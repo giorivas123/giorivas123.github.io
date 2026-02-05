@@ -411,7 +411,6 @@ h6 {
 #hero {
   width: 100%;
   height: 100vh;
-  background: url("../img/hero-bg.jpg") top right;
   background-size: cover;
 }
 
@@ -1256,6 +1255,557 @@ section {
     transform: rotate(360deg);
   }
 }
+/* ================================
+   GLOBAL BACKGROUND (HOME)
+================================ */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background:
+    radial-gradient(1200px 800px at 20% 10%, rgba(0, 82, 255, .35), transparent 60%),
+    radial-gradient(900px 700px at 80% 30%, rgba(140, 0, 255, .25), transparent 55%),
+    radial-gradient(900px 700px at 40% 90%, rgba(0, 255, 200, .12), transparent 55%),
+    linear-gradient(180deg, #0b0f19 0%, #070a12 100%);
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* Subtle grain overlay */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='.15'/%3E%3C/svg%3E");
+  opacity: .18;
+  mix-blend-mode: overlay;
+  z-index: 0;
+}
+
+/* Ensure content is above background */
+#header,
+#hero,
+#main,
+#footer {
+  position: relative;
+  z-index: 1;
+}
+
+/* ================================
+   HEADER (DARK GLASS)
+================================ */
+
+#header {
+  background: rgba(10, 14, 26, 0.55);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+#header .logo a {
+  color: #fff;
+}
+
+#navbar a {
+  color: rgba(255,255,255,.85);
+}
+
+#navbar a:hover,
+#navbar .active {
+  color: #fff;
+}
+
+/* ================================
+   HERO
+================================ */
+
+#hero h1,
+#hero h2 {
+  color: #fff;
+}
+
+#hero h2 {
+  opacity: .85;
+}
+
+/* Prevent anchor overlap */
+.anchor-offset {
+  scroll-margin-top: 90px;
+}
+
+/* ================================
+   WORK SECTION
+================================ */
+
+.work {
+  padding: 70px 0 90px;
+}
+
+.work .section-title h2,
+.work .section-title p {
+  color: #fff;
+}
+
+.work .section-title p {
+  opacity: .78;
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+/* ================================
+   PROJECT CARDS (GLASS)
+================================ */
+
+.project-block {
+  padding: 26px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, .06);
+  border: 1px solid rgba(255, 255, 255, .10);
+  box-shadow: 0 18px 50px rgba(0,0,0,.35);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  overflow: hidden;
+  margin-bottom: 22px;
+}
+
+.project-meta {
+  display: inline-flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.pill {
+  font-size: 12px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.06);
+  color: rgba(255,255,255,.85);
+}
+
+.project-title {
+  font-size: 34px;
+  line-height: 1.15;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.project-desc {
+  font-size: 15px;
+  color: rgba(255,255,255,.78);
+  margin-bottom: 18px;
+  max-width: 52ch;
+}
+
+.project-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+/* Buttons */
+.btn-solid {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.14);
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+  transition: transform .2s ease, opacity .2s ease;
+}
+
+.btn-solid:hover {
+  transform: translateY(-1px);
+  opacity: .95;
+  color: #fff;
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: transparent;
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+  transition: transform .2s ease, opacity .2s ease;
+}
+
+.btn-ghost:hover {
+  transform: translateY(-1px);
+  opacity: .95;
+  color: #fff;
+}
+
+/* Image container */
+.project-figure {
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(0,0,0,.25);
+  box-shadow: 0 16px 40px rgba(0,0,0,.35);
+}
+
+.project-figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ================================
+   FOOTER
+================================ */
+
+#footer {
+  background: transparent;
+  border-top: 1px solid rgba(255,255,255,.08);
+  color: rgba(255,255,255,.75);
+}
+/* =========================================================
+   SINGLE-PAGE DARK BLEND THEME
+   Paste ALL of this at the very bottom of assets/css/style.css
+   (This blends hero into work + forces top nav into dark glass)
+========================================================= */
+
+html { scroll-behavior: smooth; }
+
+/* ---------- Global background (premium gradient) ---------- */
+body{
+  background:
+    radial-gradient(1200px 800px at 20% 10%, rgba(0, 82, 255, .35), transparent 60%),
+    radial-gradient(900px 700px at 80% 30%, rgba(140, 0, 255, .25), transparent 55%),
+    radial-gradient(900px 700px at 40% 90%, rgba(0, 255, 200, .12), transparent 55%),
+    linear-gradient(180deg, #0b0f19 0%, #070a12 100%);
+  color:#fff;
+  overflow-x:hidden;
+}
+
+/* Subtle grain overlay */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='.15'/%3E%3C/svg%3E");
+  opacity:.18;
+  mix-blend-mode:overlay;
+  z-index:0;
+}
+
+/* Ensure content sits above background */
+#header,#hero,#main,#footer{ position:relative; z-index:1; }
+
+/* ---------- Top nav: FORCE dark glass (your request) ---------- */
+#header{
+  background: rgba(10, 14, 26, 0.70) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,.10);
+}
+
+#header .logo a{ color:#fff !important; }
+
+/* Link colors */
+#navbar a,
+#navbar a:focus{
+  color: rgba(255,255,255,.85) !important;
+}
+
+/* Hover/active */
+#navbar a:hover,
+#navbar .active,
+#navbar .active:focus,
+#navbar li:hover > a{
+  color:#fff !important;
+}
+
+/* Mobile icon (hamburger) */
+.mobile-nav-toggle{
+  color:#fff !important;
+}
+
+/* When mobile nav opens (template adds .navbar-mobile) */
+.navbar-mobile{
+  background: rgba(10, 14, 26, 0.92) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,.10);
+}
+.navbar-mobile a,
+.navbar-mobile a:focus{
+  color: rgba(255,255,255,.90) !important;
+}
+.navbar-mobile a:hover,
+.navbar-mobile .active{
+  color:#fff !important;
+}
+
+/* Social icons */
+.header-social-links a{ color: rgba(255,255,255,.85) !important; }
+.header-social-links a:hover{ color:#fff !important; }
+
+#hero {
+  position: relative;
+  overflow: hidden;
+
+  mask-image: linear-gradient(
+    to bottom,
+    black 80%,
+    rgba(0,0,0,.9) 92%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    black 80%,
+    rgba(0,0,0,.9) 92%,
+    transparent 100%
+  );
+}
+.work .section-title {
+  border-top: none !important;
+  box-shadow: none !important;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/* Overlay tint + darken lower half so it melts into the work section */
+#hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(900px 600px at 70% 18%, rgba(0, 82, 255, .35), transparent 60%),
+    radial-gradient(900px 700px at 20% 80%, rgba(140, 0, 255, .18), transparent 60%),
+    linear-gradient(
+      to bottom,
+      rgba(11, 15, 25, 0) 35%,
+      rgba(11, 15, 25, .55) 68%,
+      rgba(11, 15, 25, .92) 100%
+    );
+  z-index:1;
+  pointer-events:none;
+}
+
+/* Keep hero text above overlay */
+#hero .container{ position:relative; z-index:2; }
+
+/* Hero text contrast */
+#hero h1,#hero h2{ color:#fff !important; }
+#hero h2{ opacity:.85; }
+
+/* ---------- Anchor offset so fixed header doesn’t cover section titles ---------- */
+.anchor-offset{ scroll-margin-top: 90px; }
+
+/* ---------- Work section (integrated) ---------- */
+.work{
+  padding: 70px 0 90px;
+
+  /* Slight tint at top to match hero */
+  background: radial-gradient(1000px 600px at 50% 0%, rgba(0, 82, 255, .18), transparent 65%);
+}
+
+.work .section-title h2,
+.work .section-title p{
+  color:#fff !important;
+}
+.work .section-title p{
+  opacity:.78;
+  max-width:820px;
+  margin:0 auto;
+}
+
+/* ---------- Glass project cards ---------- */
+.project-block{
+  padding:26px;
+  border-radius:24px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.10);
+  box-shadow: 0 18px 50px rgba(0,0,0,.35);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  overflow:hidden;
+  margin-bottom:22px;
+}
+
+.project-meta{
+  display:inline-flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-bottom:14px;
+}
+
+.pill{
+  font-size:12px;
+  padding:8px 12px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.06);
+  color: rgba(255,255,255,.85);
+}
+
+.project-title{
+  font-size:34px;
+  line-height:1.15;
+  margin:0 0 10px 0;
+  color:#fff;
+}
+
+.project-desc{
+  font-size:15px;
+  color: rgba(255,255,255,.78);
+  margin-bottom:18px;
+  max-width:52ch;
+}
+
+.project-actions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:12px;
+}
+
+/* Buttons */
+.btn-solid{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:11px 16px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.14);
+  color:#fff;
+  font-weight:600;
+  font-size:14px;
+  text-decoration:none;
+  transition: transform .2s ease, opacity .2s ease;
+}
+.btn-solid:hover{ transform: translateY(-1px); opacity:.95; color:#fff; }
+
+.btn-ghost{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:11px 16px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,.14);
+  background: transparent;
+  color:#fff;
+  font-weight:600;
+  font-size:14px;
+  text-decoration:none;
+  transition: transform .2s ease, opacity .2s ease;
+}
+.btn-ghost:hover{ transform: translateY(-1px); opacity:.95; color:#fff; }
+
+/* Image frame */
+.project-figure{
+  border-radius:18px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.12);
+  background: rgba(0,0,0,.25);
+  box-shadow: 0 16px 40px rgba(0,0,0,.35);
+}
+.project-figure img{
+  width:100%;
+  height:auto;
+  display:block;
+}
+
+/* ---------- Footer dark ---------- */
+#footer{
+  background: transparent !important;
+  border-top: 1px solid rgba(255,255,255,.08);
+  color: rgba(255,255,255,.75);
+}
+/* =========================================================
+   GLOBAL WHITE TEXT (ALL PAGES)
+========================================================= */
+body {
+  color: #fff !important;
+}
+
+/* Default readable “muted” text */
+p, li, span, small, .text-muted {
+  color: rgba(255, 255, 255, .78) !important;
+}
+
+/* Links */
+a, a:focus {
+  color: rgba(255, 255, 255, .88);
+}
+a:hover {
+  color: #fff;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  color: #fff !important;
+}
+
+/* =========================================================
+   REMOVE HERO IMAGE BACKGROUND (KEEP YOUR GRADIENT THEME)
+   Your template likely sets a background image on #hero in CSS.
+   This forces it OFF.
+========================================================= */
+#hero {
+  background: transparent !important;
+}
+#hero::before {
+  background: none !important;
+}
+
+/* Optional: make hero feel cleaner on dark */
+#hero h2 { color: rgba(255,255,255,.85) !important; }
+
+/* =========================================================
+   HOME PAGE: SMALLER PROJECT IMAGES
+========================================================= */
+.project-figure {
+  max-width: 520px;      /* controls overall size */
+  margin: 0 auto;        /* centers image block */
+}
+
+.project-figure img {
+  width: 100%;
+  max-height: 320px;     /* makes the preview smaller */
+  object-fit: cover;     /* keeps it looking nice */
+}
+
+/* Even smaller on phones */
+@media (max-width: 575px) {
+  .project-figure {
+    max-width: 100%;
+  }
+  .project-figure img {
+    max-height: 240px;
+  }
+}
+
+/* =========================================================
+   HERO PITCH TEXT (for the new elevator pitch)
+========================================================= */
+.hero-pitch {
+  max-width: 720px;
+  margin: 14px auto 0;
+  font-size: 16px;
+  line-height: 1.6;
+  color: rgba(255,255,255,.80) !important;
+}
+
 
 /*--------------------------------------------------------------
 # Footer
@@ -1276,3 +1826,352 @@ section {
 #footer .credits a {
   color: #00008B;
 }
+/* ================================
+   iPhone Mockup – Hover to Animate
+================================ */
+
+/* wrapper already exists, this just enables hover control */
+.project-block:hover .iphone-gif {
+  opacity: 1;
+}
+
+.project-block:hover .iphone-poster {
+  opacity: 0;
+}
+
+/* shared screen rules */
+.iphone-screen {
+  position: absolute;
+  inset: 10px;
+  border-radius: 30px;
+  overflow: hidden;
+  background: #000;
+}
+
+/* static image (default) */
+.iphone-poster {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity .35s ease;
+  z-index: 1;
+}
+
+/* gif (hidden until hover) */
+.iphone-gif {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity .35s ease;
+  z-index: 2;
+}
+
+/* Optional: subtle “this is interactive” cue */
+.project-block:hover .iphone-mock {
+  transform: translateY(-2px);
+  transition: transform .3s ease;
+}
+/* ================================
+   VERTICAL PROJECT LAYOUT
+================================ */
+
+/* Force vertical stacking inside project cards */
+.project-block .row {
+  flex-direction: column !important;
+  text-align: center;
+}
+
+/* Reset reverse rows */
+.project-block .row.flex-lg-row-reverse {
+  flex-direction: column !important;
+}
+
+/* Center text content */
+.project-block .col-lg-6 {
+  max-width: 100%;
+}
+
+/* Spacing between text + phone */
+.project-meta,
+.project-title,
+.project-desc,
+.project-actions {
+  justify-content: center;
+}
+
+/* Keep phone smaller + elegant */
+.phone-wrap {
+  margin-top: 24px;
+}
+
+.iphone-mock {
+  width: 260px;              /* 👈 controls size */
+  margin: 0 auto;
+}
+
+/* Slightly tighter cards now that they’re vertical */
+.project-block {
+  padding: 28px 24px;
+}
+
+/* Buttons centered */
+.project-actions {
+  justify-content: center;
+}
+
+/* Desktop polish (optional) */
+@media (min-width: 992px) {
+  .iphone-mock {
+    width: 280px;
+  }
+}
+/* ================================
+   CLEAN VERTICAL PROJECT LAYOUT
+================================ */
+
+/* Force vertical stacking */
+.project-block .row {
+  flex-direction: column !important;
+  text-align: center;
+}
+
+/* Remove reverse behavior */
+.project-block .row.flex-lg-row-reverse {
+  flex-direction: column !important;
+}
+
+/* Center everything */
+.project-meta,
+.project-actions {
+  justify-content: center;
+}
+
+/* Image container */
+.project-figure {
+  margin-top: 24px;
+  max-width: 520px;      /* controls size */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Make sure the FULL app is visible */
+.project-figure img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 18px;
+  background: transparent; /* ✅ remove black */
+}
+
+/* Tighten card padding */
+.project-block {
+  padding: 28px 24px;
+}
+
+/* Buttons centered */
+.project-actions {
+  justify-content: center;
+}
+
+/* Mobile polish */
+@media (max-width: 576px) {
+  .project-figure {
+    max-width: 100%;
+  }
+}
+/* ================================
+   TIGHTEN VERTICAL SPACING
+================================ */
+
+/* Reduce space inside each project card */
+.project-block {
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+/* Reduce space between text and image */
+.project-figure {
+  margin-top: 16px;
+}
+
+/* Reduce space between projects */
+.project-block + .project-block {
+  margin-top: 24px;
+}
+
+/* Tighten section spacing */
+.work {
+  padding-top: 56px;
+  padding-bottom: 64px;
+}
+
+/* Tighten section title spacing */
+.section-title {
+  margin-bottom: 32px;
+}
+/* ================================
+   Project Split Layout (Left media / Right scroll text)
+================================ */
+
+.project-split {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 22px;
+  align-items: start;
+  text-align: left;
+}
+
+/* Left: media stays left and centered within its area */
+.project-media {
+  display: flex;
+  justify-content: center;
+}
+
+.project-media img {
+  width: 100%;
+  max-width: 520px;       /* control size */
+  height: auto;
+  object-fit: contain;
+  border-radius: 18px;
+}
+
+/* Right: scrollable narrative panel */
+.project-story {
+  border-radius: 18px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.10);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  padding: 18px;
+  max-height: 360px;      /* controls how tall before it scrolls */
+  overflow: auto;
+}
+
+/* Make scroll look clean */
+.project-story::-webkit-scrollbar {
+  width: 10px;
+}
+.project-story::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,.18);
+  border-radius: 999px;
+}
+.project-story::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.project-story h4 {
+  margin: 0 0 10px 0;
+  font-size: 16px;
+}
+
+.project-story p,
+.project-story li {
+  color: rgba(255,255,255,.78);
+}
+
+/* Stack on mobile */
+@media (max-width: 992px) {
+  .project-split {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .project-story {
+    max-height: none;   /* no scroll on mobile; let it flow */
+    overflow: visible;
+    text-align: left;
+  }
+}
+/* ================================
+   Custom Mobile Popup Menu
+================================ */
+
+.menu-toggle {
+  background: transparent;
+  border: 0;
+  color: #fff;
+  font-size: 28px;
+  line-height: 1;
+  padding: 6px 10px;
+  display: none;
+}
+
+@media (max-width: 991px) {
+  #navbar ul { display: none !important; }
+  .menu-toggle { display: inline-flex; align-items: center; justify-content: center; }
+}
+
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.6);
+  display: none;
+  z-index: 99999;
+}
+
+.menu-overlay.open {
+  display: block;
+}
+
+.menu-panel {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  left: 14px;
+  max-width: 520px;
+  margin-left: auto;
+  background: rgba(12,16,28,.92);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 16px;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  padding: 18px 16px 14px;
+  box-shadow: 0 24px 70px rgba(0,0,0,.45);
+}
+
+.menu-close {
+  background: transparent;
+  border: 0;
+  color: #fff;
+  font-size: 20px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 8px;
+}
+
+.menu-links {
+  display: grid;
+  gap: 10px;
+  padding-top: 26px;
+}
+
+.menu-links a {
+  display: block;
+  padding: 14px 14px;
+  border-radius: 12px;
+  color: #fff !important;
+  text-decoration: none;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.08);
+}
+
+.menu-links a:hover {
+  background: rgba(255,255,255,.10);
+}
+/* ===== Resume Date Fix ===== */
+.resume .resume-item h5 {
+  background: rgba(255, 255, 255, 0.08); /* subtle dark pill */
+  color: #ffffff;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+footer { color: #fff; opacity: 1; }
+footer, footer * { color: #fff !important; }

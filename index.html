@@ -24,9 +24,29 @@
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-  <!-- Template Main CSS File -->
+  <!-- Main CSS -->
   <link href="assets/css/style.css" rel="stylesheet">
 
+  <!-- ✅ Scroll Indicator CSS (added) -->
+  <style>
+    .scroll-indicator {
+      margin-top: 28px;
+      font-size: 26px;
+      color: #fff;
+      opacity: 0.75;
+      animation: bounce 1.6s infinite;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(10px); }
+    }
+  </style>
 </head>
 
 <body>
@@ -34,32 +54,221 @@
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
     <div class="container-fluid d-flex justify-content-between align-items-center">
-      <h1 class="logo me-auto me-lg-0"><a href="index.html">Gio</a></h1>
+
+      <h1 class="logo me-auto me-lg-0">
+        <a href="#hero" class="scrollto">Gio</a>
+      </h1>
+
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-          <li><a class="active" href="index.html">Home</a></li>
+          <li><a class="active scrollto" href="#hero">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="resume.html">Resume</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
         </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
+
+        <!-- ✅ Custom Hamburger Button (replaces broken template toggle) -->
+        <button id="menuToggle" class="menu-toggle" aria-label="Open menu" type="button">
+          <i class="bi bi-list"></i>
+        </button>
       </nav>
+
       <div class="header-social-links">
-        <a href="https://www.instagram.com/itsgiorivas" class="instagram" target="_blank"><i class="bi bi-instagram"></i></a>
-        <a href="https://github.com/giorivas123" class="github" target="_blank"><i class="bi bi-github"></i></a>
-        <a href="https://www.linkedin.com/in/giovanni-rivas-172b2b230" class="linkedin" target="_blank"><i class="bi bi-linkedin"></i></a>
+        <a href="https://www.instagram.com/itsgiorivas" class="instagram" target="_blank">
+          <i class="bi bi-instagram"></i>
+        </a>
+        <a href="https://github.com/giorivas123" class="github" target="_blank">
+          <i class="bi bi-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/giovanni-rivas-172b2b230" class="linkedin" target="_blank">
+          <i class="bi bi-linkedin"></i>
+        </a>
       </div>
+
     </div>
   </header>
+  <!-- End Header -->
+
+  <!-- ✅ Popup Menu Overlay (add right after header) -->
+  <div id="menuOverlay" class="menu-overlay" aria-hidden="true">
+    <div class="menu-panel" role="dialog" aria-modal="true" aria-label="Menu">
+
+      <button id="menuClose" class="menu-close" aria-label="Close menu" type="button">
+        <i class="bi bi-x-lg"></i>
+      </button>
+
+      <div class="menu-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="resume.html">Resume</a>
+      </div>
+
+    </div>
+  </div>
 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center">
-    <div class="container d-flex flex-column align-items-center" data-aos="zoom-in" data-aos-delay="100">
+    <div class="container d-flex flex-column align-items-center text-center"
+      data-aos="zoom-in" data-aos-delay="100">
+
       <h1>Giovanni Rivas</h1>
-      <h2>Welcome to my portfolio!</h2>
-      <a href="about.html" class="btn-about">About Me</a>
+      <h2>UI/UX Designer • Web & Product Design</h2>
+
+      <p class="hero-pitch">
+        I design clean, modern interfaces with a focus on turning complex ideas into simple, intuitive experiences. I’ve gained hands-on experience designing for both mobile and web, and I care deeply about creating work that feels clear, useful, and easy to navigate.
+      </p>
+
+      <!-- ✅ Updated: reliable scroll button -->
+      <a href="#work" id="selectedWorkBtn" class="btn-about">My Work</a>
+
+      <!-- ✅ Updated: scroll indicator also uses reliable scroll -->
+      <a href="#work" id="scrollIndicator" class="scroll-indicator" aria-label="Scroll to work">
+        <i class="bi bi-chevron-down"></i>
+      </a>
+
     </div>
   </section>
+  <!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= Work Section ======= -->
+    <section id="work" class="work anchor-offset">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>My Work</h2>
+          <p>
+            A curated set of projects focused on product thinking, clean UI,
+            and smooth user experiences. Scroll to explore each one.
+          </p>
+        </div>
+
+        <!-- =======================
+             Project: MusicHub
+        ======================== -->
+        <div class="project-block" data-aos="fade-up" data-aos-delay="100">
+
+          <div class="project-split">
+            <!-- LEFT: image -->
+            <div class="project-media">
+              <a href="assets/img/portfolio/musichubapp.gif"
+                 class="portfolio-lightbox"
+                 data-gallery="workGallery">
+                <img src="assets/img/portfolio/musichubapp.gif" alt="MusicHub">
+              </a>
+            </div>
+
+            <!-- RIGHT: scrollable story -->
+            <div class="project-story">
+              <div class="project-meta">
+                <span class="pill">UI/UX</span>
+                <span class="pill">App Concept</span>
+                <span class="pill">Motion</span>
+              </div>
+
+              <h3 class="project-title">MusicHub</h3>
+
+              <p class="project-desc">
+                A modern music app concept focused on discovery, collection,
+                and a premium listening experience.
+              </p>
+
+              <h4>Project Progress</h4>
+              <ul>
+                <li><strong>Goal:</strong> N/A</li>
+                <li><strong>Role:</strong> N/A</li>
+                <li><strong>Process:</strong> N/A</li>
+                <li><strong>Focus:</strong> N/A</li>
+                <li><strong>Outcome:</strong> N/A</li>
+              </ul>
+
+              <div class="project-actions">
+                <a href="assets/img/portfolio/musichubapp.gif"
+                   class="btn-solid portfolio-lightbox"
+                   data-gallery="workGallery">
+                  <i class="bi bi-arrows-fullscreen"></i>
+                  Preview
+                </a>
+
+                <a href="portfolio-details.html" class="btn-ghost">
+                  <i class="bi bi-link-45deg"></i>
+                  Case Study
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- =======================
+             Project: SIPS
+        ======================== -->
+        <div class="project-block" data-aos="fade-up" data-aos-delay="150">
+
+          <div class="project-split">
+            <!-- LEFT: image -->
+            <div class="project-media">
+              <a href="assets/img/portfolio/SIPSWalkthrough.gif"
+                 class="portfolio-lightbox"
+                 data-gallery="workGallery">
+                <img src="assets/img/portfolio/SIPSWalkthrough.gif" alt="SIPS">
+              </a>
+            </div>
+
+            <!-- RIGHT: scrollable story -->
+            <div class="project-story">
+              <div class="project-meta">
+                <span class="pill">Product Design</span>
+                <span class="pill">Mobile</span>
+                <span class="pill">Prototype</span>
+              </div>
+
+              <h3 class="project-title">SIPS</h3>
+
+              <p class="project-desc">
+                A local beverage discovery app designed to help users find
+                new drinks, spots, and favorites faster.
+              </p>
+
+              <h4>Project Progress</h4>
+              <ul>
+                <li><strong>Goal:</strong> N/A</li>
+                <li><strong>Role:</strong> N/A</li>
+                <li><strong>Process:</strong> N/A</li>
+                <li><strong>Focus:</strong> N/A</li>
+                <li><strong>Outcome:</strong> N/A</li>
+              </ul>
+
+              <div class="project-actions">
+                <a href="assets/img/portfolio/SIPSWalkthrough.gif"
+                   class="btn-solid portfolio-lightbox"
+                   data-gallery="workGallery">
+                  <i class="bi bi-arrows-fullscreen"></i>
+                  Preview
+                </a>
+
+                <a href="portfolio-details7.html" class="btn-ghost">
+                  <i class="bi bi-link-45deg"></i>
+                  Case Study
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- CTA -->
+        <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="250">
+          <a href="about.html#contact" class="btn btn-secondary">
+            View My Contact Info
+          </a>
+        </div>
+
+      </div>
+    </section>
+    <!-- End Work Section -->
+
+  </main>
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
@@ -71,7 +280,10 @@
   </footer>
 
   <div id="preloader"></div>
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-up-short"></i>
+  </a>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
@@ -83,9 +295,66 @@
   <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
 
-  <!-- Template Main JS File -->
+  <!-- Template Main JS -->
   <script src="assets/js/main.js"></script>
 
-</body>
+  <!-- ✅ Popup Menu JS -->
+  <script>
+    (function () {
+      const overlay = document.getElementById('menuOverlay');
+      const openBtn = document.getElementById('menuToggle');
+      const closeBtn = document.getElementById('menuClose');
 
+      function openMenu() {
+        overlay.classList.add('open');
+        overlay.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeMenu() {
+        overlay.classList.remove('open');
+        overlay.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      openBtn && openBtn.addEventListener('click', openMenu);
+      closeBtn && closeBtn.addEventListener('click', closeMenu);
+
+      overlay && overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) closeMenu();
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeMenu();
+      });
+    })();
+  </script>
+
+  <!-- ✅ Reliable smooth scroll to top of Work section (added) -->
+  <script>
+    (function () {
+      const btn = document.getElementById('selectedWorkBtn');
+      const indicator = document.getElementById('scrollIndicator');
+      const target = document.getElementById('work');
+      const header = document.getElementById('header');
+
+      function scrollToWork(e) {
+        e.preventDefault();
+        if (!target) return;
+
+        const headerHeight = header ? header.offsetHeight : 0;
+        const targetTop = target.getBoundingClientRect().top + window.pageYOffset;
+
+        window.scrollTo({
+          top: targetTop - headerHeight, // lands with Work title visible (not hidden behind header)
+          behavior: 'smooth'
+        });
+      }
+
+      btn && btn.addEventListener('click', scrollToWork);
+      indicator && indicator.addEventListener('click', scrollToWork);
+    })();
+  </script>
+
+</body>
 </html>

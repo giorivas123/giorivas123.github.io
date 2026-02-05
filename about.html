@@ -34,31 +34,49 @@
   <header id="header" class="fixed-top">
     <div class="container-fluid d-flex justify-content-between align-items-center">
 
-      <h1 class="logo me-auto me-lg-0"><a href="index.html">Gio</a></h1>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      <h1 class="logo me-auto me-lg-0">
+        <a href="index.html">Gio</a>
+      </h1>
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a class="active" href="about.html">About</a></li>
           <li><a href="resume.html">Resume</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
         </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
+
+        <!-- ✅ Custom Hamburger Button -->
+        <button id="menuToggle" class="menu-toggle" aria-label="Open menu" type="button">
+          <i class="bi bi-list"></i>
+        </button>
+      </nav>
 
       <div class="header-social-links">
-        <div class="header-social-links">
-          <a href="https://www.instagram.com/itsgiorivas" class="instagram" target="_blank"><i class="bi bi-instagram"></i></a>
-          <a href="https://github.com/giorivas123" class="github" target="_blank"><i class="bi bi-github"></i></a>
-          <a href="https://www.linkedin.com/in/giovanni-rivas-172b2b230" class="linkedin" target="_blank"><i class="bi bi-linkedin"></i></a>
-        </div>
+        <a href="https://www.instagram.com/itsgiorivas" class="instagram" target="_blank"><i class="bi bi-instagram"></i></a>
+        <a href="https://github.com/giorivas123" class="github" target="_blank"><i class="bi bi-github"></i></a>
+        <a href="https://www.linkedin.com/in/giovanni-rivas-172b2b230" class="linkedin" target="_blank"><i class="bi bi-linkedin"></i></a>
       </div>
 
     </div>
+  </header>
+  <!-- End Header -->
 
-  </header><!-- End Header -->
+  <!-- ✅ Popup Menu Overlay -->
+  <div id="menuOverlay" class="menu-overlay" aria-hidden="true">
+    <div class="menu-panel" role="dialog" aria-modal="true" aria-label="Menu">
+
+      <button id="menuClose" class="menu-close" aria-label="Close menu" type="button">
+        <i class="bi bi-x-lg"></i>
+      </button>
+
+      <div class="menu-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="resume.html">Resume</a>
+      </div>
+
+    </div>
+  </div>
 
   <main id="main">
 
@@ -69,7 +87,8 @@
         <div class="section-title">
           <h2>About</h2>
           <p>
-            Welcome to my "About Me" page! Here, you'll find a comprehensive overview of who I am, my background, skills, and professional experiences. This page serves as a window into my journey, aspirations, and accomplishments. Whether you're a potential employer, client, or simply curious about my story, I invite you to explore and get to know me better. Feel free to reach out if you have any questions or opportunities for collaboration. Thank you for visiting!</p>
+            Welcome to my "About Me" page! Here, you'll find a comprehensive overview of who I am, my background, skills, and professional experiences. This page serves as a window into my journey, aspirations, and accomplishments. Whether you're a potential employer, client, or simply curious about my story, I invite you to explore and get to know me better. Feel free to reach out if you have any questions or opportunities for collaboration. Thank you for visiting!
+          </p>
         </div>
 
         <div class="row">
@@ -92,7 +111,7 @@
               </div>
               <div class="col-lg-6">
                 <ul>
-                  <li><i class="bi bi-rounded-right"></i> <strong>Age:</strong> 25</li>
+                  <li><i class="bi bi-rounded-right"></i> <strong>Age:</strong> 26</li>
                   <li><i class="bi bi-rounded-right"></i> <strong>Degree:</strong> Bachelors of Arts (BA)</li>
                   <li><i class="bi bi-rounded-right"></i> <strong>Email:</strong> giorivas123@yahoo.com</li>
                   <li><i class="bi bi-rounded-right"></i> <strong>Freelance:</strong> Available</li>
@@ -100,8 +119,8 @@
               </div>
             </div>
             <p>
-               My approach to design is driven by a commitment to excellence and a dedication to understanding and exceeding client expectations. 
-              I strive to create solutions that not only meet the needs of users but also align with the strategic goals of the project. 
+              My approach to design is driven by a commitment to excellence and a dedication to understanding and exceeding client expectations.
+              I strive to create solutions that not only meet the needs of users but also align with the strategic goals of the project.
               With a strong foundation in both web and UI/UX design principles, I am well-equipped to tackle challenges and deliver impactful results.
             </p>
           </div>
@@ -183,7 +202,8 @@
         <div class="section-title">
           <h2>Facts</h2>
           <p>
-            These facts encapsulate my comprehensive expertise in software development, encompassing web technologies, project management, and client-centric service delivery.</p>
+            These facts encapsulate my comprehensive expertise in software development, encompassing web technologies, project management, and client-centric service delivery.
+          </p>
         </div>
 
         <div class="row counters">
@@ -213,7 +233,6 @@
       </div>
     </section><!-- End Facts Section -->
 
-  
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
@@ -222,8 +241,7 @@
       <div class="copyright">
         &copy; Copyright <strong><span>Gio</span></strong>. All Rights Reserved
       </div>
-      <div class="credits">
-      </div>
+      <div class="credits"></div>
     </div>
   </footer><!-- End  Footer -->
 
@@ -243,6 +261,37 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
-</body>
+  <!-- ✅ Popup Menu JS -->
+  <script>
+    (function () {
+      const overlay = document.getElementById('menuOverlay');
+      const openBtn = document.getElementById('menuToggle');
+      const closeBtn = document.getElementById('menuClose');
 
+      function openMenu() {
+        overlay.classList.add('open');
+        overlay.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeMenu() {
+        overlay.classList.remove('open');
+        overlay.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      openBtn && openBtn.addEventListener('click', openMenu);
+      closeBtn && closeBtn.addEventListener('click', closeMenu);
+
+      overlay && overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) closeMenu();
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeMenu();
+      });
+    })();
+  </script>
+
+</body>
 </html>

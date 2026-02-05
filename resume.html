@@ -26,7 +26,6 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
-
 </head>
 
 <body>
@@ -36,18 +35,19 @@
     <div class="container-fluid d-flex justify-content-between align-items-center">
 
       <h1 class="logo me-auto me-lg-0"><a href="index.html">Gio</a></h1>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a class="active" href="resume.html">Resume</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
         </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
+
+        <!-- ✅ Custom Hamburger Button -->
+        <button id="menuToggle" class="menu-toggle" aria-label="Open menu" type="button">
+          <i class="bi bi-list"></i>
+        </button>
+      </nav>
 
       <div class="header-social-links">
         <a href="https://www.instagram.com/itsgiorivas" class="instagram" target="_blank"><i class="bi bi-instagram"></i></a>
@@ -56,116 +56,135 @@
       </div>
 
     </div>
-
   </header><!-- End Header -->
+
+  <!-- ✅ Popup Menu Overlay -->
+  <div id="menuOverlay" class="menu-overlay" aria-hidden="true">
+    <div class="menu-panel" role="dialog" aria-modal="true" aria-label="Menu">
+
+      <button id="menuClose" class="menu-close" aria-label="Close menu" type="button">
+        <i class="bi bi-x-lg"></i>
+      </button>
+
+      <div class="menu-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="resume.html">Resume</a>
+      </div>
+
+    </div>
+  </div>
 
   <main id="main">
 
-<!-- ======= Resume Section ======= -->
-<section id="resume" class="resume">
-  <div class="container" data-aos="fade-up">
+    <!-- ======= Resume Section ======= -->
+    <section id="resume" class="resume">
+      <div class="container" data-aos="fade-up">
 
-    <div class="section-title">
-      <h2>Resume</h2>
-      <p>
-        Motivated digital media professional with a BA in Digital Media from the University of Central Florida. Proficient in Adobe Suite, HTML, and CSS, I am looking to further develop my experience in UI/UX design. Seeking opportunities to contribute my skills, collaborate with dynamic teams, and grow within the ever-evolving field of digital media.
-      </p>
-    </div>
-
-    <div class="row">
-      <!-- Education Moved to the Top, Valencia First -->
-      <div class="col-lg-6">
-        <h3 class="resume-title">Education</h3>
-
-        <div class="resume-item">
-          <h4>Associate of Arts in General Studies</h4>
-          <h5>2018-2021</h5>
-          <p><em>Valencia College, Orlando, FL</em></p>
-          <ul>
-            <li>Completed foundational coursework in computer science, digital media, and graphic design.</li>
-            <li>Gained experience in web development and digital storytelling.</li>
-            <li>Developed a strong understanding of digital communication and multimedia production.</li>
-          </ul>
+        <div class="section-title">
+          <h2>Resume</h2>
+          <p>
+            Motivated digital media professional with a BA in Digital Media from the University of Central Florida. Proficient in Adobe Suite, HTML, and CSS, I am looking to further develop my experience in UI/UX design. Seeking opportunities to contribute my skills, collaborate with dynamic teams, and grow within the ever-evolving field of digital media.
+          </p>
         </div>
 
-        <div class="resume-item">
-          <h4>Bachelor of Arts in Digital Media</h4>
-          <h5>2021-2025</h5>
-          <p><em>University of Central Florida, Orlando, FL</em></p>
-          <ul>
-            <li>Specialized in UI/UX design, front-end development, and digital media production.</li>
-            <li>Developed projects using Adobe Suite, HTML, CSS, and JavaScript.</li>
-            <li>Worked on team-based projects focusing on user experience and interface design.</li>
-          </ul>
-        </div>
-      </div>
+        <div class="row">
 
-      <!-- Work Experience Now in the Correct Order -->
-      <div class="col-lg-6">
-        <h3 class="resume-title">Work Experience</h3>
+          <!-- ✅ WORK EXPERIENCE FIRST (Most recent → oldest) -->
+          <div class="col-lg-6">
+            <h3 class="resume-title">Work Experience</h3>
 
-        <div class="resume-item">
-          <h4>Photographer/Videographer</h4>
-          <h5>2017-2021</h5>
-          <p><em>Discovery Cove, Orlando, FL</em></p>
-          <ul>
-            <li>Engaged with guests, enhancing customer experience through visual storytelling and interactive media.</li>
-            <li>Managed digital assets and optimized content display for guest interaction and sales.</li>
-            <li>Applied user-centered design principles to create visually appealing and memorable experiences for visitors.</li>
-          </ul>
-        </div>
+            <div class="resume-item">
+              <h4>UI & UX Design Intern</h4>
+              <h5>2026-Present</h5>
+              <p><em>Apple Inc., Orlando, FL</em></p>
+              <ul>
+                <li>Support UI and UX design efforts for products within Apple Services</li>
+                <li>Design and iterate on interface concepts with a focus on clarity and usability</li>
+                <li>Collaborate with designers and cross functional partners throughout the design process</li>
+                <li>Apply user-centered design principles to inform design decisions</li>
+              </ul>
+            </div>
 
-        <div class="resume-item">
-          <h4>IT Support Specialist</h4>
-          <h5>2021-2022</h5>
-          <p><em>Osceola County School District, Kissimmee, FL</em></p>
-          <ul>
-            <li>Assisted in troubleshooting and resolving technical issues to improve user experience across various digital platforms.</li>
-            <li>Collaborated with employees to streamline workflows and enhance accessibility of technology solutions.</li>
-            <li>Provided structured feedback to improve system usability and digital interface efficiency.</li>
-          </ul>
-        </div>
+            <div class="resume-item">
+              <h4>Sales Specialist</h4>
+              <h5>2022-Present</h5>
+              <p><em>Apple Inc., Orlando, FL</em></p>
+              <ul>
+                <li>Provided exceptional customer service by addressing inquiries and resolving technical issues, ensuring a seamless user experience.</li>
+                <li>Advised customers on digital products and services, demonstrating an understanding of user behavior and interface design.</li>
+                <li>Collaborated with team members to enhance product knowledge, improving customer interactions and digital engagement.</li>
+                <li>Utilized problem-solving skills to troubleshoot and enhance product accessibility, aligning with UX best practices.</li>
+              </ul>
+            </div>
 
-        <div class="resume-item">
-          <h4>Sales Specialist</h4>
-          <h5>2022-Present</h5>
-          <p><em>Apple Inc., Orlando, FL</em></p>
-          <ul>
-            <li>Provided exceptional customer service by addressing inquiries and resolving technical issues, ensuring a seamless user experience.</li>
-            <li>Advised customers on digital products and services, demonstrating an understanding of user behavior and interface design.</li>
-            <li>Collaborated with team members to enhance product knowledge, improving customer interactions and digital engagement.</li>
-            <li>Utilized problem-solving skills to troubleshoot and enhance product accessibility, aligning with UX best practices.</li>
-          </ul>
+            <div class="resume-item">
+              <h4>IT Support Specialist</h4>
+              <h5>2021-2022</h5>
+              <p><em>Osceola County School District, Kissimmee, FL</em></p>
+              <ul>
+                <li>Assisted in troubleshooting and resolving technical issues to improve user experience across various digital platforms.</li>
+                <li>Collaborated with employees to streamline workflows and enhance accessibility of technology solutions.</li>
+                <li>Provided structured feedback to improve system usability and digital interface efficiency.</li>
+              </ul>
+            </div>
+
+            <div class="resume-item">
+              <h4>Photographer/Videographer</h4>
+              <h5>2017-2021</h5>
+              <p><em>Discovery Cove, Orlando, FL</em></p>
+              <ul>
+                <li>Engaged with guests, enhancing customer experience through visual storytelling and interactive media.</li>
+                <li>Managed digital assets and optimized content display for guest interaction and sales.</li>
+                <li>Applied user-centered design principles to create visually appealing and memorable experiences for visitors.</li>
+              </ul>
+            </div>
+
           </div>
 
-          <div class="resume-item">
-          <h4>UI & UX Design Intern</h4>
-          <h5>2026-Present</h5>
-          <p><em>Apple Inc., Orlando, FL</em></p>
-          <ul>
-            <li>Support UI and UX design efforts for products within Apple Services</li>
-            <li>Design and iterate on interface concepts with a focus on clarity and usability</li>
-            <li>Collaborate with designers and cross functional partners throughout the design process</li>
-            <li>Apply user-centered design principles to inform design decisions</li>
-          </ul>
+          <!-- ✅ EDUCATION SECOND (Most recent → oldest) -->
+          <div class="col-lg-6">
+            <h3 class="resume-title">Education</h3>
+
+            <div class="resume-item">
+              <h4>Bachelor of Arts in Digital Media</h4>
+              <h5>2021-2025</h5>
+              <p><em>University of Central Florida, Orlando, FL</em></p>
+              <ul>
+                <li>Specialized in UI/UX design, front-end development, and digital media production.</li>
+                <li>Developed projects using Adobe Suite, HTML, CSS, and JavaScript.</li>
+                <li>Worked on team-based projects focusing on user experience and interface design.</li>
+              </ul>
+            </div>
+
+            <div class="resume-item">
+              <h4>Associate of Arts in General Studies</h4>
+              <h5>2018-2021</h5>
+              <p><em>Valencia College, Orlando, FL</em></p>
+              <ul>
+                <li>Completed foundational coursework in computer science, digital media, and graphic design.</li>
+                <li>Gained experience in web development and digital storytelling.</li>
+                <li>Developed a strong understanding of digital communication and multimedia production.</li>
+              </ul>
+            </div>
+
+          </div>
         </div>
+
+        <div class="text-center mt-4">
+          <a href="about.html#skills" class="btn btn-secondary">
+            View My Skills
+          </a>
+        </div>
+
+        <div class="text-center mt-3">
+          <a href="assets/pdf/Giovanni-Rivas-Resume.pdf" class="btn btn-primary" target="_blank">
+            Download My Resume (PDF)
+          </a>
+        </div>
+
       </div>
-    </div>
-
-    <!-- Added "View My Skills" link at the bottom -->
-    <div class="text-center mt-4">
-      <a href="about.html#skills" class="btn btn-secondary">
-        View My Skills
-      </a>
-    </div>
-
-<div class="text-center mt-3">
-  <a href="assets/pdf/Giovanni-Rivas-Resume.pdf" class="btn btn-primary" target="_blank">
-    Download My Resume (PDF)
-  </a>
-</div>
-  </div>
-</section><!-- End Resume Section -->
+    </section><!-- End Resume Section -->
 
   </main><!-- End #main -->
 
@@ -175,12 +194,7 @@
       <div class="copyright">
         &copy; Copyright <strong><span>Gio</span></strong>. All Rights Reserved
       </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/kelly-free-bootstrap-cv-resume-html-template/ -->
-      </div>
+      <div class="credits"></div>
     </div>
   </footer><!-- End  Footer -->
 
@@ -200,6 +214,37 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
-</body>
+  <!-- ✅ Popup Menu JS -->
+  <script>
+    (function () {
+      const overlay = document.getElementById('menuOverlay');
+      const openBtn = document.getElementById('menuToggle');
+      const closeBtn = document.getElementById('menuClose');
 
+      function openMenu() {
+        overlay.classList.add('open');
+        overlay.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeMenu() {
+        overlay.classList.remove('open');
+        overlay.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      openBtn && openBtn.addEventListener('click', openMenu);
+      closeBtn && closeBtn.addEventListener('click', closeMenu);
+
+      overlay && overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) closeMenu();
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeMenu();
+      });
+    })();
+  </script>
+
+</body>
 </html>
