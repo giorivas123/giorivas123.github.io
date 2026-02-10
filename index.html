@@ -417,7 +417,28 @@
   .media-preview:hover .play-overlay {
     opacity: 1;
   }
+
 </style>
+<style>
+  /* ✅ Remove forced heights so content defines the card size */
+  .project-block,
+  .project-split,
+  .project-story {
+    height: auto !important;
+    min-height: unset !important;
+  }
+
+  /* ✅ Make sure flex items stretch naturally */
+  .project-split {
+    align-items: flex-start !important;
+  }
+
+  /* ✅ Optional: give the card a little breathing room instead of dead space */
+  .project-story {
+    padding-bottom: 24px;
+  }
+</style>
+
 
 </body>
 </html>
