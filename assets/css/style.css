@@ -2172,6 +2172,7 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 999px;
   font-size: 0.85rem;
   font-weight: 500;
+  
 }
 footer { color: #fff; opacity: 1; }
 footer, footer * { color: #fff !important; }

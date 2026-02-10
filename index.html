@@ -150,13 +150,19 @@
 
           <div class="project-split">
             <!-- LEFT: image -->
-            <div class="project-media">
-              <a href="assets/img/portfolio/musichubapp.gif"
-                 class="portfolio-lightbox"
-                 data-gallery="workGallery">
-                <img src="assets/img/portfolio/musichubapp.gif" alt="MusicHub">
-              </a>
-            </div>
+<div class="project-media">
+  <a href="assets/img/portfolio/musichubapp.gif"
+     class="portfolio-lightbox media-preview"
+     data-gallery="workGallery">
+
+    <img src="assets/img/portfolio/musichub.jpg" alt="MusicHub">
+
+    <span class="play-overlay">
+      <i class="bi bi-play-fill"></i>
+    </span>
+
+  </a>
+</div>
 
             <!-- RIGHT: scrollable story -->
             <div class="project-story">
@@ -208,13 +214,20 @@
 
           <div class="project-split">
             <!-- LEFT: image -->
-            <div class="project-media">
-              <a href="assets/img/portfolio/SIPSWalkthrough.gif"
-                 class="portfolio-lightbox"
-                 data-gallery="workGallery">
-                <img src="assets/img/portfolio/SIPSWalkthrough.gif" alt="SIPS">
-              </a>
-            </div>
+         <div class="project-media">
+  <a href="assets/img/portfolio/SIPSWalkthrough.gif"
+     class="portfolio-lightbox media-preview"
+     data-gallery="workGallery">
+
+    <img src="assets/img/portfolio/SIPS.jpg" alt="SIPS">
+
+    <span class="play-overlay">
+      <i class="bi bi-play-fill"></i>
+    </span>
+
+  </a>
+</div>
+
 
             <!-- RIGHT: scrollable story -->
             <div class="project-story">
@@ -356,6 +369,55 @@
       indicator && indicator.addEventListener('click', scrollToWork);
     })();
   </script>
+<style>
+  .scroll-indicator {
+    margin-top: 28px;
+    font-size: 26px;
+    color: #fff;
+    opacity: 0.75;
+    animation: bounce 1.6s infinite;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(10px); }
+  }
+
+  /* ✅ MusicHub preview overlay */
+  .media-preview {
+    position: relative;
+    display: block;
+  }
+
+  .media-preview img {
+    width: 100%;
+    display: block;
+    border-radius: 12px;
+  }
+
+  .play-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 64px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.35);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 12px;
+  }
+
+  .media-preview:hover .play-overlay {
+    opacity: 1;
+  }
+</style>
 
 </body>
 </html>
