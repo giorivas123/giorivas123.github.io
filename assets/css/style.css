@@ -2172,7 +2172,47 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 999px;
   font-size: 0.85rem;
   font-weight: 500;
+/* ===== Clean Minimal Hero Style ===== */
 
+.hero-clean {
+  background: #f2f2f2;
+  min-height: 100vh;
+}
+
+.hero-avatar {
+  width: 160px;
+  height: 160px;
+  background: #d9d9d9;
+  border-radius: 50%;
+  margin-bottom: 30px;
+}
+
+.hero-name {
+  font-size: 56px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 20px;
+}
+
+.hero-tagline {
+  font-size: 22px;
+  max-width: 720px;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+
+.hero-sub {
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: #777;
+}
+
+/* Make scroll arrow darker for light background */
+.hero-clean .scroll-indicator {
+  color: #000;
+  opacity: 0.6;
+}
 }
 footer { color: #fff; opacity: 1; }
 footer, footer * { color: #fff !important; }
