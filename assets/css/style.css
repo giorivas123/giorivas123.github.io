@@ -2290,6 +2290,23 @@ h1, h2, h3, h4, h5, h6 {
     padding: 22px;
   }
 }
+/* ===== Additional Grid Style ===== */
+
+.additional-grid .thumb {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: #e5e5e5;
+  border-radius: 10px;
+}
+
+/* ===== About Card Small Image ===== */
+
+.about-thumb {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: #e5e5e5;
+  border-radius: 10px;
+}
 }
 footer { color: #fff; opacity: 1; }
 footer, footer * { color: #fff !important; }
