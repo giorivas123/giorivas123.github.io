@@ -29,6 +29,7 @@
   <!-- Main CSS -->
   <link href="assets/css/style.css" rel="stylesheet">
 
+  <!-- ✅ Scroll Indicator CSS (added) + clean work card styles -->
   <style>
     .scroll-indicator {
       margin-top: 28px;
@@ -44,13 +45,29 @@
     }
 
     @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(10px); }
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(10px);
+      }
     }
 
-    #workScrollIndicator { margin-top: 16px; }
+    /* ✅ Better spacing when arrow sits under a button */
+    #workScrollIndicator {
+      margin-top: 16px;
+    }
 
-    .work-clean { padding: 80px 0; }
+    /* ============================
+       CLEAN "TABLET" WORK STYLES
+       (works on your dark gradient)
+    ============================ */
+    .work-clean {
+      padding: 80px 0;
+    }
 
     .work-clean .tablet-card {
       background: rgba(255, 255, 255, 0.06);
@@ -102,6 +119,7 @@
       transform: translateY(-1px);
     }
 
+    /* ✅ Additional Projects placeholders (no broken image icons) */
     .additional-grid .tile {
       width: 100%;
       border-radius: 12px;
@@ -109,8 +127,10 @@
       border: 1px solid rgba(255, 255, 255, 0.10);
       height: 0;
       padding-top: 75%;
+      /* 4:3 */
     }
 
+    /* ✅ About tile image placeholder */
     .about-tile {
       width: 100%;
       border-radius: 12px;
@@ -118,80 +138,309 @@
       border: 1px solid rgba(255, 255, 255, 0.10);
       height: 0;
       padding-top: 100%;
+      /* square */
     }
 
     @media (max-width: 768px) {
-      .work-clean .tablet-card { padding: 22px; }
+      .work-clean .tablet-card {
+        padding: 22px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-<!-- WORK SECTION ONLY SHOWN BELOW (unchanged except column fix) -->
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container-fluid d-flex justify-content-between align-items-center">
 
-<section id="work" class="work-clean anchor-offset">
-  <div class="container" data-aos="fade-up">
+      <h1 class="logo me-auto me-lg-0">
+        <a href="#hero" class="scrollto">Gio</a>
+      </h1>
 
-    <!-- Project 1 -->
-    <div class="tablet-card" data-aos="fade-up" data-aos-delay="100">
-      <div class="row g-4 align-items-start">
-        <div class="col-md-6">
-          <div class="project-media-frame">
-            <img src="assets/img/portfolio/musichub.jpg" alt="MusicHub">
-          </div>
-        </div>
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="active scrollto" href="#hero">Work</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="resume.html">Resume</a></li>
+        </ul>
 
-        <div class="col-md-6">
-          <h2 class="tablet-title">Project 1</h2>
-          <h3 class="tablet-title" style="font-size: 28px; margin-top: 10px;">MusicHub</h3>
-          <p class="tablet-text">A modern music app concept focused on discovery, collection, and a premium listening experience.</p>
-          <p class="tablet-text">Goal: Prototype a modern music app in Figma that helps users discover smaller artists, view upcoming performances, and explore festivals/events.</p>
-          <a class="tablet-btn" href="portfolio-details.html">View Project</a>
-        </div>
+        <button id="menuToggle" class="menu-toggle" aria-label="Open menu" type="button">
+          <i class="bi bi-list"></i>
+        </button>
+      </nav>
+
+      <div class="header-social-links">
+        <a href="https://www.instagram.com/itsgiorivas" class="instagram" target="_blank" rel="noopener">
+          <i class="bi bi-instagram"></i>
+        </a>
+        <a href="https://github.com/giorivas123" class="github" target="_blank" rel="noopener">
+          <i class="bi bi-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/giovanni-rivas-172b2b230" class="linkedin" target="_blank"
+          rel="noopener">
+          <i class="bi bi-linkedin"></i>
+        </a>
+      </div>
+
+    </div>
+  </header>
+  <!-- End Header -->
+
+  <!-- ✅ Popup Menu Overlay -->
+  <div id="menuOverlay" class="menu-overlay" aria-hidden="true">
+    <div class="menu-panel" role="dialog" aria-modal="true" aria-label="Menu">
+      <button id="menuClose" class="menu-close" aria-label="Close menu" type="button">
+        <i class="bi bi-x-lg"></i>
+      </button>
+
+      <div class="menu-links">
+        <a href="index.html">Work</a>
+        <a href="about.html">About</a>
+        <a href="resume.html">Resume</a>
       </div>
     </div>
-
-    <!-- Project 2 -->
-    <div class="tablet-card" data-aos="fade-up" data-aos-delay="150">
-      <div class="row g-4 align-items-start">
-        <div class="col-md-6">
-          <div class="project-media-frame">
-            <img src="assets/img/portfolio/SIPS.jpg" alt="SIPS">
-          </div>
-        </div>
-
-        <div class="col-md-6">
-          <h2 class="tablet-title">Project 2</h2>
-          <h3 class="tablet-title" style="font-size: 28px; margin-top: 10px;">SIPS</h3>
-          <p class="tablet-text">A local beverage discovery app designed to help users find new drinks, spots, and favorites faster.</p>
-          <p class="tablet-text">Goal: Build a user-friendly app that connects users with local drink shops and supports small businesses.</p>
-          <a class="tablet-btn" href="portfolio-details7.html">View Project</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Project 3 -->
-    <div class="tablet-card" data-aos="fade-up" data-aos-delay="200">
-      <div class="row g-4 align-items-start">
-        <div class="col-md-6">
-          <div class="project-media-frame">
-            <img src="assets/img/portfolio/your-project-3.jpg" alt="Project 3">
-          </div>
-        </div>
-
-        <div class="col-md-6">
-          <h2 class="tablet-title">Project 3</h2>
-          <h3 class="tablet-title" style="font-size: 28px; margin-top: 10px;">Your Project Name</h3>
-          <p class="tablet-text">Short description for project 3 — same style as the mockup.</p>
-          <p class="tablet-text">Add a second paragraph here to match the mockup density.</p>
-          <a class="tablet-btn" href="portfolio-details3.html">View Project</a>
-        </div>
-      </div>
-    </div>
-
   </div>
-</section>
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center hero-clean">
+    <div class="container d-flex flex-column align-items-center text-center" data-aos="zoom-in" data-aos-delay="100">
+      <div class="hero-avatar"></div>
+      <h1 class="hero-name">Giovanni Rivas</h1>
+
+      <p class="hero-tagline">
+        I design clean modern interfaces with a focus on turning
+        complex ideas into simple, intuitive experiences.
+      </p>
+
+      <p class="hero-sub">
+        User Interface Design • User Experience Design • Web/Product Design
+      </p>
+
+      <a href="#work" id="scrollIndicator" class="scroll-indicator" aria-label="Scroll to work">
+        <i class="bi bi-chevron-down"></i>
+      </a>
+    </div>
+  </section>
+  <!-- End Hero -->
+
+  <main id="main">
+    <section id="work" class="work-clean anchor-offset">
+      <div class="container" data-aos="fade-up">
+
+        <!-- Project 1 -->
+        <div class="tablet-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="row g-4 align-items-start">
+            <div class="col-md-6">
+              <div class="project-media-frame">
+                <img src="assets/img/portfolio/musichub.jpg" alt="MusicHub">
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <h2 class="tablet-title">Project 1</h2>
+              <h3 class="tablet-title" style="font-size: 28px; margin-top: 10px;">MusicHub</h3>
+
+              <p class="tablet-text">
+                A modern music app concept focused on discovery, collection,
+                and a premium listening experience.
+              </p>
+
+              <p class="tablet-text">
+                Goal: Prototype a modern music app in Figma that helps users discover smaller artists,
+                view upcoming performances, and explore festivals/events.
+              </p>
+
+              <a class="tablet-btn" href="portfolio-details.html">View Project</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="tablet-card" data-aos="fade-up" data-aos-delay="150">
+          <div class="row g-4 align-items-start">
+            <div class="col-md-6">
+              <div class="project-media-frame">
+                <img src="assets/img/portfolio/SIPS.jpg" alt="SIPS">
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <h2 class="tablet-title">Project 2</h2>
+              <h3 class="tablet-title" style="font-size: 28px; margin-top: 10px;">SIPS</h3>
+
+              <p class="tablet-text">
+                A local beverage discovery app designed to help users find
+                new drinks, spots, and favorites faster.
+              </p>
+
+              <p class="tablet-text">
+                Goal: Build a user-friendly app that connects users with local drink shops and supports
+                small businesses. Designed in Figma and coded with HTML/CSS/JS.
+              </p>
+
+              <a class="tablet-btn" href="portfolio-details7.html">View Project</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="tablet-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="row g-4 align-items-start">
+            <div class="col-md-6">
+              <div class="project-media-frame">
+                <img src="assets/img/portfolio/your-project-3.jpg" alt="Project 3">
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <h2 class="tablet-title">Project 3</h2>
+              <h3 class="tablet-title" style="font-size: 28px; margin-top: 10px;">Your Project Name</h3>
+
+              <p class="tablet-text">
+                Short description for project 3 — same style as the mockup.
+              </p>
+
+              <p class="tablet-text">
+                Add a second paragraph here (optional) to match the mockup density.
+              </p>
+
+              <a class="tablet-btn" href="portfolio-details3.html">View Project</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Additional Projects -->
+        <div class="tablet-card" data-aos="fade-up" data-aos-delay="250">
+          <h2 class="tablet-title" style="margin-bottom: 18px;">Additional Projects</h2>
+
+          <div class="row g-4 additional-grid">
+            <div class="col-6 col-md-4"><div class="tile"></div></div>
+            <div class="col-6 col-md-4"><div class="tile"></div></div>
+            <div class="col-6 col-md-4"><div class="tile"></div></div>
+            <div class="col-6 col-md-4"><div class="tile"></div></div>
+            <div class="col-6 col-md-4"><div class="tile"></div></div>
+            <div class="col-6 col-md-4"><div class="tile"></div></div>
+          </div>
+        </div>
+
+        <!-- About Me -->
+        <div class="tablet-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="row g-4 align-items-start">
+            <div class="col-md-3">
+              <div class="about-tile"></div>
+            </div>
+
+            <div class="col-md-9">
+              <h2 class="tablet-title">About Me</h2>
+
+              <p class="tablet-text" style="margin-top: 10px;">
+                I’m a UI/UX and Product Designer focused on building clean, intuitive
+                digital experiences. My work blends structure, visual clarity,
+                and thoughtful interaction design to simplify complex ideas.
+              </p>
+
+              <p class="tablet-text">
+                I specialize in prototyping, front-end development, and crafting
+                seamless user flows that feel effortless. Whether designing in Figma
+                or coding responsive layouts, my goal is always the same —
+                clarity, usability, and impact.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Gio</span></strong>. All Rights Reserved
+      </div>
+    </div>
+  </footer>
+
+  <div id="preloader"></div>
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-up-short"></i>
+  </a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <script src="assets/js/main.js"></script>
+
+  <!-- ✅ Popup Menu JS -->
+  <script>
+    (function () {
+      const overlay = document.getElementById('menuOverlay');
+      const openBtn = document.getElementById('menuToggle');
+      const closeBtn = document.getElementById('menuClose');
+
+      function openMenu() {
+        overlay.classList.add('open');
+        overlay.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeMenu() {
+        overlay.classList.remove('open');
+        overlay.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      openBtn && openBtn.addEventListener('click', openMenu);
+      closeBtn && closeBtn.addEventListener('click', closeMenu);
+
+      overlay && overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) closeMenu();
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeMenu();
+      });
+    })();
+  </script>
+
+  <!-- ✅ Reliable smooth scroll (Hero -> Work) -->
+  <script>
+    (function () {
+      const header = document.getElementById('header');
+
+      function smoothScrollTo(targetEl) {
+        if (!targetEl) return;
+        const headerHeight = header ? header.offsetHeight : 0;
+        const targetTop = targetEl.getBoundingClientRect().top + window.pageYOffset;
+
+        window.scrollTo({
+          top: targetTop - headerHeight,
+          behavior: 'smooth'
+        });
+      }
+
+      const indicator = document.getElementById('scrollIndicator');
+      const workTarget = document.getElementById('work');
+
+      function goWork(e) {
+        e.preventDefault();
+        smoothScrollTo(workTarget);
+      }
+
+      indicator && indicator.addEventListener('click', goWork);
+    })();
+  </script>
 
 </body>
 </html>
