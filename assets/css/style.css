@@ -2440,6 +2440,30 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 100%;
   }
 }
+/* Make the left image column smaller */
+.work-clean .col-md-6:first-child {
+  display: flex;
+  justify-content: center;
+}
+
+/* Shrink the image container */
+.project-media-frame {
+  max-width: 420px;   /* 👈 adjust this number */
+  width: 100%;
+}
+
+/* Shrink the actual image */
+.project-media-frame img {
+  width: 100%;
+  height: auto;
+}
+
+/* Optional: even smaller on large desktop */
+@media (min-width: 1400px) {
+  .project-media-frame {
+    max-width: 380px;
+  }
+}
 }
 footer { color: #fff; opacity: 1; }
 footer, footer * { color: #fff !important; }
