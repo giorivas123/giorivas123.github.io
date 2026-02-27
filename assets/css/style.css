@@ -2307,6 +2307,139 @@ h1, h2, h3, h4, h5, h6 {
   background: #e5e5e5;
   border-radius: 10px;
 }
+/* ===== Clean section wrapper (works on dark backgrounds) ===== */
+.work-clean {
+  padding: 80px 0;
+}
+
+.work-clean .tablet-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 36px;
+  margin: 28px 0;
+  backdrop-filter: blur(10px);
+}
+
+.work-clean .tablet-title {
+  color: #fff;
+  margin: 0 0 12px;
+  font-weight: 700;
+}
+
+.work-clean .tablet-text {
+  color: rgba(255,255,255,0.78);
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+/* ===== Project layout ===== */
+.project-media-frame {
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.project-media-frame img {
+  width: 100%;
+  display: block;
+}
+
+/* ===== Additional Projects grid (CLEAN placeholders) ===== */
+.additional-grid .tile {
+  width: 100%;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.10);
+
+  /* reliable sizing (no tiny boxes) */
+  height: 0;
+  padding-top: 75%; /* 4:3 */
+}
+
+/* ===== About tile image ===== */
+.about-tile {
+  width: 100%;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.10);
+
+  height: 0;
+  padding-top: 100%; /* square */
+}
+
+/* Buttons */
+.tablet-btn {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.20);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform .2s ease, background .2s ease;
+}
+
+.tablet-btn:hover {
+  background: rgba(255,255,255,0.08);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+  .work-clean .tablet-card {
+    padding: 22px;
+  }
+}
+/* ============================
+   FIX: stop image from bleeding into text column
+============================ */
+.work-clean .tablet-card {
+  position: relative;
+  overflow: hidden;      /* clips anything that tries to spill out */
+  isolation: isolate;    /* makes z-index behave predictably inside the card */
+}
+
+/* Ensure columns stack correctly */
+.work-clean .tablet-card .col-md-7 {
+  position: relative;
+  z-index: 1;
+}
+
+.work-clean .tablet-card .col-md-5 {
+  position: relative;
+  z-index: 2;            /* text always stays above */
+}
+
+/* Constrain the media frame */
+.project-media-frame {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Constrain the actual image (this is the big one) */
+.project-media-frame img {
+  width: 100%;
+  max-width: 520px;      /* 👈 prevents the phone from becoming gigantic */
+  height: auto;
+  display: block;
+  margin: 0 auto;        /* centers the phone inside the left column */
+}
+
+/* Optional: slightly smaller on medium screens */
+@media (max-width: 992px) {
+  .project-media-frame img {
+    max-width: 460px;
+  }
+}
+
+/* Optional: full-width on small screens */
+@media (max-width: 768px) {
+  .project-media-frame img {
+    max-width: 100%;
+  }
+}
 }
 footer { color: #fff; opacity: 1; }
 footer, footer * { color: #fff !important; }
