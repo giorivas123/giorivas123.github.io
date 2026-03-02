@@ -202,17 +202,14 @@
       </div>
     </div>
   </div>
-
-  <!-- ======= Hero Section ======= -->
 <section id="hero" class="d-flex align-items-center hero-clean">
-  <div class="container d-flex flex-column align-items-center text-center" data-aos="zoom-in" data-aos-delay="100">
+  <div class="container d-flex flex-column align-items-center text-center">
 
-    <!-- Avatar -->
+    <!-- Profile Circle -->
     <div class="hero-avatar-wrap">
       <img src="assets/img/profile.jpg" alt="Giovanni Rivas" class="hero-avatar-img">
     </div>
 
-    <!-- Text (keep these!) -->
     <h1 class="hero-name">Giovanni Rivas</h1>
 
     <p class="hero-tagline">
@@ -224,12 +221,9 @@
       User Interface Design • User Experience Design • Web/Product Design
     </p>
 
-    <a href="#work" id="scrollIndicator" class="scroll-indicator" aria-label="Scroll to work">
-      <i class="bi bi-chevron-down"></i>
-    </a>
-
   </div>
 </section>
+
   <!-- End Hero -->
 
   <main id="main">
@@ -443,6 +437,54 @@
       indicator && indicator.addEventListener('click', goWork);
     })();
   </script>
+
+  <style>
+  /* Clean centered layout */
+  #hero .container {
+    padding-top: 120px;
+    padding-bottom: 80px;
+  }
+
+  /* Circle wrapper */
+  #hero .hero-avatar-wrap {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    overflow: hidden;
+
+    background: #d9d9d9; /* soft gray like your mock */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 20px;
+  }
+
+  /* Force image to behave */
+  #hero .hero-avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;   /* fills circle cleanly */
+    display: block;
+  }
+
+  /* Spacing for text */
+  #hero .hero-name {
+    margin-bottom: 16px;
+  }
+
+  #hero .hero-tagline {
+    margin-bottom: 12px;
+  }
+
+  /* Mobile adjustment */
+  @media (max-width: 768px) {
+    #hero .hero-avatar-wrap {
+      width: 100px;
+      height: 100px;
+    }
+  }
+</style>
 
 </body>
 </html>
