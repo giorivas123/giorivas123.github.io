@@ -2465,27 +2465,43 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 /* =========================
-   HERO PROFILE IMAGE (CLEAN + BALANCED)
+   HERO AVATAR (FORCED SIZE)
 ========================= */
 
-.hero-avatar {
-  width: 160px;          /* controlled size */
-  height: 160px;
-  border-radius: 50%;
-  object-fit: cover;
-  display: block;
-  margin: 0 auto 28px;
-  background: #e5e5e5;   /* subtle neutral circle behind transparent PNG */
-  padding: 10px;         /* prevents crop of raised hand */
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+.hero-avatar-wrap {
+  width: 140px !important;
+  height: 140px !important;
+  border-radius: 50% !important;
+  overflow: hidden !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  margin: 0 auto 22px !important;
+
+  background: rgba(255, 255, 255, 0.14) !important; /* matches your hero style */
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  backdrop-filter: blur(8px) !important;
+}
+
+.hero-avatar-img {
+  width: 100% !important;
+  height: 100% !important;
+
+  /* KEY FIX: keeps the whole memoji inside the circle */
+  object-fit: contain !important;
+  object-position: center !important;
+
+  display: block !important;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-  .hero-avatar {
-    width: 140px;
-    height: 140px;
-    padding: 8px;
+  .hero-avatar-wrap {
+    width: 110px !important;
+    height: 110px !important;
+    margin-bottom: 18px !important;
   }
 }
 }
