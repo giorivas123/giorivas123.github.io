@@ -2483,8 +2483,8 @@ h1, h2, h3, h4, h5, h6 {
 /* Responsive */
 @media (max-width: 768px) {
   .hero-avatar {
-    width: 120px;
-    height: 120px;
+    width: 140px;
+    height: 140px;
     padding: 8px;
   }
 }
