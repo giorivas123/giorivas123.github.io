@@ -2464,6 +2464,32 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 380px;
   }
 }
+/* =========================
+   HERO CIRCLE PROFILE IMAGE
+========================= */
+
+.hero-avatar {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 24px;
+  border: 3px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45);
+  transition: transform 0.3s ease;
+}
+
+.hero-avatar:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .hero-avatar {
+    width: 110px;
+    height: 110px;
+  }
+}
 }
 footer { color: #fff; opacity: 1; }
 footer, footer * { color: #fff !important; }
