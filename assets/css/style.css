@@ -2504,6 +2504,51 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 18px !important;
   }
 }
+/* =========================
+   HERO AVATAR (circle + spacing like your mock)
+========================= */
+
+.hero-avatar-wrap{
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0 auto 18px; /* space between circle and name */
+  background: rgba(255,255,255,0.18);
+  border: 1px solid rgba(255,255,255,0.22);
+}
+
+.hero-avatar-img{
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;      /* keeps memoji fully visible */
+  object-position: center;
+}
+
+/* Make sure text stays visible and spaced */
+.hero-name{
+  margin-top: 0;
+  margin-bottom: 14px;
+}
+
+.hero-tagline{
+  margin-bottom: 14px;
+}
+
+/* Responsive */
+@media (max-width: 768px){
+  .hero-avatar-wrap{
+    width: 110px;
+    height: 110px;
+    margin-bottom: 14px;
+  }
+}
 }
 footer { color: #fff; opacity: 1; }
 footer, footer * { color: #fff !important; }
