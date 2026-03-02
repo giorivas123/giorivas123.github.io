@@ -2549,6 +2549,27 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 14px;
   }
 }
+/* =========================
+   STICKY TOP NAV
+========================= */
+
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+
+  backdrop-filter: blur(10px);
+  background: rgba(10, 15, 30, 0.75); /* subtle dark glass */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+
+  transition: background 0.3s ease;
+
+  body {
+  padding-top: 80px; /* adjust if header height changes */
+}
+}
 
 }
 footer { color: #fff; opacity: 1; }
