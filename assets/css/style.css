@@ -2569,6 +2569,28 @@ h1, h2, h3, h4, h5, h6 {
   body {
   padding-top: 80px; /* adjust if header height changes */
 }
+/* =========================
+   GLOBAL STICKY NAV
+========================= */
+
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+
+  backdrop-filter: blur(12px);
+  background: rgba(8, 12, 28, 0.85);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Prevent content hiding under nav */
+body {
+  padding-top: 80px;
+}
 }
 
 }
