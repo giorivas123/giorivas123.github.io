@@ -424,7 +424,7 @@
   <style>
     /* Clean centered layout */
     #hero .container {
-      padding-top: 120px;
+      padding-top: 60px;
       padding-bottom: 80px;
     }
 
@@ -435,7 +435,7 @@
       border-radius: 50%;
       overflow: hidden;
 
-      background: #d9d9d9;
+      background: #d36666;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -467,7 +467,7 @@
     }
   </style>
 <style>
-  /* FORCE sticky header on HOME page */
+  /* HOME: Sticky header like About page (no weird bars) */
   #header {
     position: fixed !important;
     top: 0 !important;
@@ -476,29 +476,26 @@
     width: 100% !important;
     z-index: 99999 !important;
 
-    margin: 0 !important;
-    padding: 0 !important;
-
     background: rgba(8, 12, 28, 0.88) !important;
     backdrop-filter: blur(12px) !important;
     -webkit-backdrop-filter: blur(12px) !important;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
   }
 
-  /* REMOVE the body padding that causes the top bar */
+  /* Remove browser default spacing (kills top strip) */
   html, body {
     margin: 0 !important;
     padding: 0 !important;
   }
 
+  /* IMPORTANT: Do NOT pad the body (this is what made the bar) */
   body {
-    padding-top: 90px !important;
+    padding-top: 0 !important;
   }
 
-  /* Push the hero down instead (same effect, no top bar) */
+  /* Match About page spacing by offsetting only the hero */
   #hero {
-    padding-top: 90px !important; /* match your header height */
-    min-height: calc(100vh - 90px) !important;
+    margin-top: 80px !important; /* same feel as About header spacing */
   }
 </style>
 
