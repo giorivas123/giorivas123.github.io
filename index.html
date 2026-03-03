@@ -507,17 +507,23 @@
 .project-row {
   align-items: center;            /* matches the mock: image + text centered vertically */
 }
-
 .project-media-frame {
-  max-width: 520px;               /* keeps the left media from feeling huge */
-  margin: 0 auto;                 /* centers it inside the left column */
+  height: 420px;                 /* keep your box size */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;                 /* ⬅️ more padding = smaller screen */
 }
 
 .project-media-frame img {
-  width: 100%;
+  max-width: 80%;                /* ⬅️ makes image smaller */
+  max-height: 80%;               /* prevents it from filling box */
+  width: auto !important;
   height: auto;
+  object-fit: contain;
   display: block;
 }
+
 
 .project-copy {
   max-width: 640px;               /* keeps the text block readable like the mock */
