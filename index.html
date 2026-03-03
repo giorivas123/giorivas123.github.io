@@ -497,6 +497,21 @@
   #hero {
     margin-top: 80px !important; /* same feel as About header spacing */
   }
+  /* Remove the thin line / shadow under the nav on HOME */
+#header {
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+
+#header::after {
+  content: none !important;
+}
+
+/* If the line is on the container instead */
+#header .container-fluid {
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
 </style>
 
 </body>
