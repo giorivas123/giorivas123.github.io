@@ -2592,6 +2592,29 @@ body {
   padding-top: 80px;
 }
 }
+.project-row {
+  align-items: center;
+}
+
+.project-copy {
+  max-width: 640px;
+}
+
+.project-title {
+  font-size: 48px;
+  line-height: 1.05;
+  margin: 0 0 16px;
+}
+
+.project-eyebrow {
+  margin: 0 0 8px;
+  opacity: 0.9;
+}
+
+.project-media-frame {
+  max-width: 520px;
+  margin: 0 auto;
+}
 
 }
 footer { color: #fff; opacity: 1; }
