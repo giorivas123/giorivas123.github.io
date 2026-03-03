@@ -2549,7 +2549,51 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 14px;
   }
 }
+/* === Project 1 background image (works on ALL sizes) === */
+.project-media-frame.concert-bg{
+  position: relative;
+  background-image: url("assets/img/portfolio/concert.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 
+/* dark overlay so the phone pops */
+.project-media-frame.concert-bg::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: rgba(0,0,0,0.35);
+  z-index:1;
+}
+
+/* keep phone above overlay */
+.project-media-frame.concert-bg img{
+  position: relative;
+  z-index: 2;
+}
+
+/* Desktop / landscape */
+@media (min-width: 992px){
+  .project-media-frame{
+    height: 420px;
+    padding: 40px;
+  }
+  .project-media-frame img{
+    max-width: 260px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 991px){
+  .project-media-frame{
+    height: 380px;
+    padding: 22px;
+  }
+  .project-media-frame img{
+    max-width: 240px;
+  }
+}
 
 }
 footer { color: #fff; opacity: 1; }
