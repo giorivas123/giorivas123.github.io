@@ -308,7 +308,7 @@
         <img src="assets/img/portfolio/your-project-3.jpg" alt="Project 3">
       </div>
     </div>
-<!-- Project 3 -->
+
     <div class="col-lg-7">
       <div class="project-copy">
 
@@ -507,17 +507,18 @@
 .project-row {
   align-items: center;            /* matches the mock: image + text centered vertically */
 }
-
 .project-media-frame {
-  max-width: 520px;               /* keeps the left media from feeling huge */
-  margin: 0 auto;                 /* centers it inside the left column */
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .project-media-frame img {
   width: 100%;
-  height: auto;
   display: block;
 }
+
 
 .project-copy {
   max-width: 640px;               /* keeps the text block readable like the mock */
