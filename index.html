@@ -507,18 +507,17 @@
 .project-row {
   align-items: center;            /* matches the mock: image + text centered vertically */
 }
+
 .project-media-frame {
-  border-radius: 14px;
-  overflow: hidden;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  max-width: 520px;               /* keeps the left media from feeling huge */
+  margin: 0 auto;                 /* centers it inside the left column */
 }
 
 .project-media-frame img {
   width: 100%;
+  height: auto;
   display: block;
 }
-
 
 .project-copy {
   max-width: 640px;               /* keeps the text block readable like the mock */
