@@ -242,11 +242,11 @@
 <div class="tablet-card" data-aos="fade-up">
 
   <div class="row g-5 project-row">
-
-    <div class="col-lg-5">
-      <div class="project-media-frame concert-bg">
-  <img src="assets/img/portfolio/musichub.jpg" alt="MusicHub">
-</div>
+   <div class="project-media-frame concert-bg">
+  <div class="media-bg"></div>
+  <img class="phone-mock" src="assets/img/portfolio/musichub.jpg" alt="MusicHub">
+    </div>
+  
     </div>
 
     <div class="col-lg-7">
@@ -636,6 +636,51 @@
 @media (max-width: 991px) {
   #work .project-media-frame.concert-bg img {
     max-width: 240px !important;
+  }
+}
+/* ===== Project 1: background layer behind phone ===== */
+.project-media-frame.concert-bg{
+  position: relative;
+  overflow: hidden;
+}
+
+/* the concert image layer */
+.project-media-frame.concert-bg .media-bg{
+  position: absolute;
+  inset: 0;
+  background-image: url("assets/img/portfolio/concert.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+/* dark overlay so phone pops */
+.project-media-frame.concert-bg .media-bg::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: rgba(0,0,0,0.35);
+}
+
+/* phone sits above everything */
+.project-media-frame.concert-bg .phone-mock{
+  position: relative;
+  z-index: 2;
+
+  width: auto !important;     /* kills your earlier width:100% rule */
+  height: auto !important;
+
+  max-width: 260px;
+  max-height: 85%;
+  object-fit: contain;
+  display: block;
+}
+
+/* mobile sizing */
+@media (max-width: 991px){
+  .project-media-frame.concert-bg .phone-mock{
+    max-width: 240px;
   }
 }
 
