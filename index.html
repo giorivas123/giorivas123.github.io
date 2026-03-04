@@ -596,48 +596,6 @@
     height: 480px;
   }
 }
-/* ===== FORCE concert background behind phone (Project 1 only) ===== */
-#work .project-media-frame.concert-bg {
-  position: relative !important;
-
-  /* IMAGE BACKGROUND */
-  background: url("assets/img/portfolio/concert.jpg") center/cover no-repeat !important;
-
-  /* keep your frame styling */
-  border-radius: 18px !important;
-  overflow: hidden !important;
-
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-}
-
-/* Optional dark overlay for readability + phone pop */
-#work .project-media-frame.concert-bg::before {
-  content: "" !important;
-  position: absolute !important;
-  inset: 0 !important;
-  background: rgba(0,0,0,0.30) !important;
-  z-index: 1 !important;
-}
-
-/* Put the phone above the overlay */
-#work .project-media-frame.concert-bg img {
-  position: relative !important;
-  z-index: 2 !important;
-  width: auto !important;
-  height: auto !important;
-  max-height: 85% !important;
-  max-width: 260px !important;
-  object-fit: contain !important;
-}
-
-/* Responsive sizing */
-@media (max-width: 991px) {
-  #work .project-media-frame.concert-bg img {
-    max-width: 240px !important;
-  }
-}
 
 }
 </style>
