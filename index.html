@@ -485,53 +485,56 @@
         width: 100px;
         height: 100px;
       }
+      
     }
-  </style>
-<style>
-  /* Sticky header (no dark band) */
-  #header {
-    position: fixed !important;
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    z-index: 99999;
-
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-  }
-
-  #header::before,
-  #header::after {
-    content: none !important;
-  }
-
-  html, body {
-    margin: 0;
-    padding: 0;
-  }
-  /* --- Project composition only (no color changes) --- */
-.project-row {
-  align-items: center;            /* matches the mock: image + text centered vertically */
-}
-/* Make the screenshot sit inside a smaller inner container (like Project 1) */
-.project-media-frame{
+/* Sticky header (no dark band) */
+#header {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
   width: 100%;
-  height: 420px;                  /* controls the box height */
+  z-index: 99999;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+#header::before,
+#header::after {
+  content: none !important;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+/* --- Project composition only --- */
+.project-row {
+  align-items: center;
+}
+
+.project-media-frame {
+  position: relative;
+  width: 100%;
+  height: 420px;
   border-radius: 18px;
+  overflow: hidden;
+
+  /* default background (for other projects) */
   background: rgba(255,255,255,0.08);
   border: 1px solid rgba(255,255,255,0.10);
+
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 40px;                  /* space around the screenshot */
-  overflow: hidden;
+  padding: 40px;
 }
 
-/* Keep image contained + centered */
-.project-media-frame img{
-  max-width: 75%;
+/* Phone image sizing (ALL screens) */
+.project-media-frame img {
+  max-width: 260px;
   max-height: 85%;
   width: auto;
   height: auto;
@@ -539,9 +542,31 @@
   display: block;
 }
 
+/* ✅ ONLY Project 1 gets the concert background */
+.project-media-frame.concert-bg {
+  background-image: url("assets/img/portfolio/concert.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Optional overlay so phone pops */
+.project-media-frame.concert-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.30);
+  z-index: 1;
+}
+
+/* Keep phone above overlay */
+.project-media-frame.concert-bg img {
+  position: relative;
+  z-index: 2;
+}
 
 .project-copy {
-  max-width: 640px;               /* keeps the text block readable like the mock */
+  max-width: 640px;
 }
 
 .project-eyebrow {
@@ -551,53 +576,22 @@
 
 .project-title {
   margin: 0 0 16px;
-  font-size: 48px;                /* big headline like the mock */
+  font-size: 48px;
   line-height: 1.05;
 }
 
+/* Mobile */
 @media (max-width: 992px) {
-  .project-title {
-    font-size: 36px;
-  }
-.project-media-frame {
-  position: relative;
-
-  width: 100%;
-  height: 420px;              /* default height */
-
-  border-radius: 18px;
-  overflow: hidden;
-
-  background-image: url("assets/img/portfolio/concert.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  border: 1px solid rgba(255,255,255,0.10);
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 40px;
-}
-
-/* Keep phone centered and sized */
-.project-media-frame img {
-  max-width: 260px;
-  width: 100%;
-  height: auto;
-  object-fit: contain;
+  .project-title { font-size: 36px; }
+  .project-media-frame { height: 380px; padding: 22px; }
+  .project-media-frame img { max-width: 240px; }
 }
 
 /* Larger screens */
 @media (min-width: 1200px) {
-  .project-media-frame {
-    height: 480px;
-  }
-}
-
+  .project-media-frame { height: 480px; }
 }
 </style>
+  </style>
 </body>
 </html>
