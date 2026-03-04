@@ -638,51 +638,6 @@
     max-width: 240px !important;
   }
 }
-/* ===== Project 1: background layer behind phone ===== */
-.project-media-frame.concert-bg{
-  position: relative;
-  overflow: hidden;
-}
-
-/* the concert image layer */
-.project-media-frame.concert-bg .media-bg{
-  position: absolute;
-  inset: 0;
-  background-image: url("assets/img/portfolio/concert.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  z-index: 1;
-}
-
-/* dark overlay so phone pops */
-.project-media-frame.concert-bg .media-bg::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background: rgba(0,0,0,0.35);
-}
-
-/* phone sits above everything */
-.project-media-frame.concert-bg .phone-mock{
-  position: relative;
-  z-index: 2;
-
-  width: auto !important;     /* kills your earlier width:100% rule */
-  height: auto !important;
-
-  max-width: 260px;
-  max-height: 85%;
-  object-fit: contain;
-  display: block;
-}
-
-/* mobile sizing */
-@media (max-width: 991px){
-  .project-media-frame.concert-bg .phone-mock{
-    max-width: 240px;
-  }
-}
 
 }
 </style>
