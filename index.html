@@ -279,7 +279,7 @@
   <div class="row g-5 project-row">
 
     <div class="col-lg-5">
-      <div class="project-media-frame">
+      <div class="project-media-frame coffee-bg">
         <img src="assets/img/portfolio/SIPS.jpg" alt="SIPS">
       </div>
     </div>
@@ -561,6 +561,27 @@ html, body {
 
 /* Keep phone above overlay */
 .project-media-frame.concert-bg img {
+  position: relative;
+  z-index: 2;
+}
+
+/* ✅ ONLY Project 2 gets the coffee background */
+.project-media-frame.coffee-bg {
+  background-image: url("assets/img/portfolio/coffee.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.project-media-frame.coffee-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.30);
+  z-index: 1;
+}
+
+.project-media-frame.coffee-bg img {
   position: relative;
   z-index: 2;
 }
