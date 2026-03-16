@@ -133,6 +133,18 @@
       height: 0;
       padding-top: 75%;
       /* 4:3 */
+      transition: transform .2s ease, background .2s ease, border-color .2s ease;
+    }
+
+    .additional-grid a {
+      display: block;
+      text-decoration: none;
+    }
+
+    .additional-grid a:hover .tile {
+      transform: translateY(-3px);
+      background: rgba(255, 255, 255, 0.18);
+      border-color: rgba(255, 255, 255, 0.18);
     }
 
     /* ✅ About tile image placeholder */
@@ -321,17 +333,17 @@
               <div class="project-copy">
 
                 <h2 class="tablet-title project-eyebrow">Project 3</h2>
-                <h3 class="tablet-title project-title">Your Project Name</h3>
+                <h3 class="tablet-title project-title">Project Two</h3>
 
                 <p class="tablet-text">
-                  Short description for project 3
+                  Description for your second project.
                 </p>
 
                 <p class="tablet-text">
-                  Going to insert a description here
+                  Replace this with your real description later.
                 </p>
 
-                <a class="tablet-btn" href="portfolio-details3.html">View Project</a>
+                <a class="tablet-btn" href="portfolio-details2.html">View Project</a>
 
               </div>
             </div>
@@ -344,12 +356,26 @@
           <h2 class="tablet-title" style="margin-bottom: 18px;">Additional Projects</h2>
 
           <div class="row g-4 additional-grid">
-            <div class="col-6 col-md-4"><div class="tile"></div></div>
-            <div class="col-6 col-md-4"><div class="tile"></div></div>
-            <div class="col-6 col-md-4"><div class="tile"></div></div>
-            <div class="col-6 col-md-4"><div class="tile"></div></div>
-            <div class="col-6 col-md-4"><div class="tile"></div></div>
-            <div class="col-6 col-md-4"><div class="tile"></div></div>
+            <div class="col-6 col-md-3">
+              <a href="portfolio-details3.html" aria-label="Additional Project 1">
+                <div class="tile"></div>
+              </a>
+            </div>
+            <div class="col-6 col-md-3">
+              <a href="portfolio-details4.html" aria-label="Additional Project 2">
+                <div class="tile"></div>
+              </a>
+            </div>
+            <div class="col-6 col-md-3">
+              <a href="portfolio-details5.html" aria-label="Additional Project 3">
+                <div class="tile"></div>
+              </a>
+            </div>
+            <div class="col-6 col-md-3">
+              <a href="portfolio-details6.html" aria-label="Additional Project 4">
+                <div class="tile"></div>
+              </a>
+            </div>
           </div>
         </div>
 
@@ -372,7 +398,7 @@
               <p class="tablet-text">
                 I specialize in prototyping, front-end development, and crafting
                 seamless user flows that feel effortless. Whether designing in Figma
-                or coding responsive layouts, my goal is always the same 
+                or coding responsive layouts, my goal is always the same
                 clarity, usability, and impact.
               </p>
             </div>
