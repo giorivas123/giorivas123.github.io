@@ -6,65 +6,496 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
   <title>Giovanni Rivas</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
 
   <!-- Favicons -->
   <link href="assets/img/gio.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <!-- Fonts -->
+  <!-- Google Fonts -->
   <link
-    href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Poppins:300,400,500,600,700"
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
     rel="stylesheet">
 
-  <!-- Vendor CSS -->
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Main CSS -->
   <link href="assets/css/style.css" rel="stylesheet">
 
+  <!-- ✅ Scroll Indicator CSS (added) + clean work card styles -->
   <style>
+    /* ✅ REMOVE THE BLACK BAR ON TOP */
     html, body {
       margin: 0;
       padding: 0;
     }
 
-    /* HERO LAYOUT CHANGE ONLY */
-    #hero .hero-split-original {
-      padding-top: 80px;
+    .scroll-indicator {
+      margin-top: 28px;
+      font-size: 26px;
+      color: #fff;
+      opacity: 0.75;
+      animation: bounce 1.6s infinite;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+    }
+
+    @keyframes bounce {
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(10px);
+      }
+    }
+
+    /* ✅ Better spacing when arrow sits under a button */
+    #workScrollIndicator {
+      margin-top: 16px;
+    }
+
+    /* ============================
+       CLEAN "TABLET" WORK STYLES
+       (works on your dark gradient)
+    ============================ */
+    .work-clean {
+      padding: 100px 0;
+    }
+
+    .work-clean .tablet-card {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 36px;
+      margin: 28px 0;
+      backdrop-filter: blur(10px);
+    }
+
+    .work-clean .tablet-title {
+      color: #fff;
+      margin: 0 0 12px;
+      font-weight: 700;
+    }
+
+    .work-clean .tablet-text {
+      color: rgba(255, 255, 255, 0.78);
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+
+    .project-media-frame {
+      border-radius: 14px;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .project-media-frame img {
+      width: 100%;
+      display: block;
+    }
+
+    .tablet-btn {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 12px 16px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.20);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform .2s ease, background .2s ease;
+    }
+
+    .tablet-btn:hover {
+      background: rgba(255, 255, 255, 0.08);
+      transform: translateY(-1px);
+    }
+
+    /* ✅ Additional Projects placeholders (no broken image icons) */
+    .additional-grid .tile {
+      width: 100%;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.10);
+      height: 0;
+      padding-top: 75%;
+      /* 4:3 */
+      transition: transform .2s ease, background .2s ease, border-color .2s ease;
+    }
+
+    .additional-grid a {
+      display: block;
+      text-decoration: none;
+    }
+
+    .additional-grid a:hover .tile {
+      transform: translateY(-3px);
+      background: rgba(255, 255, 255, 0.18);
+      border-color: rgba(255, 255, 255, 0.18);
+    }
+
+    /* ✅ About tile image placeholder */
+    .about-tile {
+      width: 100%;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.10);
+      height: 0;
+      padding-top: 100%;
+      /* square */
+    }
+
+    @media (max-width: 768px) {
+      .work-clean .tablet-card {
+        padding: 22px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container-fluid d-flex justify-content-between align-items-center">
+
+      <h1 class="logo me-auto me-lg-0">
+        <a href="#hero" class="scrollto">Gio</a>
+      </h1>
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="active scrollto" href="#hero">Work</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="resume.html">Resume</a></li>
+        </ul>
+
+        <button id="menuToggle" class="menu-toggle" aria-label="Open menu" type="button">
+          <i class="bi bi-list"></i>
+        </button>
+      </nav>
+
+      <div class="header-social-links">
+        <a href="https://www.instagram.com/itsgiorivas" class="instagram" target="_blank" rel="noopener">
+          <i class="bi bi-instagram"></i>
+        </a>
+        <a href="https://github.com/giorivas123" class="github" target="_blank" rel="noopener">
+          <i class="bi bi-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/giovanni-rivas-172b2b230" class="linkedin" target="_blank"
+          rel="noopener">
+          <i class="bi bi-linkedin"></i>
+        </a>
+      </div>
+
+    </div>
+  </header>
+  <!-- End Header -->
+
+  <!-- ✅ Popup Menu Overlay -->
+  <div id="menuOverlay" class="menu-overlay" aria-hidden="true">
+    <div class="menu-panel" role="dialog" aria-modal="true" aria-label="Menu">
+      <button id="menuClose" class="menu-close" aria-label="Close menu" type="button">
+        <i class="bi bi-x-lg"></i>
+      </button>
+
+      <div class="menu-links">
+        <a href="index.html">Work</a>
+        <a href="about.html">About</a>
+        <a href="resume.html">Resume</a>
+      </div>
+    </div>
+  </div>
+
+  <section id="hero" class="d-flex align-items-center hero-clean">
+    <div class="container d-flex flex-column align-items-center text-center">
+
+      <!-- Profile Circle -->
+      <div class="hero-avatar-wrap">
+        <img src="assets/img/profile.jpg" alt="Giovanni Rivas" class="hero-avatar-img">
+      </div>
+
+      <h1 class="hero-name">Giovanni Rivas</h1>
+
+      <p class="hero-tagline">
+        I design clean modern interfaces with a focus on turning
+        complex ideas into simple, intuitive experiences.
+      </p>
+
+      <p class="hero-sub">
+        User Interface Design • User Experience Design • Web/Product Design
+      </p>
+      <a href="#work" class="scroll-indicator">
+        <i class="bi bi-chevron-down"></i>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- End Hero -->
+
+  <main id="main">
+    <section id="work" class="work-clean anchor-offset">
+      <div class="container" data-aos="fade-up">
+
+        <!-- Project 1 -->
+        <div class="tablet-card" data-aos="fade-up" data-aos-delay="150">
+          <div class="row g-5 project-row">
+
+            <div class="col-lg-5">
+              <div class="project-media-frame coffee-bg">
+                <img src="assets/img/portfolio/SIPS.jpg" alt="SIPS">
+              </div>
+            </div>
+
+            <div class="col-lg-7">
+              <div class="project-copy">
+
+                <h2 class="tablet-title project-eyebrow">Project 1</h2>
+                <h3 class="tablet-title project-title">SIPS</h3>
+
+                <p class="tablet-text">
+                  A local beverage discovery app designed to help users find
+                  new drinks, spots, and favorites faster.
+                </p>
+
+                <p class="tablet-text">
+                  Goal: Build a user-friendly app that connects users with local drink shops and supports
+                  small businesses. Designed in Figma and coded with HTML/CSS/JS.
+                </p>
+
+                <a class="tablet-btn" href="portfolio-details7.html">View Project</a>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="tablet-card" data-aos="fade-up">
+          <div class="row g-5 project-row">
+
+            <div class="col-lg-5">
+              <div class="project-media-frame concert-bg">
+                <img src="assets/img/portfolio/musichub.jpg" alt="MusicHub">
+              </div>
+            </div>
+
+            <div class="col-lg-7">
+              <div class="project-copy">
+
+                <h2 class="tablet-title project-eyebrow">Project 2</h2>
+                <h3 class="tablet-title project-title">MusicHub</h3>
+
+                <p class="tablet-text">
+                  A modern music app concept focused on discovery, collection,
+                  and a premium listening experience.
+                </p>
+
+                <p class="tablet-text">
+                  Goal: Prototype a modern music app in Figma that helps users discover smaller artists,
+                  view upcoming performances, and explore festivals/events.
+                </p>
+
+                <a class="tablet-btn" href="portfolio-details.html">View Project</a>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="tablet-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="row g-5 project-row">
+
+            <div class="col-lg-5">
+              <div class="project-media-frame">
+                <img src="assets/img/portfolio/exerciseapp.gif" alt="Project 3">
+              </div>
+            </div>
+
+            <div class="col-lg-7">
+              <div class="project-copy">
+
+                <h2 class="tablet-title project-eyebrow">Project 3</h2>
+                <h3 class="tablet-title project-title">Project Two</h3>
+
+                <p class="tablet-text">
+                  Description for your second project.
+                </p>
+
+                <p class="tablet-text">
+                  Replace this with your real description later.
+                </p>
+
+                <a class="tablet-btn" href="portfolio-details2.html">View Project</a>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Additional Projects -->
+        <div class="tablet-card" data-aos="fade-up" data-aos-delay="250">
+          <h2 class="tablet-title" style="margin-bottom: 18px;">Additional Projects</h2>
+
+          <div class="row g-4 additional-grid">
+            <div class="col-6 col-md-3">
+              <a href="portfolio-details3.html" aria-label="Additional Project 1">
+                <div class="tile"></div>
+              </a>
+            </div>
+            <div class="col-6 col-md-3">
+              <a href="portfolio-details4.html" aria-label="Additional Project 2">
+                <div class="tile"></div>
+              </a>
+            </div>
+            <div class="col-6 col-md-3">
+              <a href="portfolio-details5.html" aria-label="Additional Project 3">
+                <div class="tile"></div>
+              </a>
+            </div>
+            <div class="col-6 col-md-3">
+              <a href="portfolio-details6.html" aria-label="Additional Project 4">
+                <div class="tile"></div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- About Me -->
+        <div class="tablet-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="row g-4 align-items-start">
+            <div class="col-md-3">
+              <div class="about-tile"></div>
+            </div>
+
+            <div class="col-md-9">
+              <h2 class="tablet-title">About Me</h2>
+
+              <p class="tablet-text" style="margin-top: 10px;">
+                I’m a UI/UX and Product Designer focused on building clean, intuitive
+                digital experiences. My work blends structure, visual clarity,
+                and thoughtful interaction design to simplify complex ideas.
+              </p>
+
+              <p class="tablet-text">
+                I specialize in prototyping, front-end development, and crafting
+                seamless user flows that feel effortless. Whether designing in Figma
+                or coding responsive layouts, my goal is always the same
+                clarity, usability, and impact.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Gio</span></strong>. All Rights Reserved
+      </div>
+    </div>
+  </footer>
+
+  <div id="preloader"></div>
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-up-short"></i>
+  </a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <script src="assets/js/main.js"></script>
+
+  <!-- ✅ Popup Menu JS -->
+  <script>
+    (function () {
+      const overlay = document.getElementById('menuOverlay');
+      const openBtn = document.getElementById('menuToggle');
+      const closeBtn = document.getElementById('menuClose');
+
+      function openMenu() {
+        overlay.classList.add('open');
+        overlay.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeMenu() {
+        overlay.classList.remove('open');
+        overlay.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      openBtn && openBtn.addEventListener('click', openMenu);
+      closeBtn && closeBtn.addEventListener('click', closeMenu);
+
+      overlay && overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) closeMenu();
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeMenu();
+      });
+    })();
+  </script>
+
+  <style>
+    /* Clean centered layout */
+    #hero .container {
+      padding-top: 60px;
       padding-bottom: 80px;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
     }
 
-    #hero .hero-left-side {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    #hero .hero-right-side {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      text-align: left;
-    }
-
+    /* Circle wrapper */
     #hero .hero-avatar-wrap {
-      width: 220px;
-      height: 220px;
+      width: 180px;
+      height: 180px;
       border-radius: 50%;
       overflow: hidden;
+
       background: #374151;
       display: flex;
       align-items: center;
       justify-content: center;
+
+      margin: 0 auto 20px;
     }
 
+    /* Force image to behave */
     #hero .hero-avatar-img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      display: block;
     }
 
     #hero .hero-name {
@@ -73,118 +504,146 @@
 
     #hero .hero-tagline {
       margin-bottom: 12px;
-      max-width: 500px;
     }
 
-    #hero .hero-sub {
-      max-width: 500px;
-    }
-
-    #hero .scroll-indicator {
-      justify-content: flex-start;
-      margin-top: 20px;
-      font-size: 24px;
-      color: #fff;
-      opacity: 0.7;
-      animation: bounce 1.6s infinite;
-    }
-
-    @keyframes bounce {
-      0%,100% { transform: translateY(0); }
-      50% { transform: translateY(10px); }
-    }
-
-    /* MOBILE */
-    @media (max-width: 991px) {
-      #hero .hero-left-side {
-        margin-bottom: 30px;
+    @media (max-width: 768px) {
+      #hero .hero-avatar-wrap {
+        width: 100px;
+        height: 100px;
       }
+    }
 
-      #hero .hero-right-side {
-        text-align: center;
-        align-items: center;
-      }
+    /* Sticky header (no dark band) */
+    #header {
+      position: fixed !important;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      z-index: 99999;
+      background: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+    }
 
-      #hero .scroll-indicator {
-        justify-content: center;
-      }
+    #header::before,
+    #header::after {
+      content: none !important;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* --- Project composition only --- */
+    .project-row {
+      align-items: center;
+    }
+
+    .project-media-frame {
+      position: relative;
+      width: 100%;
+      height: 420px;
+      border-radius: 18px;
+      overflow: hidden;
+
+      /* default background (for other projects) */
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.10);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+    }
+
+    /* Phone image sizing (ALL screens) */
+    .project-media-frame img {
+      max-width: 260px;
+      max-height: 85%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    /* ✅ ONLY Project 1 gets the concert background */
+    .project-media-frame.concert-bg {
+      background-image: url("assets/img/portfolio/concert.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    /* Optional overlay so phone pops */
+    .project-media-frame.concert-bg::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.30);
+      z-index: 1;
+    }
+
+    /* Keep phone above overlay */
+    .project-media-frame.concert-bg img {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* ✅ ONLY Project 2 gets the coffee background */
+    .project-media-frame.coffee-bg {
+      background-image: url("assets/img/portfolio/coffee.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .project-media-frame.coffee-bg::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.30);
+      z-index: 1;
+    }
+
+    .project-media-frame.coffee-bg img {
+      position: relative;
+      z-index: 2;
+    }
+
+    .project-copy {
+      max-width: 640px;
+    }
+
+    .project-eyebrow {
+      margin: 0 0 8px;
+      opacity: 0.9;
+    }
+
+    .project-title {
+      margin: 0 0 16px;
+      font-size: 48px;
+      line-height: 1.05;
+    }
+
+    /* Mobile */
+    @media (max-width: 992px) {
+      .project-title { font-size: 36px; }
+      .project-media-frame { height: 380px; padding: 22px; }
+      .project-media-frame img { max-width: 240px; }
+    }
+
+    /* Larger screens */
+    @media (min-width: 1200px) {
+      .project-media-frame { height: 480px; }
+    }
+
+    .project-media-frame img {
+      filter: drop-shadow(0 18px 40px rgba(0,0,0,0.55));
+      transform: scale(1.02);
+      border-radius: 28px;
     }
   </style>
-</head>
-
-<body>
-
-  <!-- HEADER (UNCHANGED) -->
-  <header id="header" class="fixed-top">
-    <div class="container-fluid d-flex justify-content-between align-items-center">
-
-      <h1 class="logo">
-        <a href="#hero">Gio</a>
-      </h1>
-
-      <nav>
-        <ul class="d-flex gap-4 list-unstyled mb-0">
-          <li><a href="#work">Work</a></li>
-          <li><a href="#">About</a></li>
-        </ul>
-      </nav>
-
-    </div>
-  </header>
-
-  <!-- HERO (UPDATED LAYOUT ONLY) -->
-  <section id="hero" class="d-flex align-items-center hero-clean">
-    <div class="container hero-split-original">
-      <div class="row align-items-center">
-
-        <!-- LEFT IMAGE -->
-        <div class="col-lg-5 hero-left-side">
-          <div class="hero-avatar-wrap">
-            <img src="assets/img/profile.jpg" alt="Giovanni Rivas" class="hero-avatar-img">
-          </div>
-        </div>
-
-        <!-- RIGHT TEXT -->
-        <div class="col-lg-7 hero-right-side">
-          <h1 class="hero-name">Giovanni Rivas</h1>
-
-          <p class="hero-tagline">
-            I design clean modern interfaces with a focus on turning
-            complex ideas into simple, intuitive experiences.
-          </p>
-
-          <p class="hero-sub">
-            User Interface Design • User Experience Design • Web/Product Design
-          </p>
-
-          <a href="#work" class="scroll-indicator">
-            <i class="bi bi-chevron-down"></i>
-          </a>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- WORK SECTION (UNCHANGED) -->
-  <section id="work" class="py-5">
-    <div class="container">
-
-      <div class="mb-5">
-        <h2>SIPS</h2>
-        <p>A local beverage discovery app designed to help users find new drinks.</p>
-      </div>
-
-      <div class="mb-5">
-        <h2>MusicHub</h2>
-        <p>A modern music app focused on discovery and listening experience.</p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- JS -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
 </body>
 </html>
