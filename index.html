@@ -991,6 +991,108 @@
         margin-top: -28px;
       }
     }
+    /* =========================
+   ABOUT CARD WRAP
+========================= */
+.about-card-section {
+  padding: 0 0 40px;
+  position: relative;
+  z-index: 3;
+}
+
+.about-card-shell {
+  background: rgba(255, 255, 255, 0.055);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 22px;
+  padding: 36px;
+  backdrop-filter: blur(12px);
+  position: relative;
+  overflow: hidden;
+  transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+}
+
+.about-card-shell::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.24),
+    rgba(255, 255, 255, 0)
+  );
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.about-card-shell:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.14);
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.28);
+}
+
+.about-card-shell .section-title h2,
+.about-card-shell h3,
+.about-card-shell p,
+.about-card-shell li,
+.about-card-shell strong,
+.about-card-shell span,
+.about-card-shell .fst-italic {
+  color: rgba(255, 255, 255, 0.84);
+}
+
+.about-card-shell .section-title h2,
+.about-card-shell h3 {
+  color: #fff;
+}
+
+.about-card-shell .section-title p {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-card-shell img.img-fluid {
+  border-radius: 22px;
+  display: block;
+}
+
+.about-card-shell .content {
+  padding-top: 0 !important;
+}
+
+.about-card-shell ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.about-card-shell ul li {
+  margin-bottom: 18px;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.about-card-shell .bi-rounded-right {
+  margin-right: 8px;
+}
+
+@media (max-width: 992px) {
+  .about-card-shell {
+    padding: 26px;
+  }
+
+  .about-card-shell img.img-fluid {
+    margin-bottom: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-card-shell {
+    padding: 22px;
+  }
+}
     
   </style>
 </head>
@@ -1255,52 +1357,57 @@
           </div>
         </div>
     <!-- ======= About Section ======= -->
-    <section id="about" class="about">
-      <div class="container" data-aos="fade-up">
+   <section id="about" class="about-card-section">
+  <div class="container" data-aos="fade-up">
 
-        <div class="section-title">
-          <h2>About</h2>
+    <div class="about-card-shell">
+      <div class="section-title">
+        <h2>ABOUT</h2>
+        <p>
+          Welcome to my "About Me" page! Here, you'll find a comprehensive overview of who I am, my background, skills, and professional experiences. This page serves as a window into my journey, aspirations, and accomplishments. Whether you're a potential employer, client, or simply curious about my story, I invite you to explore and get to know me better. Feel free to reach out if you have any questions or opportunities for collaboration. Thank you for visiting!
+        </p>
+      </div>
+
+      <div class="row align-items-end">
+        <div class="col-lg-4">
+          <img src="assets/img/about.jpg" class="img-fluid" alt="">
+        </div>
+
+        <div class="col-lg-8 pt-4 pt-lg-0 content">
+          <h3>UI/UX Designer</h3>
+
+          <p class="fst-italic">
+            As a Web &amp; UI/UX Designer, I specialize in creating engaging and user-friendly digital experiences. With a keen eye for design and a passion for innovation, I craft visually stunning interfaces that prioritize user satisfaction and usability.
+          </p>
+
+          <div class="row">
+            <div class="col-lg-6">
+              <ul>
+                <li><i class="bi bi-rounded-right"></i> <strong>Birthday:</strong> 15 Febuary 1999</li>
+                <li><i class="bi bi-rounded-right"></i> <strong>Phone:</strong> +321 682 6406</li>
+                <li><i class="bi bi-rounded-right"></i> <strong>City:</strong> Florida, USA</li>
+              </ul>
+            </div>
+
+            <div class="col-lg-6">
+              <ul>
+                <li><i class="bi bi-rounded-right"></i> <strong>Age:</strong> 26</li>
+                <li><i class="bi bi-rounded-right"></i> <strong>Degree:</strong> Bachelors of Arts (BA)</li>
+                <li><i class="bi bi-rounded-right"></i> <strong>Email:</strong> giorivas123@yahoo.com</li>
+                <li><i class="bi bi-rounded-right"></i> <strong>Freelance:</strong> Available</li>
+              </ul>
+            </div>
+          </div>
+
           <p>
-            Welcome to my "About Me" page! Here, you'll find a comprehensive overview of who I am, my background, skills, and professional experiences. This page serves as a window into my journey, aspirations, and accomplishments. Whether you're a potential employer, client, or simply curious about my story, I invite you to explore and get to know me better. Feel free to reach out if you have any questions or opportunities for collaboration. Thank you for visiting!
+            My approach to design is driven by a commitment to excellence and a dedication to understanding and exceeding client expectations. I strive to create solutions that not only meet the needs of users but also align with the strategic goals of the project. With a strong foundation in both web and UI/UX design principles, I am well-equipped to tackle challenges and deliver impactful results.
           </p>
         </div>
-
-        <div class="row">
-          <div class="col-lg-4">
-            <img src="assets/img/about.jpg" class="img-fluid" alt="">
-          </div>
-          <div class="col-lg-8 pt-4 pt-lg-0 content">
-            <h3>UI/UX Designer</h3>
-            <p class="fst-italic">
-              As a Web & UI/UX Designer, I specialize in creating engaging and user-friendly digital experiences. With a keen eye for design and a passion for innovation, I craft visually stunning interfaces that prioritize user satisfaction and usability.
-            </p>
-            <div class="row">
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-rounded-right"></i> <strong>Birthday:</strong> 15 Febuary 1999</li>
-                  <li><i class="bi bi-rounded-right"></i> <strong>Phone:</strong> +321 682 6406</li>
-                  <li><i class="bi bi-rounded-right"></i> <strong>City:</strong> Florida, USA</li>
-                </ul>
-              </div>
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-rounded-right"></i> <strong>Age:</strong> 26</li>
-                  <li><i class="bi bi-rounded-right"></i> <strong>Degree:</strong> Bachelors of Arts (BA)</li>
-                  <li><i class="bi bi-rounded-right"></i> <strong>Email:</strong> giorivas123@yahoo.com</li>
-                  <li><i class="bi bi-rounded-right"></i> <strong>Freelance:</strong> Available</li>
-                </ul>
-              </div>
-            </div>
-            <p>
-              My approach to design is driven by a commitment to excellence and a dedication to understanding and exceeding client expectations.
-              I strive to create solutions that not only meet the needs of users but also align with the strategic goals of the project.
-              With a strong foundation in both web and UI/UX design principles, I am well-equipped to tackle challenges and deliver impactful results.
-            </p>
-          </div>
-        </div>
-
       </div>
-    </section><!-- End About Section -->
+    </div>
+
+  </div>
+</section><!-- End About Section -->
 
     <!-- ======= Skills Section ======= -->
     <section id="skills" class="skills">
