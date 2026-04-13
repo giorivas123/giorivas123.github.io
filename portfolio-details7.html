@@ -61,23 +61,70 @@
 
     .sips-hero-wrap {
       position: relative;
-      min-height: 520px;
+      min-height: 560px;
       display: flex;
       align-items: center;
       justify-content: center;
+      overflow: hidden;
+      border-radius: 28px;
+      background:
+        radial-gradient(circle at 20% 30%, rgba(44, 108, 255, 0.22), transparent 30%),
+        radial-gradient(circle at 80% 20%, rgba(0, 255, 170, 0.10), transparent 25%),
+        radial-gradient(circle at 50% 80%, rgba(130, 80, 255, 0.14), transparent 30%),
+        linear-gradient(135deg, rgba(8, 18, 54, 0.95), rgba(2, 8, 26, 0.98));
+      box-shadow: inset 0 0 80px rgba(255,255,255,0.02);
+    }
+
+    .sips-hero-wrap::before {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(61, 127, 255, 0.20), rgba(61, 127, 255, 0.02) 60%, transparent 75%);
+      filter: blur(10px);
+      animation: glowPulse 6s ease-in-out infinite;
+      z-index: 0;
+    }
+
+    .sips-hero-wrap::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+      background-size: 32px 32px;
+      -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 95%);
+      mask-image: radial-gradient(circle at center, black 40%, transparent 95%);
+      pointer-events: none;
+      opacity: 0.35;
+    }
+
+    .sips-hero-inner {
+      position: relative;
+      z-index: 2;
+      transition: transform 0.2s ease;
+      will-change: transform;
     }
 
     .sips-hero-image {
+      position: relative;
       max-width: 260px;
       width: 100%;
       border-radius: 22px;
-      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.28);
+      box-shadow:
+        0 30px 60px rgba(0, 0, 0, 0.35),
+        0 0 35px rgba(85, 140, 255, 0.12);
       transition: transform 0.35s ease, box-shadow 0.35s ease;
+      animation: floatPhone 4.8s ease-in-out infinite;
+      transform-style: preserve-3d;
     }
 
     .sips-hero-image:hover {
-      transform: translateY(-8px) scale(1.02);
-      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+      box-shadow:
+        0 38px 70px rgba(0, 0, 0, 0.42),
+        0 0 50px rgba(85, 140, 255, 0.18);
     }
 
     .sips-callout {
@@ -85,11 +132,12 @@
       display: flex;
       align-items: center;
       gap: 10px;
-      color: #d7d7d7;
+      color: #e4e7ef;
       font-size: 13px;
       line-height: 1.4;
       max-width: 180px;
       pointer-events: none;
+      z-index: 2;
     }
 
     .sips-callout .dot {
@@ -99,13 +147,27 @@
       border-radius: 50%;
       flex-shrink: 0;
       box-shadow: 0 0 0 4px rgba(255,255,255,0.08);
+      animation: pulseDot 2s ease-in-out infinite;
     }
 
     .sips-callout .line {
       width: 55px;
       height: 1px;
-      background: rgba(255,255,255,0.55);
+      background: rgba(255,255,255,0.6);
       flex-shrink: 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .sips-callout .line::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.85), transparent);
+      animation: shimmerLine 3s ease-in-out infinite;
     }
 
     .sips-callout.left {
@@ -131,9 +193,58 @@
       bottom: 85px;
     }
 
+    @keyframes floatPhone {
+      0% {
+        transform: translateY(0px) rotate(-1deg);
+      }
+      50% {
+        transform: translateY(-14px) rotate(1deg);
+      }
+      100% {
+        transform: translateY(0px) rotate(-1deg);
+      }
+    }
+
+    @keyframes glowPulse {
+      0% {
+        transform: scale(0.96);
+        opacity: 0.7;
+      }
+      50% {
+        transform: scale(1.05);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(0.96);
+        opacity: 0.7;
+      }
+    }
+
+    @keyframes pulseDot {
+      0% {
+        box-shadow: 0 0 0 0 rgba(255,255,255,0.25);
+      }
+      70% {
+        box-shadow: 0 0 0 10px rgba(255,255,255,0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(255,255,255,0);
+      }
+    }
+
+    @keyframes shimmerLine {
+      0% {
+        left: -100%;
+      }
+      100% {
+        left: 120%;
+      }
+    }
+
     @media (max-width: 991px) {
       .sips-hero-wrap {
         min-height: auto;
+        padding: 60px 20px;
         margin-bottom: 30px;
       }
 
@@ -163,7 +274,7 @@
               <div class="swiper-wrapper align-items-center">
 
                 <div class="swiper-slide">
-                  <div class="sips-hero-wrap">
+                  <div class="sips-hero-wrap" id="sipsHero">
                     <div class="sips-callout left top-left">
                       <span class="dot"></span>
                       <span class="line"></span>
@@ -182,9 +293,11 @@
                       <span>Mobile first browsing experience</span>
                     </div>
 
-                    <img src="assets/img/portfolio/SIPSWalkthrough.gif"
-                      alt="SIPS App Preview"
-                      class="sips-hero-image">
+                    <div class="sips-hero-inner" id="sipsHeroInner">
+                      <img src="assets/img/portfolio/SIPSWalkthrough.gif"
+                        alt="SIPS App Preview"
+                        class="sips-hero-image">
+                    </div>
                   </div>
                 </div>
 
@@ -442,6 +555,28 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <script>
+    const hero = document.getElementById('sipsHero');
+    const inner = document.getElementById('sipsHeroInner');
+
+    if (hero && inner) {
+      hero.addEventListener('mousemove', (e) => {
+        const rect = hero.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        const moveX = (x / rect.width - 0.5) * 18;
+        const moveY = (y / rect.height - 0.5) * 18;
+
+        inner.style.transform = `translate(${moveX}px, ${moveY}px)`;
+      });
+
+      hero.addEventListener('mouseleave', () => {
+        inner.style.transform = 'translate(0px, 0px)';
+      });
+    }
+  </script>
 
 </body>
 
