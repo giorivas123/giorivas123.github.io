@@ -2549,7 +2549,50 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 14px;
   }
 }
+/* =========================
+   SKILLS (MATCH ABOUT CARD)
+========================= */
 
+#skills .section-title h2 {
+  color: #fff;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+#skills .progress {
+  margin-bottom: 26px;
+}
+
+#skills .skill {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+#skills .progress-bar-wrap {
+  width: 100%;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.15);
+  overflow: hidden;
+}
+
+#skills .progress-bar {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #1b17ff, #003bff);
+  transition: width 1.2s ease;
+}
+
+/* widths */
+#skills .progress-bar[aria-valuenow="100"] { width: 100%; }
+#skills .progress-bar[aria-valuenow="90"] { width: 90%; }
+#skills .progress-bar[aria-valuenow="80"] { width: 80%; }
+#skills .progress-bar[aria-valuenow="70"] { width: 70%; }
 
 }
 footer { color: #fff; opacity: 1; }
