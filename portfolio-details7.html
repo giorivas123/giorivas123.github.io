@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,13 +6,59 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
   <title>Giovanni Rivas</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
 
+  <!-- Favicons -->
   <link href="assets/img/gio.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
   <style>
+    .portfolio-description h2,
+    .portfolio-description h3 {
+      margin-top: 30px;
+    }
+
+    .portfolio-description p {
+      margin-bottom: 16px;
+      line-height: 1.8;
+    }
+
+    .portfolio-description ul {
+      padding-left: 20px;
+      margin-bottom: 20px;
+    }
+
+    .portfolio-description li {
+      margin-bottom: 10px;
+      line-height: 1.7;
+    }
+
+    .portfolio-placeholder {
+      margin: 20px 0 30px;
+      padding: 40px 20px;
+      border: 1px dashed rgba(255,255,255,0.2);
+      text-align: center;
+      border-radius: 12px;
+      font-style: italic;
+      color: #bbb;
+      background: rgba(255,255,255,0.02);
+    }
+
     .sips-hero-wrap {
       position: relative;
       min-height: 560px;
@@ -27,28 +72,51 @@
         radial-gradient(circle at 80% 20%, rgba(0, 255, 170, 0.10), transparent 25%),
         radial-gradient(circle at 50% 80%, rgba(130, 80, 255, 0.14), transparent 30%),
         linear-gradient(135deg, rgba(8, 18, 54, 0.95), rgba(2, 8, 26, 0.98));
+      box-shadow: inset 0 0 80px rgba(255,255,255,0.02);
+    }
+
+    .sips-hero-wrap::before {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(61, 127, 255, 0.20), rgba(61, 127, 255, 0.02) 60%, transparent 75%);
+      filter: blur(10px);
+      animation: glowPulse 6s ease-in-out infinite;
+      z-index: 0;
+    }
+
+    .sips-hero-wrap::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+      background-size: 32px 32px;
+      -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 95%);
+      mask-image: radial-gradient(circle at center, black 40%, transparent 95%);
+      pointer-events: none;
+      opacity: 0.35;
     }
 
     .sips-hero-inner {
       position: relative;
       z-index: 2;
+      transition: transform 0.2s ease;
+      will-change: transform;
     }
 
-    /* ✅ FIXED — no floating */
     .sips-hero-image {
+      position: relative;
       max-width: 260px;
       width: 100%;
       border-radius: 22px;
       box-shadow:
         0 30px 60px rgba(0, 0, 0, 0.35),
         0 0 35px rgba(85, 140, 255, 0.12);
-      transition: box-shadow 0.3s ease;
-    }
-
-    .sips-hero-image:hover {
-      box-shadow:
-        0 38px 70px rgba(0, 0, 0, 0.42),
-        0 0 50px rgba(85, 140, 255, 0.18);
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
     }
 
     .sips-callout {
@@ -58,7 +126,10 @@
       gap: 10px;
       color: #e4e7ef;
       font-size: 13px;
+      line-height: 1.4;
       max-width: 180px;
+      pointer-events: none;
+      z-index: 2;
     }
 
     .sips-callout .dot {
@@ -66,74 +137,406 @@
       height: 8px;
       background: #fff;
       border-radius: 50%;
+      flex-shrink: 0;
+      box-shadow: 0 0 0 4px rgba(255,255,255,0.08);
+      animation: pulseDot 2s ease-in-out infinite;
     }
 
     .sips-callout .line {
       width: 55px;
       height: 1px;
       background: rgba(255,255,255,0.6);
+      flex-shrink: 0;
+      position: relative;
+      overflow: hidden;
     }
 
-    .sips-callout.left { left: 0; }
-    .sips-callout.right { right: 0; flex-direction: row-reverse; text-align: right; }
-    .sips-callout.top-left { top: 85px; }
-    .sips-callout.middle-right { top: 50%; transform: translateY(-50%); }
-    .sips-callout.bottom-left { bottom: 85px; }
+    .sips-callout .line::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.85), transparent);
+      animation: shimmerLine 3s ease-in-out infinite;
+    }
 
+    .sips-callout.left {
+      left: 0;
+    }
+
+    .sips-callout.right {
+      right: 0;
+      flex-direction: row-reverse;
+      text-align: right;
+    }
+
+    .sips-callout.top-left {
+      top: 85px;
+    }
+
+    .sips-callout.middle-right {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .sips-callout.bottom-left {
+      bottom: 85px;
+    }
+
+    @keyframes glowPulse {
+      0% {
+        transform: scale(0.96);
+        opacity: 0.7;
+      }
+      50% {
+        transform: scale(1.05);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(0.96);
+        opacity: 0.7;
+      }
+    }
+
+    @keyframes pulseDot {
+      0% {
+        box-shadow: 0 0 0 0 rgba(255,255,255,0.25);
+      }
+      70% {
+        box-shadow: 0 0 0 10px rgba(255,255,255,0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(255,255,255,0);
+      }
+    }
+
+    @keyframes shimmerLine {
+      0% {
+        left: -100%;
+      }
+      100% {
+        left: 120%;
+      }
+    }
+
+    @media (max-width: 991px) {
+      .sips-hero-wrap {
+        min-height: auto;
+        padding: 60px 20px;
+        margin-bottom: 30px;
+      }
+
+      .sips-callout {
+        display: none;
+      }
+
+      .sips-hero-image {
+        max-width: 220px;
+      }
+    }
   </style>
 </head>
 
 <body>
 
   <main id="main">
-    <section class="portfolio-details">
+
+    <!-- ======= Portfolio Details Section ======= -->
+    <section id="portfolio-details" class="portfolio-details">
       <div class="container">
 
         <div class="row gy-4 align-items-center">
 
           <div class="col-lg-8">
-            <div class="sips-hero-wrap">
+            <div class="portfolio-details-slider swiper">
+              <div class="swiper-wrapper align-items-center">
 
-              <div class="sips-callout left top-left">
-                <span class="dot"></span>
-                <span class="line"></span>
-                <span>Clean category navigation</span>
+                <div class="swiper-slide">
+                  <div class="sips-hero-wrap" id="sipsHero">
+                    <div class="sips-callout left top-left">
+                      <span class="dot"></span>
+                      <span class="line"></span>
+                      <span>Clean category navigation</span>
+                    </div>
+
+                    <div class="sips-callout right middle-right">
+                      <span class="dot"></span>
+                      <span class="line"></span>
+                      <span>Social discovery feed</span>
+                    </div>
+
+                    <div class="sips-callout left bottom-left">
+                      <span class="dot"></span>
+                      <span class="line"></span>
+                      <span>Mobile first browsing experience</span>
+                    </div>
+
+                    <div class="sips-hero-inner" id="sipsHeroInner">
+                      <img src="assets/img/portfolio/SIPSWalkthrough.gif"
+                        alt="SIPS App Preview"
+                        class="sips-hero-image">
+                    </div>
+                  </div>
+                </div>
+
               </div>
-
-              <div class="sips-callout right middle-right">
-                <span class="dot"></span>
-                <span class="line"></span>
-                <span>Social discovery feed</span>
-              </div>
-
-              <div class="sips-callout left bottom-left">
-                <span class="dot"></span>
-                <span class="line"></span>
-                <span>Mobile first browsing experience</span>
-              </div>
-
-              <div class="sips-hero-inner">
-                <img src="assets/img/portfolio/SIPSWalkthrough.gif"
-                  alt="SIPS App Preview"
-                  class="sips-hero-image">
-              </div>
-
+              <div class="swiper-pagination"></div>
             </div>
           </div>
 
           <div class="col-lg-4">
-            <h3>SIPS</h3>
-            <p>
-              SIPS is a mobile-first product designed to make discovering local beverage spots more intuitive and visually engaging.
-            </p>
+            <div class="portfolio-info">
+              <h3>SIPS</h3>
+              <ul>
+                <li><strong>Category</strong>: Web / Product Design</li>
+                <li><strong>Live Demo</strong>: <a href="https://sips-rh1i.onrender.com" target="_blank">View on Render</a></li>
+                <li><strong>Github Repository</strong>: <a href="https://github.com/giorivas123/SIPS.git" target="_blank">View on Github</a></li>
+              </ul>
+            </div>
+
+            <div class="portfolio-description">
+              <h2>Overview</h2>
+              <p>
+                SIPS is a mobile-first product I designed to make discovering local beverage spots feel more intuitive, curated, and visually engaging. The goal was to create a platform that helps users find drink shops more easily while also giving small businesses more visibility.
+              </p>
+
+              <p>
+                <a href="assets/videos/SIPSVideoWalkthrough.mp4" class="glightbox" data-glightbox="type: video">
+                  <strong>▶ Watch Full Walkthrough</strong>
+                </a>
+              </p>
+            </div>
           </div>
 
         </div>
 
+        <div class="row mt-5">
+          <div class="col-lg-12">
+            <div class="portfolio-description">
+
+              <h2>The Problem</h2>
+              <p>
+                Discovering local drink spots often feels scattered. Most users rely on social media, word of mouth, or broad search platforms, which can make the experience feel inconsistent and overwhelming. I wanted to explore how a dedicated platform could make that process simpler, faster, and more enjoyable.
+              </p>
+
+              <div class="portfolio-placeholder">
+                [ Insert Image Here: Problem Statement Visual, Moodboard, or Competitive Reference ]
+              </div>
+
+              <h2>My Goal</h2>
+              <p>
+                My goal with SIPS was to design a product that felt focused and easy to use. Instead of overwhelming users with too much information, I wanted the experience to feel curated and intentional.
+              </p>
+
+              <p>I focused on three things:</p>
+              <ul>
+                <li>making discovery fast</li>
+                <li>keeping the interface visually clear</li>
+                <li>supporting small businesses through a more dedicated platform</li>
+              </ul>
+
+              <h2>Process</h2>
+
+              <h3>1. Defining the Idea</h3>
+              <p>
+                I started by identifying the core concept behind the app. I wanted to create something centered around beverage discovery, but with a more curated and modern feel than traditional search platforms.
+              </p>
+              <p>
+                At this stage, I focused on questions like:
+              </p>
+              <ul>
+                <li>What problem is this solving?</li>
+                <li>Who is this for?</li>
+                <li>What would make this experience feel different?</li>
+              </ul>
+              <p>
+                This helped me define the product early on as a platform for discovering local drink spots in a cleaner and more intentional way.
+              </p>
+
+              <div class="portfolio-placeholder">
+                [ Insert Image Here: Early Notes, Brainstorming, Whiteboard, or Concept Sketches ]
+              </div>
+
+              <h3>2. Establishing the Core Experience</h3>
+              <p>
+                Once the idea was clear, I narrowed the product down to its most important actions. I wanted the experience to feel simple from the start, so I focused on the main things a user would want to do inside the app.
+              </p>
+              <p>The core experience became:</p>
+              <ul>
+                <li>browse local beverage spots</li>
+                <li>view shop details</li>
+                <li>explore options quickly and easily</li>
+              </ul>
+              <p>
+                This step was important because it helped me avoid overbuilding and kept the product focused on what mattered most.
+              </p>
+
+              <div class="portfolio-placeholder">
+                [ Insert Image Here: User Flow, Site Map, or Feature Breakdown ]
+              </div>
+
+              <h3>3. Planning the User Experience</h3>
+              <p>
+                After defining the core functionality, I began thinking through the user journey. I wanted the flow to feel natural and low-friction, so I built the experience around a simple sequence:
+              </p>
+              <p><strong>Open → Browse → Select → Explore</strong></p>
+              <p>
+                I considered how users would move through the app, what information they needed first, and how the interface could guide them without feeling heavy.
+              </p>
+              <p>
+                This stage helped shape the structure of the product before I moved into visual design.
+              </p>
+
+              <div class="portfolio-placeholder">
+                [ Insert Image Here: User Journey Map, Wireflow, or App Flow Diagram ]
+              </div>
+
+              <h3>4. Designing the Interface in Figma</h3>
+              <p>
+                Once the structure was in place, I moved into visual design. I designed the app in Figma, focusing on creating a clean and modern interface that felt easy to scan and comfortable to use.
+              </p>
+              <p>Some of the design choices I made included:</p>
+              <ul>
+                <li>card-based layouts for easier browsing</li>
+                <li>clear typographic hierarchy</li>
+                <li>consistent spacing and alignment</li>
+                <li>a lightweight visual style that kept the content in focus</li>
+              </ul>
+              <p>
+                I wanted the interface to feel polished, but also practical.
+              </p>
+
+              <div class="portfolio-placeholder">
+                [ Insert Image Here: Low-Fidelity Wireframes ]
+              </div>
+
+              <div class="portfolio-placeholder">
+                [ Insert Image Here: Mid-Fidelity Screens ]
+              </div>
+
+              <div class="portfolio-placeholder">
+                [ Insert Image Here: High-Fidelity Final UI Screens ]
+              </div>
+
+              <h3>5. Turning the Design into a Working Frontend</h3>
+              <p>
+                After the visual design phase, I translated the interface into code using HTML, CSS, and JavaScript. This step pushed the project beyond concept work and into implementation.
+              </p>
+              <p>
+                Building the frontend helped me understand how design decisions hold up in a real environment. It also made me think more critically about responsiveness, spacing, and structure outside of Figma.
+              </p>
+              <p>
+                This phase was especially valuable because it strengthened the connection between my design thinking and front-end execution.
+              </p>
+
+              <div class="portfolio-placeholder">
+                [ Insert Image Here: Frontend Development Screenshot or Code Snippet Preview ]
+              </div>
+
+              <h3>6. Deploying the Product</h3>
+              <p>
+                Once the frontend was built, I moved into deployment. I hosted the live frontend and backend using Render so the project could exist as a real, accessible product rather than just a design file.
+              </p>
+              <p>
+                This stage made the project feel much more tangible. It shifted the work from mockups and local development into something that could actually be tested in a live environment.
+              </p>
+
+              <div class="portfolio-placeholder">
+                [ Insert Image Here: Deployment Screenshot, Live Site Preview, or Render Dashboard ]
+              </div>
+
+              <h3>7. Connecting the Frontend to the Backend</h3>
+              <p>
+                A major turning point in the project was integrating the frontend with the backend API. This allowed the product to move from a static interface to a more dynamic experience.
+              </p>
+              <p>At this stage, I focused on:</p>
+              <ul>
+                <li>connecting screens to real data</li>
+                <li>displaying content dynamically</li>
+                <li>making the app behave more like a live product</li>
+              </ul>
+              <p>
+                This was one of the most important parts of the process because it introduced more realistic system behavior and made me think beyond the surface of the UI.
+              </p>
+
+              <div class="portfolio-placeholder">
+                [ Insert Image Here: API Integration Diagram, Data Flow Graphic, or Connected Live Screen ]
+              </div>
+
+              <h3>8. Testing on Mobile</h3>
+              <p>
+                After deployment and integration, I tested the app on mobile devices to evaluate how the experience felt in practice. This helped me identify layout issues, spacing inconsistencies, and interaction details that were not as obvious in design tools alone.
+              </p>
+              <p>
+                Testing in a real environment showed me how important it is to refine for actual use, not just visual presentation.
+              </p>
+              <p>
+                This stage reinforced the idea that strong product design continues beyond the mockup phase.
+              </p>
+
+              <div class="portfolio-placeholder">
+                [ Insert Image Here: Mobile Testing Photo or Device Mockup ]
+              </div>
+
+              <h3>9. Key Takeaways</h3>
+              <p>
+                SIPS taught me how to take a project through multiple stages of the product process, from idea to execution. More importantly, it helped me understand how design decisions evolve once a product becomes interactive and real.
+              </p>
+              <p>Through this project, I strengthened my ability to:</p>
+              <ul>
+                <li>define a focused product concept</li>
+                <li>design clear, structured interfaces</li>
+                <li>translate design into code</li>
+                <li>think through real implementation constraints</li>
+                <li>validate the experience through testing</li>
+              </ul>
+
+              <div class="portfolio-placeholder">
+                [ Insert Image Here: Final Before/After Comparison or Final Product Showcase ]
+              </div>
+
+              <h2>Final Outcome</h2>
+              <p>
+                SIPS became one of my strongest projects because it reflects more than just visual design. It shows how I think through product structure, usability, implementation, and refinement across the full process.
+              </p>
+              <p>
+                It began as an idea centered around beverage discovery and developed into a live product experience that demonstrates both design and front-end thinking.
+              </p>
+
+              <div class="portfolio-placeholder">
+                [ Insert Final Hero Mockup Here: Best Final Screen or Multi-Screen Showcase ]
+              </div>
+
+            </div>
+          </div>
+        </div>
+
       </div>
-    </section>
-  </main>
+    </section><!-- End Portfolio Details Section -->
+
+  </main><!-- End #main -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-up-short"></i>
+  </a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
 
 </body>
+
 </html>
-```
