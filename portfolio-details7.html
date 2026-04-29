@@ -476,10 +476,73 @@
   height: auto !important;
   display: block !important;
 }
+/* match section 2 size */
+.step-3-image {
+  max-width: 100%;
+  margin: 30px 0 10px;
+  position: relative;
+}
+
+/* expand button */
+.expand-btn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 5;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.expand-btn:hover {
+  transform: scale(1.1);
+  background: rgba(0,0,0,0.8);
+}
+
+/* modal */
+.image-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(5,9,20,0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999999;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s ease;
+}
+
+.image-modal.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.image-modal img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+}
+
+.image-modal.close-area {
+  cursor: zoom-out;
+}
     }
   </style>
 </head>
-
+<div id="imageModal" class="image-modal" onclick="closeImageModal()">
+  <img src="assets/img/portfolio/sips-sketches3.png">
+</div>
 <body>
 
   <a href="javascript:history.back()" class="back-top">← Back</a>
@@ -589,10 +652,14 @@
                 <p>
                   I built the flow around a simple sequence: open, browse, select, and explore. This helped me think through what users needed first and how the interface could guide them without feeling heavy.
                 </p>
+<div class="portfolio-image step-3-image">
+  <button class="expand-btn" onclick="openImageModal()">
+    <i class="bi bi-arrows-fullscreen"></i>
+  </button>
 
-                <div class="portfolio-image step-3-image">
-                <img src="assets/img/portfolio/sips-sketches3.png" alt="SIPS user flow sketches">
-                </div>
+  <img src="assets/img/portfolio/sips-sketches3.png" alt="SIPS user flow sketches">
+</div>
+               
                 </div>
               </div>
             </div>
@@ -816,6 +883,15 @@
       window.addEventListener('resize', updateActiveSlide);
     }
   </script>
+  <script>
+function openImageModal() {
+  document.getElementById('imageModal').classList.add('active');
+}
+
+function closeImageModal() {
+  document.getElementById('imageModal').classList.remove('active');
+}
+</script>
 
 </body>
 
