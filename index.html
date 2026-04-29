@@ -1096,6 +1096,30 @@
     
   </style>
 </head>
+<script>
+  let fidelityIndex = 0;
+
+  function moveFidelity(direction) {
+    const slides = document.querySelectorAll('.fidelity-slide');
+
+    fidelityIndex = (fidelityIndex + direction + slides.length) % slides.length;
+
+    slides.forEach((slide, index) => {
+      slide.classList.remove('active', 'prev', 'next');
+
+      const prevIndex = (fidelityIndex - 1 + slides.length) % slides.length;
+      const nextIndex = (fidelityIndex + 1) % slides.length;
+
+      if (index === fidelityIndex) {
+        slide.classList.add('active');
+      } else if (index === prevIndex) {
+        slide.classList.add('prev');
+      } else if (index === nextIndex) {
+        slide.classList.add('next');
+      }
+    });
+  }
+</script>
 
 <body>
 
