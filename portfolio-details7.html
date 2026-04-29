@@ -21,9 +21,7 @@
   <link href="assets/css/style.css" rel="stylesheet">
 
   <style>
-    html,
-    body,
-    #main {
+    html, body, #main {
       margin: 0;
       padding: 0;
       background: #050914;
@@ -41,7 +39,7 @@
       gap: 8px;
       padding: 10px 16px;
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.15);
+      background: rgba(255,255,255,0.15);
       color: #fff;
       font-size: 14px;
       font-weight: 600;
@@ -259,106 +257,122 @@
       border-style: dashed;
       box-shadow: none;
     }
+
     .fidelity-carousel {
-  position: relative;
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
-  margin-top: 42px;
-  margin-bottom: 40px;
-  overflow: hidden;
-}
+      position: relative;
+      width: 100%;
+      max-width: 1180px;
+      margin: 42px auto 40px;
+      overflow: hidden;
+      padding: 0 76px;
+      box-sizing: border-box;
+    }
 
-.fidelity-stage {
-  display: flex;
-  gap: 36px;
-  overflow-x: auto;
-  overflow-y: hidden;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  padding: 40px calc((100vw - 980px) / 2) 48px;
-  box-sizing: border-box;
-}
+    .fidelity-stage {
+      display: flex;
+      gap: 32px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      padding: 36px 0 44px;
+      box-sizing: border-box;
+    }
 
-.fidelity-slide {
-  flex: 0 0 min(82vw, 980px);
-  scroll-snap-align: center;
-  border-radius: 26px;
-  overflow: hidden;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.12);
-  box-shadow: 0 30px 80px rgba(0,0,0,0.35);
-  opacity: 0.35;
-  filter: blur(5px) brightness(0.7);
-  transform: scale(0.9);
-  transition: 0.35s ease;
-}
+    .fidelity-stage::-webkit-scrollbar {
+      height: 8px;
+    }
 
-.fidelity-slide.active {
-  opacity: 1;
-  filter: blur(0) brightness(1);
-  transform: scale(1);
-}
+    .fidelity-stage::-webkit-scrollbar-thumb {
+      background: rgba(255,255,255,0.25);
+      border-radius: 999px;
+    }
 
-.fidelity-slide img {
-  width: 100%;
-  height: 560px;
-  object-fit: contain;
-  display: block;
-  background: #111;
-}
+    .fidelity-stage::-webkit-scrollbar-track {
+      background: rgba(255,255,255,0.08);
+      border-radius: 999px;
+    }
 
-.fidelity-controls {
-  pointer-events: none;
-}
+    .fidelity-slide {
+      flex: 0 0 100%;
+      scroll-snap-align: center;
+      border-radius: 26px;
+      overflow: hidden;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 30px 80px rgba(0,0,0,0.35);
+      opacity: 0.35;
+      filter: blur(5px) brightness(0.7);
+      transform: scale(0.92);
+      transition: 0.35s ease;
+    }
 
-.fidelity-arrow {
-  position: absolute;
-  top: 50%;
-  z-index: 20;
-  transform: translateY(-50%);
-  pointer-events: auto;
-  width: 58px;
-  height: 58px;
-  min-width: 0;
-  padding: 0;
-  border-radius: 50%;
-  border: 1px solid rgba(255,255,255,0.2);
-  background: rgba(255,255,255,0.15);
-  color: #fff;
-  font-size: 0;
-  backdrop-filter: blur(14px);
-}
+    .fidelity-slide.active {
+      opacity: 1;
+      filter: blur(0) brightness(1);
+      transform: scale(1);
+    }
 
-.fidelity-arrow i {
-  font-size: 28px;
-}
+    .fidelity-slide p {
+      margin: 0;
+      padding: 16px 18px;
+      text-align: center;
+      color: #cfd7ea;
+      background: rgba(10, 14, 28, 0.92);
+      font-style: italic;
+      font-size: 18px;
+    }
 
-.fidelity-prev {
-  left: 28px;
-}
+    .fidelity-slide img {
+      width: 100%;
+      height: 560px;
+      object-fit: contain;
+      display: block;
+      background: #111;
+    }
 
-.fidelity-next {
-  right: 28px;
-}
+    .fidelity-controls {
+      pointer-events: none;
+    }
 
-.fidelity-arrow:hover {
-  background: rgba(255,255,255,0.25);
-  transform: translateY(-50%) scale(1.08);
-}
+    .fidelity-arrow {
+      position: absolute;
+      top: 50%;
+      z-index: 20;
+      transform: translateY(-50%);
+      pointer-events: auto;
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.15);
+      color: #fff;
+      backdrop-filter: blur(14px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      cursor: pointer;
+      transition: 0.25s ease;
+    }
 
-@media (max-width: 768px) {
-  .fidelity-stage {
-    padding: 28px 24px 40px;
-  }
+    .fidelity-arrow i {
+      font-size: 26px;
+    }
 
-  .fidelity-slide {
-    flex-basis: 86vw;
-  }
+    .fidelity-prev {
+      left: 14px;
+    }
 
-  .fidelity-slide img {
-    height: 360px;
-  }
-}
+    .fidelity-next {
+      right: 14px;
+    }
+
+    .fidelity-arrow:hover {
+      background: rgba(255,255,255,0.25);
+      transform: translateY(-50%) scale(1.08);
+    }
+
     .takeaway-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -401,17 +415,20 @@
         position: static;
       }
 
-      .fidelity-stage {
-        padding: 25px 30px 35px;
-        margin: 0 -30px;
-      }
-
-      .fidelity-slide {
-        flex: 0 0 82%;
+      .fidelity-carousel {
+        padding: 0 54px;
       }
 
       .fidelity-slide img {
-        height: 330px;
+        height: 360px;
+      }
+
+      .fidelity-prev {
+        left: 6px;
+      }
+
+      .fidelity-next {
+        right: 6px;
       }
 
       .takeaway-grid {
@@ -429,10 +446,21 @@
         font-size: 16px;
       }
 
+      .fidelity-carousel {
+        padding: 0 44px;
+      }
+
       .fidelity-arrow {
-        min-width: 100px;
-        font-size: 15px;
-        padding: 12px 20px;
+        width: 42px;
+        height: 42px;
+      }
+
+      .fidelity-arrow i {
+        font-size: 22px;
+      }
+
+      .fidelity-slide img {
+        height: 300px;
       }
     }
   </style>
@@ -440,9 +468,7 @@
 
 <body>
 
-  <a href="javascript:history.back()" class="back-top">
-    ← Back
-  </a>
+  <a href="javascript:history.back()" class="back-top">← Back</a>
 
   <main id="main">
 
@@ -583,16 +609,19 @@
                     </div>
 
                   </div>
-                  <div class="fidelity-controls">
-  <button class="fidelity-arrow fidelity-prev" type="button" onclick="moveFidelity(-1)">
-    <i class="bi bi-chevron-left"></i>
-  </button>
 
-  <button class="fidelity-arrow fidelity-next" type="button" onclick="moveFidelity(1)">
-    <i class="bi bi-chevron-right"></i>
-  </button>
-</div>
-                
+                  <div class="fidelity-controls">
+                    <button class="fidelity-arrow fidelity-prev" type="button" onclick="moveFidelity(-1)">
+                      <i class="bi bi-chevron-left"></i>
+                    </button>
+
+                    <button class="fidelity-arrow fidelity-next" type="button" onclick="moveFidelity(1)">
+                      <i class="bi bi-chevron-right"></i>
+                    </button>
+                  </div>
+                </div>
+
+              </div>
             </div>
 
             <div class="process-step">
@@ -656,6 +685,7 @@
                 </div>
               </div>
             </div>
+
           </div>
 
           <div class="article-section">
@@ -709,65 +739,67 @@
   <script src="assets/js/main.js"></script>
 
   <script>
-  const fidelityStage = document.getElementById('fidelityStage');
+    const fidelityStage = document.getElementById('fidelityStage');
 
-  function updateActiveSlide() {
-    if (!fidelityStage) return;
+    function updateActiveSlide() {
+      if (!fidelityStage) return;
 
-    const slides = Array.from(fidelityStage.querySelectorAll('.fidelity-slide'));
-    const stageCenter = fidelityStage.scrollLeft + fidelityStage.offsetWidth / 2;
+      const slides = Array.from(fidelityStage.querySelectorAll('.fidelity-slide'));
+      const stageCenter = fidelityStage.scrollLeft + fidelityStage.offsetWidth / 2;
 
-    let closestSlide = slides[0];
-    let closestDistance = Infinity;
+      let closestSlide = slides[0];
+      let closestDistance = Infinity;
 
-    slides.forEach((slide) => {
-      const slideCenter = slide.offsetLeft + slide.offsetWidth / 2;
-      const distance = Math.abs(stageCenter - slideCenter);
+      slides.forEach((slide) => {
+        const slideCenter = slide.offsetLeft + slide.offsetWidth / 2;
+        const distance = Math.abs(stageCenter - slideCenter);
 
-      if (distance < closestDistance) {
-        closestDistance = distance;
-        closestSlide = slide;
+        if (distance < closestDistance) {
+          closestDistance = distance;
+          closestSlide = slide;
+        }
+      });
+
+      slides.forEach((slide) => slide.classList.remove('active'));
+      closestSlide.classList.add('active');
+    }
+
+    function moveFidelity(direction) {
+      if (!fidelityStage) return;
+
+      const slides = Array.from(fidelityStage.querySelectorAll('.fidelity-slide'));
+      const activeSlide = fidelityStage.querySelector('.fidelity-slide.active') || slides[0];
+      const currentIndex = slides.indexOf(activeSlide);
+
+      let nextIndex = currentIndex + direction;
+
+      if (nextIndex < 0) {
+        nextIndex = slides.length - 1;
       }
-    });
 
-    slides.forEach((slide) => slide.classList.remove('active'));
-    closestSlide.classList.add('active');
-  }
+      if (nextIndex >= slides.length) {
+        nextIndex = 0;
+      }
 
-  function moveFidelity(direction) {
-    if (!fidelityStage) return;
+      const targetSlide = slides[nextIndex];
+      const targetLeft = targetSlide.offsetLeft - (fidelityStage.offsetWidth - targetSlide.offsetWidth) / 2;
 
-    const slides = Array.from(fidelityStage.querySelectorAll('.fidelity-slide'));
-    const activeSlide = fidelityStage.querySelector('.fidelity-slide.active') || slides[0];
-    const currentIndex = slides.indexOf(activeSlide);
+      fidelityStage.scrollTo({
+        left: targetLeft,
+        behavior: 'smooth'
+      });
 
-    let nextIndex = currentIndex + direction;
-
-    if (nextIndex < 0) {
-      nextIndex = slides.length - 1;
+      setTimeout(updateActiveSlide, 450);
     }
 
-    if (nextIndex >= slides.length) {
-      nextIndex = 0;
+    if (fidelityStage) {
+      fidelityStage.addEventListener('scroll', () => {
+        window.requestAnimationFrame(updateActiveSlide);
+      });
+
+      window.addEventListener('load', updateActiveSlide);
+      window.addEventListener('resize', updateActiveSlide);
     }
-
-    slides[nextIndex].scrollIntoView({
-      behavior: 'smooth',
-      inline: 'center',
-      block: 'nearest'
-    });
-
-    setTimeout(updateActiveSlide, 450);
-  }
-
-  if (fidelityStage) {
-    fidelityStage.addEventListener('scroll', () => {
-      window.requestAnimationFrame(updateActiveSlide);
-    });
-
-    window.addEventListener('load', updateActiveSlide);
-  }
-</script>
   </script>
 
 </body>
