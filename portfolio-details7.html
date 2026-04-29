@@ -287,6 +287,7 @@
       }
     }
   </style>
+  
 </head>
 
 <body>
@@ -792,31 +793,31 @@ html, body, #main {
 }
 
 .fidelity-stage {
-  position: relative !important;
-  width: 100% !important;
-  height: 520px !important;
-  perspective: 1200px !important;
-  overflow: hidden !important;
+  display: flex !important;
+  gap: 28px !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  scroll-snap-type: x mandatory !important;
+  padding: 10px 20px 30px !important;
+  height: auto !important;
+  perspective: none !important;
 }
 
 .fidelity-slide {
-  position: absolute !important;
-  top: 50% !important;
-  left: 50% !important;
-  width: 68% !important;
-  max-width: 680px !important;
-  height: 440px !important;
-  transform: translate(-50%, -50%) scale(0.7) !important;
-  opacity: 0 !important;
-  filter: blur(7px) brightness(0.7) !important;
-  z-index: 1 !important;
+  flex: 0 0 70% !important;
+  max-width: 700px !important;
+  min-width: 300px !important;
+
+  scroll-snap-align: center !important;
+
   border-radius: 24px !important;
   overflow: hidden !important;
+
   background: rgba(255,255,255,0.06) !important;
   border: 1px solid rgba(255,255,255,0.12) !important;
   box-shadow: 0 24px 60px rgba(0,0,0,0.3) !important;
-  transition: transform 0.5s ease, opacity 0.5s ease, filter 0.5s ease !important;
-  pointer-events: none !important;
+
+  transition: 0.35s ease !important;
 }
 
 .fidelity-slide.active {
@@ -936,6 +937,54 @@ html, body, #main {
   .fidelity-slide.next {
     transform: translate(-14%, -50%) scale(0.68) !important;
   }
+  .fidelity-stage {
+  scroll-behavior: smooth;
+  .fidelity-slide {
+  opacity: 0.4;
+  filter: blur(4px) scale(0.9);
+}
+
+.fidelity-slide.active {
+  opacity: 1 !important;
+  filter: blur(0) scale(1);
+}
+.process-step {
+  display: grid !important;
+  grid-template-columns: 70px 1fr !important;
+  gap: 36px !important;
+  align-items: start !important;
+}
+
+.process-step > div:last-child {
+  width: 100% !important;
+  min-width: 0 !important;
+}
+
+/* prevents text from going vertical */
+.article-section p,
+.article-section h2,
+.article-section h3 {
+  max-width: 100% !important;
+  white-space: normal !important;
+}
+
+/* fixes the takeaway grid collapsing */
+.takeaway-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 18px !important;
+}
+
+@media (max-width: 768px) {
+  .process-step {
+    grid-template-columns: 1fr !important;
+  }
+
+  .takeaway-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+}
 }
 </style>
 </html>

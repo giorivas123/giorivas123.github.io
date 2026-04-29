@@ -1097,28 +1097,47 @@
   </style>
 </head>
 <script>
-  let fidelityIndex = 0;
+  const fidelityStage = document.querySelector('.fidelity-stage');
 
-  function moveFidelity(direction) {
+  function updateActiveSlide() {
     const slides = document.querySelectorAll('.fidelity-slide');
+    const stageCenter = fidelityStage.scrollLeft + fidelityStage.offsetWidth / 2;
 
-    fidelityIndex = (fidelityIndex + direction + slides.length) % slides.length;
+    let closestSlide = slides[0];
+    let closestDistance = Infinity;
 
-    slides.forEach((slide, index) => {
-      slide.classList.remove('active', 'prev', 'next');
+    slides.forEach((slide) => {
+      const slideCenter = slide.offsetLeft + slide.offsetWidth / 2;
+      const distance = Math.abs(stageCenter - slideCenter);
 
-      const prevIndex = (fidelityIndex - 1 + slides.length) % slides.length;
-      const nextIndex = (fidelityIndex + 1) % slides.length;
-
-      if (index === fidelityIndex) {
-        slide.classList.add('active');
-      } else if (index === prevIndex) {
-        slide.classList.add('prev');
-      } else if (index === nextIndex) {
-        slide.classList.add('next');
+      if (distance < closestDistance) {
+        closestDistance = distance;
+        closestSlide = slide;
       }
     });
+
+    slides.forEach((slide) => slide.classList.remove('active'));
+    closestSlide.classList.add('active');
   }
+
+  function moveFidelity(direction) {
+    const activeSlide = document.querySelector('.fidelity-slide.active');
+    const slides = Array.from(document.querySelectorAll('.fidelity-slide'));
+    const currentIndex = slides.indexOf(activeSlide);
+    const nextIndex = Math.max(0, Math.min(slides.length - 1, currentIndex + direction));
+
+    slides[nextIndex].scrollIntoView({
+      behavior: 'smooth',
+      inline: 'center',
+      block: 'nearest'
+    });
+  }
+
+  fidelityStage.addEventListener('scroll', () => {
+    window.requestAnimationFrame(updateActiveSlide);
+  });
+
+  window.addEventListener('load', updateActiveSlide);
 </script>
 
 <body>
