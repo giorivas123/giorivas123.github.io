@@ -594,6 +594,121 @@ box-shadow:0 8px 20px rgba(0,0,0,0.25);
   ← Back
 </a>
 <style>
+.article-wrap {
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.process-step {
+  display: grid !important;
+  grid-template-columns: 70px minmax(0, 1fr) !important;
+  gap: 36px !important;
+  align-items: start;
+  margin-bottom: 80px;
+}
+
+.process-step > div:last-child {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.step-number {
+  width: 58px;
+  height: 58px;
+  flex-shrink: 0;
+}
+
+.portfolio-image,
+.portfolio-placeholder {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.portfolio-image img,
+.portfolio-placeholder img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* Section 4 scroll */
+.fidelity-scroll {
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  gap: 22px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 14px 4px 24px;
+  margin-top: 28px;
+  scroll-snap-type: x mandatory;
+  box-sizing: border-box;
+}
+
+.fidelity-card {
+  flex: 0 0 92%;
+  max-width: 92%;
+  min-width: 0;
+  scroll-snap-align: start;
+  border-radius: 24px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.25);
+}
+
+.fidelity-card p {
+  margin: 0;
+  padding: 16px 18px;
+  color: #cfd7ea;
+  font-style: italic;
+  text-align: center;
+}
+
+.fidelity-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.fidelity-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+
+.fidelity-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.25);
+  border-radius: 999px;
+}
+
+.fidelity-scroll::-webkit-scrollbar-track {
+  background: rgba(255,255,255,0.08);
+  border-radius: 999px;
+}
+
+@media (max-width: 768px) {
+  .process-step {
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+  }
+
+  .step-number {
+    position: static !important;
+  }
+
+  .fidelity-card {
+    flex: 0 0 96%;
+    max-width: 96%;
+  }
+}
+</style>
+<style>
 html, body, #main {
   margin: 0 !important;
   padding: 0 !important;
