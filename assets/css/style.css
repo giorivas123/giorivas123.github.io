@@ -2998,14 +2998,19 @@ body,
   object-fit: contain;
 }
 .step-3-image {
-  max-width: 720px;
-  max-height: 460px;
+  max-width: 780px;
+  height: 420px; /* controls visual size */
   margin: 30px auto 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 24px;
 }
 
 .step-3-image img {
-  width: 100%;
-  max-height: 460px;
+  width: auto;
+  height: 100%;
   object-fit: contain;
 }
 }
