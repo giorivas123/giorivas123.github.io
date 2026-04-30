@@ -5,79 +5,837 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Giovanni Rivas</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+  <title>MusicHub Case Study</title>
 
-  <!-- Favicons -->
   <link href="assets/img/gio.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Raleway:400,500,600,700|Poppins:400,500,600,700" rel="stylesheet">
 
-  <!-- Vendor CSS Files -->
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+
+  <style>
+    html, body, #main {
+      margin: 0;
+      padding: 0;
+      background: #070711;
+      color: #e9edf7;
+      overflow-x: hidden;
+    }
+
+    .back-top {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 999999;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.15);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    }
+
+    .back-top:hover {
+      color: #fff;
+      background: rgba(255,255,255,0.22);
+    }
+
+    .case-study {
+      padding: 80px 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top left, rgba(153, 89, 255, 0.22), transparent 32%),
+        radial-gradient(circle at bottom right, rgba(255, 76, 140, 0.18), transparent 28%),
+        linear-gradient(135deg, #0b0b18 0%, #070711 45%, #12091f 100%);
+    }
+
+    .case-hero {
+      position: relative;
+      min-height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      margin-bottom: 40px;
+      border-radius: 34px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at top, rgba(255,255,255,0.28), transparent 38%),
+        linear-gradient(135deg, #1c1c2e 0%, #2b183f 45%, #12091f 100%);
+      box-shadow: 0 30px 90px rgba(0,0,0,0.25);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      max-width: 700px;
+      padding: 30px 20px;
+    }
+
+    .case-logo {
+      width: clamp(160px, 20vw, 320px);
+      height: auto;
+      margin: 6px auto 16px;
+      display: block;
+      filter: drop-shadow(0 10px 25px rgba(0,0,0,0.2));
+    }
+
+    .case-eyebrow,
+    .section-label {
+      color: #c7a7ff;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .case-intro {
+      font-size: 18px;
+      line-height: 1.7;
+      color: #f8f8f8;
+      max-width: 700px;
+      margin: 0 auto 22px;
+      text-shadow: 0 8px 22px rgba(0,0,0,0.18);
+    }
+
+    .case-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .case-btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.16);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.3);
+      transition: 0.25s ease;
+      text-decoration: none;
+      backdrop-filter: blur(12px);
+    }
+
+    .case-btn:hover {
+      background: rgba(255,255,255,0.28);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    .music-notes-bg {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .music-notes-bg span {
+      position: absolute;
+      top: -60px;
+      color: rgba(255,255,255,0.25);
+      font-size: 42px;
+      animation: fallNotes 12s linear infinite;
+    }
+
+    .music-notes-bg span:nth-child(1) { left: 8%; animation-delay: 0s; }
+    .music-notes-bg span:nth-child(2) { left: 20%; animation-delay: 2s; }
+    .music-notes-bg span:nth-child(3) { left: 34%; animation-delay: 4s; }
+    .music-notes-bg span:nth-child(4) { left: 48%; animation-delay: 1s; }
+    .music-notes-bg span:nth-child(5) { left: 63%; animation-delay: 3s; }
+    .music-notes-bg span:nth-child(6) { left: 76%; animation-delay: 5s; }
+    .music-notes-bg span:nth-child(7) { left: 88%; animation-delay: 1.5s; }
+    .music-notes-bg span:nth-child(8) { left: 95%; animation-delay: 6s; }
+
+    @keyframes fallNotes {
+      0% {
+        top: -80px;
+        transform: translateY(0) rotate(0deg);
+      }
+
+      100% {
+        top: 110%;
+        transform: translateY(40px) rotate(360deg);
+      }
+    }
+
+    .article-wrap {
+      width: min(100%, 980px);
+      margin: 0 auto;
+    }
+
+    .article-section {
+      width: 100%;
+      margin-bottom: 80px;
+      padding-bottom: 60px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .article-section:last-child {
+      border-bottom: 0;
+    }
+
+    .article-section h2 {
+      color: #fff;
+      font-size: 36px;
+      font-weight: 800;
+      margin-bottom: 22px;
+    }
+
+    .article-section h3 {
+      color: #fff;
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .article-section p,
+    .article-section ul {
+      color: #cfd7ea;
+      font-size: 18px;
+      line-height: 1.85;
+      margin-bottom: 18px;
+      max-width: 100%;
+      white-space: normal;
+    }
+
+    .article-section ul {
+      padding-left: 22px;
+    }
+
+    .process-step {
+      display: grid;
+      grid-template-columns: 72px minmax(0, 1fr);
+      gap: 36px;
+      align-items: start;
+      width: 100%;
+      margin-bottom: 90px;
+    }
+
+    .process-step > div:last-child {
+      min-width: 0;
+      width: 100%;
+    }
+
+    .step-number {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.18);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      font-weight: 800;
+      position: sticky;
+      top: 110px;
+    }
+
+    .portfolio-image,
+    .portfolio-placeholder {
+      width: 100%;
+      max-width: 760px;
+      height: 430px;
+      margin: 30px auto 10px;
+      border-radius: 24px;
+      overflow: hidden;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.25);
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .portfolio-image img {
+      width: 100%;
+      height: 100%;
+      max-width: 100%;
+      max-height: 100%;
+      display: block;
+      object-fit: contain;
+    }
+
+    .portfolio-placeholder {
+      padding: 70px 24px;
+      text-align: center;
+      color: #aeb8d2;
+      font-style: italic;
+      border-style: dashed;
+      box-shadow: none;
+    }
+
+    .step-3-image {
+      position: relative;
+    }
+
+    .expand-btn {
+      position: absolute;
+      right: 16px;
+      bottom: 16px;
+      z-index: 5;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(0,0,0,0.65);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(10px);
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .expand-btn:hover {
+      background: rgba(0,0,0,0.85);
+      transform: scale(1.08);
+    }
+
+    .image-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 999999;
+      background: rgba(5,9,20,0.95);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: 0.3s ease;
+      cursor: zoom-out;
+    }
+
+    .image-modal.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .image-modal img {
+      max-width: 92vw;
+      max-height: 92vh;
+      object-fit: contain;
+    }
+
+    .fidelity-carousel {
+      position: relative;
+      width: 100%;
+      max-width: 1180px;
+      margin: 42px auto 40px;
+      overflow: hidden;
+      padding: 0 76px;
+      box-sizing: border-box;
+    }
+
+    .fidelity-stage {
+      display: flex;
+      gap: 32px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      padding: 36px 0 44px;
+      box-sizing: border-box;
+    }
+
+    .fidelity-slide {
+      flex: 0 0 100%;
+      scroll-snap-align: center;
+      border-radius: 26px;
+      overflow: hidden;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 30px 80px rgba(0,0,0,0.35);
+      opacity: 0.35;
+      filter: blur(5px) brightness(0.7);
+      transform: scale(0.92);
+      transition: 0.35s ease;
+    }
+
+    .fidelity-slide.active {
+      opacity: 1;
+      filter: blur(0) brightness(1);
+      transform: scale(1);
+    }
+
+    .fidelity-slide p {
+      margin: 0;
+      padding: 16px 18px;
+      text-align: center;
+      color: #cfd7ea;
+      background: rgba(10, 14, 28, 0.92);
+      font-style: italic;
+      font-size: 18px;
+    }
+
+    .fidelity-slide img {
+      width: 100%;
+      height: 560px;
+      object-fit: contain;
+      display: block;
+      background: #111;
+    }
+
+    .fidelity-controls {
+      pointer-events: none;
+    }
+
+    .fidelity-arrow {
+      position: absolute;
+      top: 50%;
+      z-index: 20;
+      transform: translateY(-50%);
+      pointer-events: auto;
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.15);
+      color: #fff;
+      backdrop-filter: blur(14px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      cursor: pointer;
+      transition: 0.25s ease;
+    }
+
+    .fidelity-arrow i {
+      font-size: 26px;
+    }
+
+    .fidelity-prev {
+      left: 14px;
+    }
+
+    .fidelity-next {
+      right: 14px;
+    }
+
+    .fidelity-arrow:hover {
+      background: rgba(255,255,255,0.25);
+      transform: translateY(-50%) scale(1.08);
+    }
+
+    .takeaway-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .takeaway-card {
+      padding: 24px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: #dce4f8;
+      font-size: 17px;
+      line-height: 1.6;
+    }
+
+    .iphone-wrapper {
+      display: flex;
+      justify-content: center;
+      margin-top: 40px;
+    }
+
+    .iphone-frame {
+      width: 320px;
+      height: 650px;
+      background: #111;
+      border-radius: 46px;
+      padding: 14px;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.35);
+      overflow: hidden;
+      position: relative;
+      border: 4px solid #1d1d1f;
+    }
+
+    .iphone-frame iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 34px;
+      display: block;
+      background: #fff;
+    }
+
+    .iphone-notch {
+      position: absolute;
+      top: 14px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 118px;
+      height: 28px;
+      background: #111;
+      border-radius: 0 0 16px 16px;
+      z-index: 5;
+    }
+
+    @media (max-width: 991px) {
+      .case-hero {
+        min-height: 280px;
+      }
+
+      .case-logo {
+        width: clamp(150px, 38vw, 280px);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .case-study {
+        padding: 60px 0;
+      }
+
+      .process-step {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .step-number {
+        position: static;
+      }
+
+      .portfolio-image,
+      .portfolio-placeholder {
+        height: 320px;
+      }
+
+      .fidelity-carousel {
+        padding: 0 54px;
+      }
+
+      .fidelity-slide img {
+        height: 360px;
+      }
+
+      .fidelity-prev {
+        left: 6px;
+      }
+
+      .fidelity-next {
+        right: 6px;
+      }
+
+      .takeaway-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 575px) {
+      .article-section h2 {
+        font-size: 30px;
+      }
+
+      .article-section p,
+      .article-section ul {
+        font-size: 16px;
+      }
+
+      .case-hero {
+        min-height: 260px;
+      }
+
+      .hero-content {
+        padding: 24px 18px;
+      }
+
+      .case-intro {
+        font-size: 15px;
+        line-height: 1.6;
+      }
+
+      .case-logo {
+        width: clamp(140px, 55vw, 260px);
+      }
+
+      .portfolio-image,
+      .portfolio-placeholder {
+        height: 280px;
+      }
+
+      .fidelity-carousel {
+        padding: 0 44px;
+      }
+
+      .fidelity-arrow {
+        width: 42px;
+        height: 42px;
+      }
+
+      .fidelity-arrow i {
+        font-size: 22px;
+      }
+
+      .fidelity-slide img {
+        height: 300px;
+      }
+
+      .iphone-frame {
+        width: 285px;
+        height: 580px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
+  <a href="javascript:history.back()" class="back-top">← Back</a>
+
   <main id="main">
 
-    <!-- ======= Portfolio Details Section ======= -->
-    <section id="portfolio-details" class="portfolio-details">
+    <section id="portfolio-details" class="case-study">
       <div class="container">
 
-        <div class="row gy-4">
+        <div class="case-hero">
+          <div class="music-notes-bg">
+            <span>♪</span>
+            <span>♫</span>
+            <span>♬</span>
+            <span>♪</span>
+            <span>♫</span>
+            <span>♬</span>
+            <span>♪</span>
+            <span>♫</span>
+          </div>
 
-          <div class="col-lg-8">
-            <div class="portfolio-details-slider swiper">
-              <div class="swiper-wrapper align-items-center">
+          <div class="hero-content">
+            <div class="case-eyebrow">Web / Product Design</div>
+            <img src="assets/img/portfolio/musichub.jpg" alt="MusicHub Logo" class="case-logo">
+            <p class="case-intro">
+              MusicHub is a mobile first music discovery product designed to help users explore artists, events, and music experiences in one focused place.
+            </p>
 
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/portfolio-1.jpg" alt="">
+            <div class="case-links">
+              <a class="case-btn" href="#" target="_blank">View Live Demo</a>
+              <a class="case-btn" href="#" target="_blank">View Github</a>
+              <a class="case-btn glightbox" href="assets/videos/MusicHubVideoWalkthrough.mp4" data-glightbox="type: video">Watch Walkthrough</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="article-wrap">
+
+          <div class="article-section">
+            <div class="section-label">Overview</div>
+            <h2>A focused way to discover music experiences</h2>
+            <p>
+              I created MusicHub to make discovering music, artists, and local events feel more intuitive and visually engaging. Instead of jumping between different platforms, MusicHub gives users a focused place to explore music related content.
+            </p>
+          </div>
+
+          <div class="article-section">
+            <div class="section-label">Problem</div>
+            <h2>Music discovery can feel scattered</h2>
+            <p>
+              Finding artists, events, and music related updates can feel inconsistent. Users often move between streaming apps, social media, ticketing sites, and search engines. I wanted to explore how a dedicated mobile experience could make that process feel more direct and enjoyable.
+            </p>
+          </div>
+
+          <div class="article-section">
+            <div class="section-label">Goal</div>
+            <h2>Design a simple music product with a clear purpose</h2>
+            <p>
+              My goal was to design a product that made music discovery feel focused, easy to browse, and visually engaging.
+            </p>
+
+            <ul>
+              <li>Make music discovery easier to navigate</li>
+              <li>Help users explore artists and events quickly</li>
+              <li>Keep the interface clean, visual, and easy to scan</li>
+            </ul>
+          </div>
+
+          <div class="article-section">
+            <div class="section-label">Process</div>
+            <h2>Step by step product process</h2>
+
+            <div class="process-step">
+              <div class="step-number">1</div>
+              <div>
+                <h3>Defining the idea</h3>
+                <p>
+                  I started by identifying the core concept behind MusicHub. I wanted to create something centered around music discovery, but with a cleaner and more curated feel than traditional search or social platforms.
+                </p>
+                <p>
+                  I focused on what problem the product was solving, who it was for, and what would make the experience feel different.
+                </p>
+
+                <div class="portfolio-image">
+                  <img src="assets/img/portfolio/musichub-sketches.png" alt="MusicHub early sketches">
+                </div>
+              </div>
+            </div>
+
+            <div class="process-step">
+              <div class="step-number">2</div>
+              <div>
+                <h3>Establishing the core experience</h3>
+                <p>
+                  Once the idea was clear, I narrowed the product down to its most important actions. This helped keep the product focused instead of overbuilt.
+                </p>
+
+                <ul>
+                  <li>Browse artists and music content</li>
+                  <li>Explore events and featured experiences</li>
+                  <li>Save or revisit music related discoveries</li>
+                </ul>
+
+                <div class="portfolio-image">
+                  <img src="assets/img/portfolio/musichub-sketches2.png" alt="MusicHub experience sketches">
+                </div>
+              </div>
+            </div>
+
+            <div class="process-step">
+              <div class="step-number">3</div>
+              <div>
+                <h3>Planning the user flow</h3>
+                <p>
+                  I built the flow around a simple sequence: open, browse, select, and explore. This helped me think through what users needed first and how the interface could guide them without feeling overwhelming.
+                </p>
+
+                <div class="portfolio-image step-3-image">
+                  <img src="assets/img/portfolio/musichub-sketches3.png" alt="MusicHub user flow sketches">
+
+                  <button class="expand-btn" onclick="openImageModal()" aria-label="Expand user flow image">
+                    <i class="bi bi-arrows-fullscreen"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="process-step">
+              <div class="step-number">4</div>
+              <div>
+                <h3>Designing the interface in Figma</h3>
+                <p>
+                  I designed MusicHub in Figma with a visual and modern direction. I focused on strong imagery, card based layouts, clear hierarchy, and spacing that helped music content feel easy to browse.
+                </p>
+
+                <div class="fidelity-carousel">
+                  <div class="fidelity-stage" id="fidelityStage">
+
+                    <div class="fidelity-slide active">
+                      <p>Low fidelity wireframes</p>
+                      <img src="assets/img/portfolio/musichub-sketches4.png" alt="MusicHub low fidelity wireframes">
+                    </div>
+
+                    <div class="fidelity-slide">
+                      <p>Mid fidelity screens</p>
+                      <img src="assets/img/portfolio/musichub-sketches5.png" alt="MusicHub mid fidelity screens">
+                    </div>
+
+                    <div class="fidelity-slide">
+                      <p>High fidelity final UI</p>
+                      <img src="assets/img/portfolio/musichub-sketches6.png" alt="MusicHub high fidelity screens">
+                    </div>
+
+                  </div>
+
+                  <div class="fidelity-controls">
+                    <button class="fidelity-arrow fidelity-prev" type="button" onclick="moveFidelity(-1)">
+                      <i class="bi bi-chevron-left"></i>
+                    </button>
+
+                    <button class="fidelity-arrow fidelity-next" type="button" onclick="moveFidelity(1)">
+                      <i class="bi bi-chevron-right"></i>
+                    </button>
+                  </div>
                 </div>
 
               </div>
-              <div class="swiper-pagination"></div>
+            </div>
+
+            <div class="process-step">
+              <div class="step-number">5</div>
+              <div>
+                <h3>Turning the design into a working frontend</h3>
+                <p>
+                  After the visual design phase, I translated the interface into code using HTML, CSS, and JavaScript. This helped me test how the design worked beyond static screens.
+                </p>
+
+                <div class="portfolio-image">
+                  <img src="assets/img/portfolio/musichub-sketches7.png" alt="MusicHub frontend code preview">
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="article-section">
+            <div class="section-label">Takeaways</div>
+            <h2>What I learned</h2>
+            <p>
+              MusicHub helped me understand how a visual product experience can support discovery, browsing, and stronger content organization.
+            </p>
+
+            <div class="takeaway-grid">
+              <div class="takeaway-card">I strengthened my ability to define a focused product concept.</div>
+              <div class="takeaway-card">I practiced designing visual, content driven mobile interfaces.</div>
+              <div class="takeaway-card">I translated design decisions into real frontend code.</div>
+              <div class="takeaway-card">I learned how music content can be structured for easier discovery.</div>
             </div>
           </div>
 
-          <div class="col-lg-4">
-            <div class="portfolio-info">
-              <h3>MusicHub</h3>
-              <ul>
-                <li><strong>Category</strong>: App Design</li>
-                <li><strong>Project URL</strong>: <a href="https://www.figma.com/file/EjtERwhozXWBFy0A83JnYb/Hifi-Prototype?type=design&node-id=0%3A1&mode=design&t=cVbnrSQcQxxjgB7y-1" target="_blank">View Project</a></li>
-              </ul>                       
-            </div>
-            <div class="portfolio-description">
-              <h2>MusicHub's App Summary</h2>
-              <p>
-                MusicHub is a collaborative project developed by five talented designers, offering a seamless user experience for exploring music interfaces. Designed with precision in Figma, it showcases their collective creativity and dedication to crafting a polished and intuitive app.
-              </p>
+          <div class="article-section">
+            <div class="section-label">Final Outcome</div>
+            <h2>A polished music discovery experience</h2>
+            <p>
+              MusicHub became a strong project because it reflects both visual design and product thinking. It shows how I approach structure, browsing behavior, interface design, and refinement across the full process.
+            </p>
+
+            <div class="iphone-wrapper">
+              <div class="iphone-frame">
+                <div class="iphone-notch"></div>
+
+                <iframe 
+                  src="#"
+                  title="MusicHub Live Product">
+                </iframe>
+              </div>
             </div>
           </div>
 
         </div>
 
       </div>
-    </section><!-- End Portfolio Details Section -->
+    </section>
 
-  </main><!-- End #main -->
+  </main>
 
   <div id="preloader"></div>
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-  <!-- Vendor JS Files -->
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-up-short"></i>
+  </a>
+
+  <div id="imageModal" class="image-modal" onclick="closeImageModal()">
+    <img src="assets/img/portfolio/musichub-sketches3.png" alt="Expanded MusicHub user flow">
+  </div>
+
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -86,9 +844,74 @@
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
-
-  <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <script>
+    const fidelityStage = document.getElementById('fidelityStage');
+
+    function updateActiveSlide() {
+      if (!fidelityStage) return;
+
+      const slides = Array.from(fidelityStage.querySelectorAll('.fidelity-slide'));
+      const stageCenter = fidelityStage.scrollLeft + fidelityStage.offsetWidth / 2;
+
+      let closestSlide = slides[0];
+      let closestDistance = Infinity;
+
+      slides.forEach((slide) => {
+        const slideCenter = slide.offsetLeft + slide.offsetWidth / 2;
+        const distance = Math.abs(stageCenter - slideCenter);
+
+        if (distance < closestDistance) {
+          closestDistance = distance;
+          closestSlide = slide;
+        }
+      });
+
+      slides.forEach((slide) => slide.classList.remove('active'));
+      closestSlide.classList.add('active');
+    }
+
+    function moveFidelity(direction) {
+      if (!fidelityStage) return;
+
+      const slides = Array.from(fidelityStage.querySelectorAll('.fidelity-slide'));
+      const activeSlide = fidelityStage.querySelector('.fidelity-slide.active') || slides[0];
+      const currentIndex = slides.indexOf(activeSlide);
+
+      let nextIndex = currentIndex + direction;
+
+      if (nextIndex < 0) nextIndex = slides.length - 1;
+      if (nextIndex >= slides.length) nextIndex = 0;
+
+      const targetSlide = slides[nextIndex];
+      const targetLeft = targetSlide.offsetLeft - (fidelityStage.offsetWidth - targetSlide.offsetWidth) / 2;
+
+      fidelityStage.scrollTo({
+        left: targetLeft,
+        behavior: 'smooth'
+      });
+
+      setTimeout(updateActiveSlide, 450);
+    }
+
+    function openImageModal() {
+      document.getElementById('imageModal').classList.add('active');
+    }
+
+    function closeImageModal() {
+      document.getElementById('imageModal').classList.remove('active');
+    }
+
+    if (fidelityStage) {
+      fidelityStage.addEventListener('scroll', () => {
+        window.requestAnimationFrame(updateActiveSlide);
+      });
+
+      window.addEventListener('load', updateActiveSlide);
+      window.addEventListener('resize', updateActiveSlide);
+    }
+  </script>
 
 </body>
 
