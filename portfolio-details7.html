@@ -434,6 +434,45 @@
       line-height: 1.6;
     }
 
+    .iphone-wrapper {
+      display: flex;
+      justify-content: center;
+      margin-top: 40px;
+    }
+
+    .iphone-frame {
+      width: 320px;
+      height: 650px;
+      background: #111;
+      border-radius: 46px;
+      padding: 14px;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.35);
+      overflow: hidden;
+      position: relative;
+      border: 4px solid #1d1d1f;
+    }
+
+    .iphone-frame iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 34px;
+      display: block;
+      background: #fff;
+    }
+
+    .iphone-notch {
+      position: absolute;
+      top: 14px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 118px;
+      height: 28px;
+      background: #111;
+      border-radius: 0 0 16px 16px;
+      z-index: 5;
+    }
+
     @media (max-width: 991px) {
       .case-hero {
         grid-template-columns: 1fr;
@@ -516,30 +555,11 @@
       .fidelity-slide img {
         height: 300px;
       }
-      .iphone-wrapper {
-  display: flex;
-  justify-content: center;
-  margin-top: 40px;
-}
 
-.iphone-frame {
-  width: 320px;
-  height: 650px;
-  background: #111;
-  border-radius: 40px;
-  padding: 12px;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.25);
-  overflow: hidden; /* 🔥 THIS FIXES YOUR ISSUE */
-  position: relative;
-}
-
-.iphone-frame iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-  border-radius: 28px;
-  display: block;
-}
+      .iphone-frame {
+        width: 285px;
+        height: 580px;
+      }
     }
   </style>
 </head>
@@ -728,7 +748,7 @@
                   I hosted the live frontend and backend using Render so the project could exist as an accessible product instead of only a local build or design file.
                 </p>
 
-               <div class="portfolio-image">
+                <div class="portfolio-image">
                   <img src="assets/img/portfolio/sips-sketches8.png" alt="Screenshot of Render Dashboard">
                 </div>
               </div>
@@ -737,21 +757,22 @@
             <div class="process-step">
               <div class="step-number">7</div>
               <div>
-              <h3>Connecting the frontend to the backend</h3>
-                 <p>
+                <h3>Connecting the frontend to the backend</h3>
+                <p>
                   A major turning point was integrating the frontend with the backend API. This made the product more dynamic and helped the app behave closer to a real product experience.
-                 </p>
+                </p>
 
-                  <ul>
-                   <li>Connected screens to data</li>
-                   <li>Displayed content dynamically</li>
-                   <li>Tested how the live product responded</li>
-                   </ul>
+                <ul>
+                  <li>Connected screens to data</li>
+                  <li>Displayed content dynamically</li>
+                  <li>Tested how the live product responded</li>
+                </ul>
 
-                  <p>
-                   The screenshot below shows the <strong>:contentReference[oaicite:0]{index=0} dashboard</strong>, where user account login data is being stored. This reflects how the backend was set up to handle authentication before users entered the app. By saving user data through MongoDB, we were able to support a more realistic login flow and ensure that account information persisted across sessions.
-                  </p>
-                   <div class="portfolio-image">
+                <p>
+                  The screenshot below shows the <strong>MongoDB dashboard</strong>, where user account login data is being stored. This reflects how the backend was set up to handle authentication before users entered the app. By saving user data through MongoDB, we were able to support a more realistic login flow and ensure that account information persisted across sessions.
+                </p>
+
+                <div class="portfolio-image">
                   <img src="assets/img/portfolio/sips-sketches9.png" alt="Screenshot of MongoDB Dashboard">
                 </div>
               </div>
@@ -765,7 +786,7 @@
                   I tested the app on mobile devices to evaluate the real experience. This helped me catch spacing issues, layout problems, and interaction details that were not as obvious inside design tools.
                 </p>
 
-               <div class="portfolio-image">
+                <div class="portfolio-image">
                   <img src="assets/img/portfolio/SIPSWalkthrough.gif" alt="Testing on Mobile">
                 </div>
               </div>
@@ -787,42 +808,33 @@
               <div class="takeaway-card">I learned how implementation can reveal new design problems.</div>
             </div>
           </div>
-<div class="article-section">
-  <div class="section-label">Final Outcome</div>
-  <h2>A live product experience</h2>
-  <p>
-    SIPS became one of my strongest projects because it reflects more than visual design. It shows how I think through product structure, usability, implementation, and refinement across the full process.
-  </p>
 
-  <div class="iphone-mockup">
-    <iframe 
-      src="https://sips-rh1i.onrender.com"
-      title="SIPS Live Product"
-      class="iphone-screen">
-    </iframe>
-  </div>
-<div class="article-section">
-  <div class="section-label">Final Outcome</div>
-  <h2>A live product experience</h2>
-  <p>
-    SIPS became one of my strongest projects because it reflects more than visual design. It shows how I think through product structure, usability, implementation, and refinement across the full process.
-  </p>
+          <div class="article-section">
+            <div class="section-label">Final Outcome</div>
+            <h2>A live product experience</h2>
+            <p>
+              SIPS became one of my strongest projects because it reflects more than visual design. It shows how I think through product structure, usability, implementation, and refinement across the full process.
+            </p>
 
-  <div class="iphone-wrapper">
-    <div class="iphone-frame">
-      <iframe 
-        src="https://sips-rh1i.onrender.com"
-        title="SIPS Live Product">
-      </iframe>
-    </div>
-  </div>
+            <div class="iphone-wrapper">
+              <div class="iphone-frame">
+                <div class="iphone-notch"></div>
 
-  <div class="text-center mt-3">
-    <a href="https://sips-rh1i.onrender.com" target="_blank" class="btn btn-dark">
-      View Live Product
-    </a>
-  </div>
-</div>
+                <iframe 
+                  src="https://sips-rh1i.onrender.com"
+                  title="SIPS Live Product">
+                </iframe>
+              </div>
+            </div>
+
+            <div class="text-center mt-3">
+              <a href="https://sips-rh1i.onrender.com" target="_blank" class="btn btn-dark">
+                View Live Product
+              </a>
+            </div>
+          </div>
+
+        </div>
 
       </div>
     </section>
