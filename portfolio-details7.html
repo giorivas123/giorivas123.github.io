@@ -24,7 +24,7 @@
     html, body, #main {
       margin: 0;
       padding: 0;
-      background: #12351f;
+      background: #120b24;
       color: #e9edf7;
       overflow-x: hidden;
     }
@@ -57,48 +57,50 @@
       padding: 80px 0;
       min-height: 100vh;
       background:
-        radial-gradient(circle at top left, rgba(255,255,255,0.06), transparent 32%),
-        radial-gradient(circle at bottom left, rgba(0,0,0,0.2), transparent 28%),
-        linear-gradient(135deg, #355e3b 0%, #234728 45%, #12351f 100%);
+        radial-gradient(circle at top left, rgba(132, 79, 255, 0.25), transparent 32%),
+        radial-gradient(circle at bottom left, rgba(70, 35, 140, 0.25), transparent 28%),
+        linear-gradient(135deg, #2b174d 0%, #1b1033 45%, #0f091d 100%);
     }
 
- .case-hero {
-  position: relative;
-  min-height: 410px;
-  width: min(100%, 1700px);
-  margin: 0 auto 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  border-radius: 34px;
-  overflow: hidden;
-  background:
-    radial-gradient(circle at top, rgba(255,255,255,0.45), transparent 38%),
-    linear-gradient(135deg, #d8d8d8 0%, #bfc1c4 45%, #9ca0a4 100%);
-  box-shadow: 0 30px 90px rgba(0,0,0,0.25);
-}
-.case-study .container {
-  max-width: 1780px;
-}
+    .case-study .container {
+      max-width: 1780px;
+    }
+
+    .case-hero {
+      position: relative;
+      min-height: 410px;
+      width: min(100%, 1700px);
+      margin: 0 auto 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      border-radius: 34px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at top center, rgba(255,255,255,0.23), transparent 34%),
+        linear-gradient(135deg, #1f1b33 0%, #25143c 48%, #13091f 100%);
+      box-shadow: 0 30px 90px rgba(0,0,0,0.25);
+    }
+
     .hero-content {
       position: relative;
       z-index: 3;
-      max-width: 700px;
+      max-width: 740px;
       padding: 30px 20px;
     }
 
     .case-logo {
-      width: clamp(160px, 20vw, 320px);
+      width: clamp(180px, 22vw, 340px);
       height: auto;
-      margin: 6px auto 16px;
+      margin: 6px auto 18px;
       display: block;
-      filter: drop-shadow(0 10px 25px rgba(0,0,0,0.2));
+      filter: drop-shadow(0 10px 25px rgba(0,0,0,0.25));
     }
 
     .case-eyebrow,
     .section-label {
-      color: #111;
+      color: #c7a7ff;
       font-size: 14px;
       font-weight: 700;
       letter-spacing: 0.08em;
@@ -109,8 +111,8 @@
     .case-intro {
       font-size: 18px;
       line-height: 1.7;
-      color: #f8f8f8;
-      max-width: 700px;
+      color: #ded6ea;
+      max-width: 760px;
       margin: 0 auto 22px;
       text-shadow: 0 8px 22px rgba(0,0,0,0.18);
     }
@@ -127,69 +129,22 @@
       align-items: center;
       padding: 10px 16px;
       border-radius: 999px;
-      background: rgba(255,255,255,0.22);
+      background: rgba(255,255,255,0.15);
       color: #fff;
-      border: 1px solid rgba(255,255,255,0.35);
+      border: 1px solid rgba(255,255,255,0.28);
       transition: 0.25s ease;
       text-decoration: none;
       backdrop-filter: blur(12px);
     }
 
     .case-btn:hover {
-      background: rgba(255,255,255,0.34);
+      background: rgba(255,255,255,0.25);
       color: #fff;
       transform: translateY(-2px);
     }
 
     .coffee-beans-bg {
-      position: absolute;
-      inset: 0;
-      overflow: hidden;
-      z-index: 1;
-    }
-
-    .coffee-beans-bg span {
-      position: absolute;
-      top: -90px;
-      width: 42px;
-      height: 60px;
-      background: #4b2f24;
-      border-radius: 50%;
-      opacity: 0.42;
-      animation: fallBeans 12s linear infinite;
-    }
-
-    .coffee-beans-bg span::after {
-      content: "";
-      position: absolute;
-      top: 8px;
-      left: 50%;
-      width: 4px;
-      height: 44px;
-      background: rgba(255,255,255,0.28);
-      border-radius: 50%;
-      transform: translateX(-50%) rotate(12deg);
-    }
-
-    .coffee-beans-bg span:nth-child(1) { left: 8%; animation-delay: 0s; }
-    .coffee-beans-bg span:nth-child(2) { left: 20%; animation-delay: 2s; transform: scale(0.8); }
-    .coffee-beans-bg span:nth-child(3) { left: 34%; animation-delay: 4s; transform: scale(1.1); }
-    .coffee-beans-bg span:nth-child(4) { left: 48%; animation-delay: 1s; transform: scale(0.9); }
-    .coffee-beans-bg span:nth-child(5) { left: 63%; animation-delay: 3s; transform: scale(1.2); }
-    .coffee-beans-bg span:nth-child(6) { left: 76%; animation-delay: 5s; transform: scale(0.75); }
-    .coffee-beans-bg span:nth-child(7) { left: 88%; animation-delay: 1.5s; transform: scale(1); }
-    .coffee-beans-bg span:nth-child(8) { left: 95%; animation-delay: 6s; transform: scale(0.85); }
-
-    @keyframes fallBeans {
-      0% {
-        top: -100px;
-        transform: translateY(0) rotate(0deg);
-      }
-
-      100% {
-        top: 110%;
-        transform: translateY(40px) rotate(360deg);
-      }
+      display: none;
     }
 
     .article-wrap {
@@ -209,14 +164,14 @@
     }
 
     .article-section h2 {
-      color: #111;
+      color: #fff;
       font-size: 36px;
       font-weight: 800;
       margin-bottom: 22px;
     }
 
     .article-section h3 {
-      color: #111;
+      color: #fff;
       font-size: 24px;
       font-weight: 700;
       margin-bottom: 16px;
@@ -628,17 +583,6 @@
       <div class="container">
 
         <div class="case-hero">
-          <div class="coffee-beans-bg">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-
           <div class="hero-content">
             <div class="case-eyebrow">Web / Product Design</div>
             <img src="assets/img/portfolio/sips-logo.png" alt="SIPS Logo" class="case-logo">
