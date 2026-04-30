@@ -64,12 +64,12 @@
 
     .case-hero {
       position: relative;
-      min-height: 420px;
+      min-height: 300px;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      margin-bottom: 90px;
+      margin-bottom: 40px;
       border-radius: 34px;
       overflow: hidden;
       background:
@@ -81,14 +81,14 @@
     .hero-content {
       position: relative;
       z-index: 3;
-      max-width: 900px;
-      padding: 50px 24px;
+      max-width: 700px;
+      padding: 30px 20px;
     }
 
     .case-logo {
-      width: clamp(200px, 28vw, 480px);
+      width: clamp(160px, 20vw, 320px);
       height: auto;
-      margin: 10px auto 24px;
+      margin: 6px auto 16px;
       display: block;
       filter: drop-shadow(0 10px 25px rgba(0,0,0,0.2));
     }
@@ -104,11 +104,11 @@
     }
 
     .case-intro {
-      font-size: 20px;
-      line-height: 1.8;
+      font-size: 18px;
+      line-height: 1.7;
       color: #f8f8f8;
-      max-width: 760px;
-      margin: 0 auto 30px;
+      max-width: 700px;
+      margin: 0 auto 22px;
       text-shadow: 0 8px 22px rgba(0,0,0,0.18);
     }
 
@@ -122,7 +122,7 @@
     .case-btn {
       display: inline-flex;
       align-items: center;
-      padding: 12px 18px;
+      padding: 10px 16px;
       border-radius: 999px;
       background: rgba(255,255,255,0.22);
       color: #fff;
@@ -510,11 +510,11 @@
 
     @media (max-width: 991px) {
       .case-hero {
-        min-height: 380px;
+        min-height: 280px;
       }
 
       .case-logo {
-        width: clamp(200px, 45vw, 420px);
+        width: clamp(150px, 38vw, 280px);
       }
     }
 
@@ -568,12 +568,21 @@
         font-size: 16px;
       }
 
+      .case-hero {
+        min-height: 260px;
+      }
+
+      .hero-content {
+        padding: 24px 18px;
+      }
+
       .case-intro {
-        font-size: 17px;
+        font-size: 15px;
+        line-height: 1.6;
       }
 
       .case-logo {
-        width: clamp(180px, 65vw, 340px);
+        width: clamp(140px, 55vw, 260px);
       }
 
       .portfolio-image,
