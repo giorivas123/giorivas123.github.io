@@ -271,6 +271,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      position: relative;
     }
 
     .portfolio-image img {
@@ -289,10 +290,6 @@
       font-style: italic;
       border-style: dashed;
       box-shadow: none;
-    }
-
-    .step-3-image {
-      position: relative;
     }
 
     .expand-btn {
@@ -693,9 +690,9 @@
 
                 <div class="portfolio-image">
                   <img src="assets/img/portfolio/musichub-sketches.png" alt="MusicHub early sketches">
-                   <button class="expand-btn" onclick="openImageModal(this)">
-                  <i class="bi bi-arrows-fullscreen"></i>
-                   </button>
+                  <button class="expand-btn" onclick="openImageModal(this)" aria-label="Expand image">
+                    <i class="bi bi-arrows-fullscreen"></i>
+                  </button>
                 </div>
               </div>
             </div>
@@ -716,9 +713,9 @@
 
                 <div class="portfolio-image">
                   <img src="assets/img/portfolio/musichub-sketches2.png" alt="MusicHub experience sketches">
-                  <button class="expand-btn" onclick="openImageModal(this)">
-                  <i class="bi bi-arrows-fullscreen"></i>
-                   </button>
+                  <button class="expand-btn" onclick="openImageModal(this)" aria-label="Expand image">
+                    <i class="bi bi-arrows-fullscreen"></i>
+                  </button>
                 </div>
               </div>
             </div>
@@ -731,10 +728,9 @@
                   I built the flow around a simple sequence: open, browse, select, and explore. This helped me think through what users needed first and how the interface could guide them without feeling overwhelming.
                 </p>
 
-                <div class="portfolio-image step-3-image">
+                <div class="portfolio-image">
                   <img src="assets/img/portfolio/musichub-sketches3.png" alt="MusicHub user flow sketches">
-
-                  <button class="expand-btn" onclick="openImageModal()" aria-label="Expand user flow image">
+                  <button class="expand-btn" onclick="openImageModal(this)" aria-label="Expand image">
                     <i class="bi bi-arrows-fullscreen"></i>
                   </button>
                 </div>
@@ -749,39 +745,30 @@
                   I designed MusicHub in Figma with a visual and modern direction. I focused on strong imagery, card based layouts, clear hierarchy, and spacing that helped music content feel easy to browse.
                 </p>
 
-                <div class="fidelity-carousel">
-                  <div class="fidelity-stage" id="fidelityStage">
-
-                    <div class="fidelity-slide active">
-                      <p>Low fidelity wireframes</p>
-                      <img src="assets/img/portfolio/musichub-sketches4.png" alt="MusicHub low fidelity wireframes">
-                    </div>
-
-                    <div class="fidelity-slide">
-                      <p>Mid fidelity screens</p>
-                      <img src="assets/img/portfolio/musichub-sketches5.png" alt="MusicHub mid fidelity screens">
-                    </div>
-
-                    <div class="fidelity-slide">
-                      <p>High fidelity final UI</p>
-                      <img src="assets/img/portfolio/musichub-sketches6.png" alt="MusicHub high fidelity screens">
-                    </div>
-
-                  </div>
-
-                  <div class="fidelity-controls">
-                    <button class="fidelity-arrow fidelity-prev" type="button" onclick="moveFidelity(-1)">
-                      <i class="bi bi-chevron-left"></i>
-                    </button>
-
-                    <button class="fidelity-arrow fidelity-next" type="button" onclick="moveFidelity(1)">
-                      <i class="bi bi-chevron-right"></i>
-                    </button>
-                  </div>
+                <div class="portfolio-image">
+                  <img src="assets/img/portfolio/musichub-sketches4.png" alt="MusicHub low fidelity wireframes">
+                  <button class="expand-btn" onclick="openImageModal(this)" aria-label="Expand image">
+                    <i class="bi bi-arrows-fullscreen"></i>
+                  </button>
                 </div>
 
+                <div class="portfolio-image">
+                  <img src="assets/img/portfolio/musichub-sketches5.png" alt="MusicHub mid fidelity screens">
+                  <button class="expand-btn" onclick="openImageModal(this)" aria-label="Expand image">
+                    <i class="bi bi-arrows-fullscreen"></i>
+                  </button>
+                </div>
+
+                <div class="portfolio-image">
+                  <img src="assets/img/portfolio/musichub-sketches6.png" alt="MusicHub high fidelity screens">
+                  <button class="expand-btn" onclick="openImageModal(this)" aria-label="Expand image">
+                    <i class="bi bi-arrows-fullscreen"></i>
+                  </button>
+                </div>
               </div>
             </div>
+
+          </div>
 
           <div class="article-section">
             <div class="section-label">Takeaways</div>
@@ -831,7 +818,7 @@
   </a>
 
   <div id="imageModal" class="image-modal" onclick="closeImageModal()">
-    <img src="assets/img/portfolio/musichub-sketches3.png" alt="Expanded MusicHub user flow">
+    <img id="modalImage" src="" alt="Expanded project image">
   </div>
 
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
@@ -859,69 +846,18 @@
       }, 0);
     });
 
-    const fidelityStage = document.getElementById('fidelityStage');
+    function openImageModal(button) {
+      const image = button.parentElement.querySelector("img");
+      const modal = document.getElementById("imageModal");
+      const modalImage = document.getElementById("modalImage");
 
-    function updateActiveSlide() {
-      if (!fidelityStage) return;
-
-      const slides = Array.from(fidelityStage.querySelectorAll('.fidelity-slide'));
-      const stageCenter = fidelityStage.scrollLeft + fidelityStage.offsetWidth / 2;
-
-      let closestSlide = slides[0];
-      let closestDistance = Infinity;
-
-      slides.forEach((slide) => {
-        const slideCenter = slide.offsetLeft + slide.offsetWidth / 2;
-        const distance = Math.abs(stageCenter - slideCenter);
-
-        if (distance < closestDistance) {
-          closestDistance = distance;
-          closestSlide = slide;
-        }
-      });
-
-      slides.forEach((slide) => slide.classList.remove('active'));
-      closestSlide.classList.add('active');
-    }
-
-    function moveFidelity(direction) {
-      if (!fidelityStage) return;
-
-      const slides = Array.from(fidelityStage.querySelectorAll('.fidelity-slide'));
-      const activeSlide = fidelityStage.querySelector('.fidelity-slide.active') || slides[0];
-      const currentIndex = slides.indexOf(activeSlide);
-
-      let nextIndex = currentIndex + direction;
-
-      if (nextIndex < 0) nextIndex = slides.length - 1;
-      if (nextIndex >= slides.length) nextIndex = 0;
-
-      const targetSlide = slides[nextIndex];
-      const targetLeft = targetSlide.offsetLeft - (fidelityStage.offsetWidth - targetSlide.offsetWidth) / 2;
-
-      fidelityStage.scrollTo({
-        left: targetLeft,
-        behavior: 'smooth'
-      });
-
-      setTimeout(updateActiveSlide, 450);
-    }
-
-    function openImageModal() {
-      document.getElementById('imageModal').classList.add('active');
+      modalImage.src = image.src;
+      modalImage.alt = image.alt;
+      modal.classList.add("active");
     }
 
     function closeImageModal() {
-      document.getElementById('imageModal').classList.remove('active');
-    }
-
-    if (fidelityStage) {
-      fidelityStage.addEventListener('scroll', () => {
-        window.requestAnimationFrame(updateActiveSlide);
-      });
-
-      window.addEventListener('load', updateActiveSlide);
-      window.addEventListener('resize', updateActiveSlide);
+      document.getElementById("imageModal").classList.remove("active");
     }
   </script>
 
