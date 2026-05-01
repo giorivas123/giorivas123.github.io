@@ -57,8 +57,8 @@
       padding: 80px 0;
       min-height: 100vh;
       background:
-        radial-gradient(circle at top left, rgba(255,255,255,0.06), transparent 32%),
-        radial-gradient(circle at bottom left, rgba(0,0,0,0.2), transparent 28%),
+        radial-gradient(circle at top left, rgba(255,255,255,0.08), transparent 32%),
+        radial-gradient(circle at bottom left, rgba(0,0,0,0.24), transparent 28%),
         linear-gradient(135deg, #355e3b 0%, #234728 45%, #12351f 100%);
     }
 
@@ -68,59 +68,70 @@
 
     .case-hero {
       position: relative;
-      height: 300px !important;
-      min-height: 300px !important;
-      max-height: 300px !important;
-      width: min(100%, 1000px);
-      margin: 0 auto 40px;
+      height: 330px !important;
+      min-height: 330px !important;
+      max-height: 330px !important;
+      width: min(86%, 1450px);
+      margin: 0 auto 60px;
       padding: 0 !important;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      border-radius: 34px;
+      border-radius: 38px;
       overflow: hidden;
       background:
-        radial-gradient(circle at top, rgba(255,255,255,0.45), transparent 38%),
-        linear-gradient(135deg, #d8d8d8 0%, #bfc1c4 45%, #9ca0a4 100%);
-      box-shadow: 0 30px 90px rgba(0,0,0,0.25);
+        radial-gradient(circle at 50% 0%, rgba(255,255,255,0.65), transparent 42%),
+        linear-gradient(135deg, #f0f0ef 0%, #cfd1d2 44%, #a5a9ac 100%);
+      box-shadow:
+        0 32px 90px rgba(0,0,0,0.32),
+        inset 0 1px 0 rgba(255,255,255,0.7);
+    }
+
+    .case-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(255,255,255,0.2), transparent 35%, rgba(0,0,0,0.08)),
+        radial-gradient(circle at center, rgba(255,255,255,0.3), transparent 55%);
+      pointer-events: none;
     }
 
     .hero-content {
       position: relative;
       z-index: 3;
-      max-width: 700px;
-      padding: 0 20px !important;
-      transform: scale(0.85);
-      transform-origin: center;
+      max-width: 850px;
+      padding: 0 28px !important;
+    }
+
+    .case-eyebrow {
+      color: #151515;
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
     }
 
     .case-logo {
       width: auto !important;
-      height: 70px !important;
-      max-height: 70px !important;
-      margin: 4px auto 12px !important;
+      height: 105px !important;
+      max-height: 105px !important;
+      margin: 0 auto 22px !important;
       display: block;
       object-fit: contain !important;
-      filter: drop-shadow(0 10px 25px rgba(0,0,0,0.2));
-    }
-
-    .case-eyebrow {
-      color: #111;
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin-bottom: 14px;
+      filter: drop-shadow(0 12px 22px rgba(0,0,0,0.22));
     }
 
     .case-intro {
-      font-size: 16px !important;
-      line-height: 1.5 !important;
-      color: #222;
-      max-width: 700px;
-      margin: 0 auto 14px !important;
-      text-shadow: none;
+      font-size: 19px !important;
+      line-height: 1.55 !important;
+      color: #ffffff;
+      max-width: 850px;
+      margin: 0 auto 24px !important;
+      font-weight: 500;
+      text-shadow: 0 2px 14px rgba(0,0,0,0.22);
     }
 
     .case-links {
@@ -133,20 +144,26 @@
     .case-btn {
       display: inline-flex;
       align-items: center;
-      padding: 10px 16px;
+      justify-content: center;
+      min-width: 150px;
+      padding: 12px 22px;
       border-radius: 999px;
-      background: rgba(0,0,0,0.12);
+      background: rgba(255,255,255,0.18);
       color: #111;
-      border: 1px solid rgba(0,0,0,0.18);
+      border: 1px solid rgba(0,0,0,0.16);
       transition: 0.25s ease;
       text-decoration: none;
-      backdrop-filter: blur(12px);
+      backdrop-filter: blur(14px);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.35);
+      font-size: 16px;
+      font-weight: 600;
     }
 
     .case-btn:hover {
-      background: rgba(0,0,0,0.2);
+      background: rgba(255,255,255,0.32);
       color: #111;
       transform: translateY(-2px);
+      box-shadow: 0 12px 26px rgba(0,0,0,0.18);
     }
 
     .coffee-beans-bg {
@@ -154,7 +171,7 @@
     }
 
     .section-label {
-      color: #111;
+      color: #b9c7b8;
       font-size: 14px;
       font-weight: 700;
       letter-spacing: 0.08em;
@@ -179,14 +196,14 @@
     }
 
     .article-section h2 {
-      color: #111;
+      color: #fff;
       font-size: 36px;
       font-weight: 800;
       margin-bottom: 22px;
     }
 
     .article-section h3 {
-      color: #111;
+      color: #fff;
       font-size: 24px;
       font-weight: 700;
       margin-bottom: 16px;
@@ -483,20 +500,43 @@
 
     @media (max-width: 991px) {
       .case-hero {
-        height: 280px !important;
-        min-height: 280px !important;
-        max-height: 280px !important;
+        width: 88%;
+        height: 315px !important;
+        min-height: 315px !important;
+        max-height: 315px !important;
       }
 
       .case-logo {
-        height: 62px !important;
-        max-height: 62px !important;
+        height: 92px !important;
+        max-height: 92px !important;
+      }
+
+      .case-intro {
+        font-size: 17px !important;
       }
     }
 
     @media (max-width: 768px) {
       .case-study {
         padding: 60px 0;
+      }
+
+      .case-hero {
+        width: 90%;
+        height: 340px !important;
+        min-height: 340px !important;
+        max-height: 340px !important;
+        border-radius: 30px;
+      }
+
+      .case-links {
+        gap: 10px;
+      }
+
+      .case-btn {
+        font-size: 14px;
+        min-width: auto;
+        padding: 10px 16px;
       }
 
       .process-step {
@@ -545,14 +585,19 @@
       }
 
       .case-hero {
-        height: 260px !important;
-        min-height: 260px !important;
-        max-height: 260px !important;
+        width: 92%;
+        height: 360px !important;
+        min-height: 360px !important;
+        max-height: 360px !important;
       }
 
       .hero-content {
         padding: 0 18px !important;
-        transform: scale(0.82);
+      }
+
+      .case-eyebrow {
+        font-size: 12px;
+        margin-bottom: 16px;
       }
 
       .case-intro {
@@ -561,8 +606,9 @@
       }
 
       .case-logo {
-        height: 58px !important;
-        max-height: 58px !important;
+        height: 82px !important;
+        max-height: 82px !important;
+        margin-bottom: 18px !important;
       }
 
       .portfolio-image,
@@ -591,12 +637,6 @@
         width: 285px;
         height: 580px;
       }
-      #portfolio-details .case-hero {
-  width: 78% !important;
-  max-width: 1300px !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
     }
   </style>
 </head>
@@ -613,6 +653,7 @@
         <div class="case-hero">
           <div class="hero-content">
             <div class="case-eyebrow">Web / Product Design</div>
+
             <img src="assets/img/portfolio/sips-logo.png" alt="SIPS Logo" class="case-logo">
 
             <p class="case-intro">
