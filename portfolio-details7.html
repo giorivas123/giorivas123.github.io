@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>SIPS Case Study</title>
+  <title>Giovanni Rivas</title>
 
   <link href="assets/img/gio.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
@@ -24,7 +24,7 @@
     html, body, #main {
       margin: 0;
       padding: 0;
-      background: #070711;
+      background: #12351f;
       color: #e9edf7;
       overflow-x: hidden;
     }
@@ -57,24 +57,32 @@
       padding: 80px 0;
       min-height: 100vh;
       background:
-        radial-gradient(circle at top left, rgba(153, 89, 255, 0.22), transparent 32%),
-        radial-gradient(circle at bottom right, rgba(255, 76, 140, 0.18), transparent 28%),
-        linear-gradient(135deg, #0b0b18 0%, #070711 45%, #12091f 100%);
+        radial-gradient(circle at top left, rgba(255,255,255,0.06), transparent 32%),
+        radial-gradient(circle at bottom left, rgba(0,0,0,0.2), transparent 28%),
+        linear-gradient(135deg, #355e3b 0%, #234728 45%, #12351f 100%);
+    }
+
+    .case-study .container {
+      max-width: 1780px;
     }
 
     .case-hero {
       position: relative;
-      min-height: 300px;
+      height: 300px !important;
+      min-height: 300px !important;
+      max-height: 300px !important;
+      width: min(100%, 1000px);
+      margin: 0 auto 40px;
+      padding: 0 !important;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      margin-bottom: 40px;
       border-radius: 34px;
       overflow: hidden;
       background:
-        radial-gradient(circle at top, rgba(255,255,255,0.28), transparent 38%),
-        linear-gradient(135deg, #1c1c2e 0%, #2b183f 45%, #12091f 100%);
+        radial-gradient(circle at top, rgba(255,255,255,0.45), transparent 38%),
+        linear-gradient(135deg, #d8d8d8 0%, #bfc1c4 45%, #9ca0a4 100%);
       box-shadow: 0 30px 90px rgba(0,0,0,0.25);
     }
 
@@ -82,20 +90,23 @@
       position: relative;
       z-index: 3;
       max-width: 700px;
-      padding: 30px 20px;
+      padding: 0 20px !important;
+      transform: scale(0.85);
+      transform-origin: center;
     }
 
     .case-logo {
-      width: clamp(160px, 20vw, 320px);
-      height: auto;
-      margin: 6px auto 16px;
+      width: auto !important;
+      height: 70px !important;
+      max-height: 70px !important;
+      margin: 4px auto 12px !important;
       display: block;
+      object-fit: contain !important;
       filter: drop-shadow(0 10px 25px rgba(0,0,0,0.2));
     }
 
-    .case-eyebrow,
-    .section-label {
-      color: #c7a7ff;
+    .case-eyebrow {
+      color: #111;
       font-size: 14px;
       font-weight: 700;
       letter-spacing: 0.08em;
@@ -104,12 +115,12 @@
     }
 
     .case-intro {
-      font-size: 18px;
-      line-height: 1.7;
-      color: #f8f8f8;
+      font-size: 16px !important;
+      line-height: 1.5 !important;
+      color: #222;
       max-width: 700px;
-      margin: 0 auto 22px;
-      text-shadow: 0 8px 22px rgba(0,0,0,0.18);
+      margin: 0 auto 14px !important;
+      text-shadow: none;
     }
 
     .case-links {
@@ -124,54 +135,31 @@
       align-items: center;
       padding: 10px 16px;
       border-radius: 999px;
-      background: rgba(255,255,255,0.16);
-      color: #fff;
-      border: 1px solid rgba(255,255,255,0.3);
+      background: rgba(0,0,0,0.12);
+      color: #111;
+      border: 1px solid rgba(0,0,0,0.18);
       transition: 0.25s ease;
       text-decoration: none;
       backdrop-filter: blur(12px);
     }
 
     .case-btn:hover {
-      background: rgba(255,255,255,0.28);
-      color: #fff;
+      background: rgba(0,0,0,0.2);
+      color: #111;
       transform: translateY(-2px);
     }
 
-    .music-notes-bg {
-      position: absolute;
-      inset: 0;
-      overflow: hidden;
-      z-index: 1;
+    .coffee-beans-bg {
+      display: none;
     }
 
-    .music-notes-bg span {
-      position: absolute;
-      top: -60px;
-      color: rgba(255,255,255,0.25);
-      font-size: 42px;
-      animation: fallNotes 12s linear infinite;
-    }
-
-    .music-notes-bg span:nth-child(1) { left: 8%; animation-delay: 0s; }
-    .music-notes-bg span:nth-child(2) { left: 20%; animation-delay: 2s; }
-    .music-notes-bg span:nth-child(3) { left: 34%; animation-delay: 4s; }
-    .music-notes-bg span:nth-child(4) { left: 48%; animation-delay: 1s; }
-    .music-notes-bg span:nth-child(5) { left: 63%; animation-delay: 3s; }
-    .music-notes-bg span:nth-child(6) { left: 76%; animation-delay: 5s; }
-    .music-notes-bg span:nth-child(7) { left: 88%; animation-delay: 1.5s; }
-    .music-notes-bg span:nth-child(8) { left: 95%; animation-delay: 6s; }
-
-    @keyframes fallNotes {
-      0% {
-        top: -80px;
-        transform: translateY(0) rotate(0deg);
-      }
-
-      100% {
-        top: 110%;
-        transform: translateY(40px) rotate(360deg);
-      }
+    .section-label {
+      color: #111;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
     }
 
     .article-wrap {
@@ -191,14 +179,14 @@
     }
 
     .article-section h2 {
-      color: #fff;
+      color: #111;
       font-size: 36px;
       font-weight: 800;
       margin-bottom: 22px;
     }
 
     .article-section h3 {
-      color: #fff;
+      color: #111;
       font-size: 24px;
       font-weight: 700;
       margin-bottom: 16px;
@@ -495,11 +483,14 @@
 
     @media (max-width: 991px) {
       .case-hero {
-        min-height: 280px;
+        height: 280px !important;
+        min-height: 280px !important;
+        max-height: 280px !important;
       }
 
       .case-logo {
-        width: clamp(150px, 38vw, 280px);
+        height: 62px !important;
+        max-height: 62px !important;
       }
     }
 
@@ -554,20 +545,24 @@
       }
 
       .case-hero {
-        min-height: 260px;
+        height: 260px !important;
+        min-height: 260px !important;
+        max-height: 260px !important;
       }
 
       .hero-content {
-        padding: 24px 18px;
+        padding: 0 18px !important;
+        transform: scale(0.82);
       }
 
       .case-intro {
-        font-size: 15px;
-        line-height: 1.6;
+        font-size: 15px !important;
+        line-height: 1.6 !important;
       }
 
       .case-logo {
-        width: clamp(140px, 55vw, 260px);
+        height: 58px !important;
+        max-height: 58px !important;
       }
 
       .portfolio-image,
@@ -596,6 +591,12 @@
         width: 285px;
         height: 580px;
       }
+      #portfolio-details .case-hero {
+  width: 78% !important;
+  max-width: 1300px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
     }
   </style>
 </head>
@@ -610,28 +611,18 @@
       <div class="container">
 
         <div class="case-hero">
-          <div class="music-notes-bg">
-            <span>♪</span>
-            <span>♫</span>
-            <span>♬</span>
-            <span>♪</span>
-            <span>♫</span>
-            <span>♬</span>
-            <span>♪</span>
-            <span>♫</span>
-          </div>
-
           <div class="hero-content">
             <div class="case-eyebrow">Web / Product Design</div>
-            <img src="assets/img/portfolio/sips-logo.png" alt="MusicHub Logo" class="case-logo">
+            <img src="assets/img/portfolio/sips-logo.png" alt="SIPS Logo" class="case-logo">
+
             <p class="case-intro">
-              MusicHub is a mobile first music discovery product designed to help users explore artists, events, and music experiences in one focused place.
+              SIPS is a mobile first beverage discovery product designed to help users find local drink spots quickly, while giving small businesses more visibility.
             </p>
 
             <div class="case-links">
-              <a class="case-btn" href="#" target="_blank">View Live Demo</a>
-              <a class="case-btn" href="#" target="_blank">View Github</a>
-              <a class="case-btn glightbox" href="assets/videos/MusicHubVideoWalkthrough.mp4" data-glightbox="type: video">Watch Walkthrough</a>
+              <a class="case-btn" href="https://sips-rh1i.onrender.com" target="_blank">View Live Demo</a>
+              <a class="case-btn" href="https://github.com/giorivas123/SIPS.git" target="_blank">View Github</a>
+              <a class="case-btn glightbox" href="assets/videos/SIPSVideoWalkthrough.mp4" data-glightbox="type: video">Watch Walkthrough</a>
             </div>
           </div>
         </div>
@@ -640,31 +631,31 @@
 
           <div class="article-section">
             <div class="section-label">Overview</div>
-            <h2>A focused way to discover music experiences</h2>
+            <h2>A focused way to discover local drinks</h2>
             <p>
-              I created MusicHub to make discovering music, artists, and local events feel more intuitive and visually engaging. Instead of jumping between different platforms, MusicHub gives users a focused place to explore music related content.
+              I created SIPS to make discovering local beverage spots feel more intuitive, curated, and visually engaging. Instead of relying on scattered recommendations across social media, search engines, and word of mouth, SIPS gives users a more focused place to browse and explore.
             </p>
           </div>
 
           <div class="article-section">
             <div class="section-label">Problem</div>
-            <h2>Music discovery can feel scattered</h2>
+            <h2>Discovery can feel scattered</h2>
             <p>
-              Finding artists, events, and music related updates can feel inconsistent. Users often move between streaming apps, social media, ticketing sites, and search engines. I wanted to explore how a dedicated mobile experience could make that process feel more direct and enjoyable.
+              Finding local drink shops can feel inconsistent. Users often jump between different platforms to compare places, view details, and decide where to go. I wanted to explore how a dedicated mobile experience could make that process simpler, faster, and more enjoyable.
             </p>
           </div>
 
           <div class="article-section">
             <div class="section-label">Goal</div>
-            <h2>Design a simple music product with a clear purpose</h2>
+            <h2>Design a simple product with a clear purpose</h2>
             <p>
-              My goal was to design a product that made music discovery feel focused, easy to browse, and visually engaging.
+              My goal was to design a product that felt focused and easy to use. I wanted the experience to feel curated instead of overwhelming.
             </p>
 
             <ul>
-              <li>Make music discovery easier to navigate</li>
-              <li>Help users explore artists and events quickly</li>
-              <li>Keep the interface clean, visual, and easy to scan</li>
+              <li>Make local drink discovery faster</li>
+              <li>Keep the interface clean and easy to scan</li>
+              <li>Support small businesses through a dedicated product experience</li>
             </ul>
           </div>
 
@@ -677,14 +668,14 @@
               <div>
                 <h3>Defining the idea</h3>
                 <p>
-                  I started by identifying the core concept behind MusicHub. I wanted to create something centered around music discovery, but with a cleaner and more curated feel than traditional search or social platforms.
+                  I started by identifying the core concept behind the app. I wanted to create something centered around beverage discovery, but with a more curated and modern feel than traditional search platforms.
                 </p>
                 <p>
                   I focused on what problem the product was solving, who it was for, and what would make the experience feel different.
                 </p>
 
                 <div class="portfolio-image">
-                  <img src="assets/img/portfolio/musichub-sketches.png" alt="MusicHub early sketches">
+                  <img src="assets/img/portfolio/sips-sketches.png" alt="SIPS early sketches">
                 </div>
               </div>
             </div>
@@ -698,13 +689,13 @@
                 </p>
 
                 <ul>
-                  <li>Browse artists and music content</li>
-                  <li>Explore events and featured experiences</li>
-                  <li>Save or revisit music related discoveries</li>
+                  <li>Browse local beverage spots</li>
+                  <li>View shop details</li>
+                  <li>Explore drink options quickly</li>
                 </ul>
 
                 <div class="portfolio-image">
-                  <img src="assets/img/portfolio/musichub-sketches2.png" alt="MusicHub experience sketches">
+                  <img src="assets/img/portfolio/sips-sketches2.png" alt="SIPS experience sketches">
                 </div>
               </div>
             </div>
@@ -714,11 +705,11 @@
               <div>
                 <h3>Planning the user flow</h3>
                 <p>
-                  I built the flow around a simple sequence: open, browse, select, and explore. This helped me think through what users needed first and how the interface could guide them without feeling overwhelming.
+                  I built the flow around a simple sequence: open, browse, select, and explore. This helped me think through what users needed first and how the interface could guide them without feeling heavy.
                 </p>
 
                 <div class="portfolio-image step-3-image">
-                  <img src="assets/img/portfolio/musichub-sketches3.png" alt="MusicHub user flow sketches">
+                  <img src="assets/img/portfolio/sips-sketches3.png" alt="SIPS user flow sketches">
 
                   <button class="expand-btn" onclick="openImageModal()" aria-label="Expand user flow image">
                     <i class="bi bi-arrows-fullscreen"></i>
@@ -732,7 +723,7 @@
               <div>
                 <h3>Designing the interface in Figma</h3>
                 <p>
-                  I designed MusicHub in Figma with a visual and modern direction. I focused on strong imagery, card based layouts, clear hierarchy, and spacing that helped music content feel easy to browse.
+                  I designed the app in Figma with a clean, modern direction. I focused on card based layouts, clear hierarchy, consistent spacing, and a lightweight visual style that kept the content easy to scan.
                 </p>
 
                 <div class="fidelity-carousel">
@@ -740,17 +731,17 @@
 
                     <div class="fidelity-slide active">
                       <p>Low fidelity wireframes</p>
-                      <img src="assets/img/portfolio/musichub-sketches4.png" alt="MusicHub low fidelity wireframes">
+                      <img src="assets/img/portfolio/sips-sketches4.png" alt="SIPS low fidelity wireframes">
                     </div>
 
                     <div class="fidelity-slide">
                       <p>Mid fidelity screens</p>
-                      <img src="assets/img/portfolio/musichub-sketches5.png" alt="MusicHub mid fidelity screens">
+                      <img src="assets/img/portfolio/sips-sketches5.png" alt="SIPS mid fidelity screens">
                     </div>
 
                     <div class="fidelity-slide">
                       <p>High fidelity final UI</p>
-                      <img src="assets/img/portfolio/musichub-sketches6.png" alt="MusicHub high fidelity screens">
+                      <img src="assets/img/portfolio/sips-sketches6.png" alt="SIPS high fidelity screens">
                     </div>
 
                   </div>
@@ -774,11 +765,63 @@
               <div>
                 <h3>Turning the design into a working frontend</h3>
                 <p>
-                  After the visual design phase, I translated the interface into code using HTML, CSS, and JavaScript. This helped me test how the design worked beyond static screens.
+                  After the visual design phase, I translated the interface into code using HTML, CSS, and JavaScript. This moved the project beyond concept work and helped me test how the design held up in a real environment.
                 </p>
 
                 <div class="portfolio-image">
-                  <img src="assets/img/portfolio/musichub-sketches7.png" alt="MusicHub frontend code preview">
+                  <img src="assets/img/portfolio/sips-sketches7.png" alt="SIPS frontend code preview">
+                </div>
+              </div>
+            </div>
+
+            <div class="process-step">
+              <div class="step-number">6</div>
+              <div>
+                <h3>Deploying the product</h3>
+                <p>
+                  I hosted the live frontend and backend using Render so the project could exist as an accessible product instead of only a local build or design file.
+                </p>
+
+                <div class="portfolio-image">
+                  <img src="assets/img/portfolio/sips-sketches8.png" alt="Screenshot of Render Dashboard">
+                </div>
+              </div>
+            </div>
+
+            <div class="process-step">
+              <div class="step-number">7</div>
+              <div>
+                <h3>Connecting the frontend to the backend</h3>
+                <p>
+                  A major turning point was integrating the frontend with the backend API. This made the product more dynamic and helped the app behave closer to a real product experience.
+                </p>
+
+                <ul>
+                  <li>Connected screens to data</li>
+                  <li>Displayed content dynamically</li>
+                  <li>Tested how the live product responded</li>
+                </ul>
+
+                <p>
+                  The screenshot below shows the <strong>MongoDB dashboard</strong>, where user account login data is being stored. This reflects how the backend was set up to handle authentication before users entered the app. By saving user data through MongoDB, we were able to support a more realistic login flow and ensure that account information persisted across sessions.
+                </p>
+
+                <div class="portfolio-image">
+                  <img src="assets/img/portfolio/sips-sketches9.png" alt="Screenshot of MongoDB Dashboard">
+                </div>
+              </div>
+            </div>
+
+            <div class="process-step">
+              <div class="step-number">8</div>
+              <div>
+                <h3>Testing on mobile</h3>
+                <p>
+                  I tested the app on mobile devices to evaluate the real experience. This helped me catch spacing issues, layout problems, and interaction details that were not as obvious inside design tools.
+                </p>
+
+                <div class="portfolio-image">
+                  <img src="assets/img/portfolio/SIPSWalkthrough.gif" alt="Testing on Mobile">
                 </div>
               </div>
             </div>
@@ -789,22 +832,22 @@
             <div class="section-label">Takeaways</div>
             <h2>What I learned</h2>
             <p>
-              MusicHub helped me understand how a visual product experience can support discovery, browsing, and stronger content organization.
+              SIPS helped me understand how a product evolves from an idea into something interactive and testable.
             </p>
 
             <div class="takeaway-grid">
               <div class="takeaway-card">I strengthened my ability to define a focused product concept.</div>
-              <div class="takeaway-card">I practiced designing visual, content driven mobile interfaces.</div>
+              <div class="takeaway-card">I practiced designing clear and structured mobile interfaces.</div>
               <div class="takeaway-card">I translated design decisions into real frontend code.</div>
-              <div class="takeaway-card">I learned how music content can be structured for easier discovery.</div>
+              <div class="takeaway-card">I learned how implementation can reveal new design problems.</div>
             </div>
           </div>
 
           <div class="article-section">
             <div class="section-label">Final Outcome</div>
-            <h2>A polished music discovery experience</h2>
+            <h2>A live product experience</h2>
             <p>
-              MusicHub became a strong project because it reflects both visual design and product thinking. It shows how I approach structure, browsing behavior, interface design, and refinement across the full process.
+              SIPS became one of my strongest projects because it reflects more than visual design. It shows how I think through product structure, usability, implementation, and refinement across the full process.
             </p>
 
             <div class="iphone-wrapper">
@@ -812,8 +855,8 @@
                 <div class="iphone-notch"></div>
 
                 <iframe 
-                  src="#"
-                  title="MusicHub Live Product">
+                  src="https://sips-rh1i.onrender.com"
+                  title="SIPS Live Product">
                 </iframe>
               </div>
             </div>
@@ -833,7 +876,7 @@
   </a>
 
   <div id="imageModal" class="image-modal" onclick="closeImageModal()">
-    <img src="assets/img/portfolio/musichub-sketches3.png" alt="Expanded MusicHub user flow">
+    <img src="assets/img/portfolio/sips-sketches3.png" alt="Expanded SIPS user flow">
   </div>
 
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
