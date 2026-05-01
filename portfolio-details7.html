@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>SIPS Case Study</title>
+  <title>Giovanni Rivas</title>
 
   <link href="assets/img/gio.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
@@ -24,7 +24,7 @@
     html, body, #main {
       margin: 0;
       padding: 0;
-      background: #070711;
+      background: #12351f;
       color: #e9edf7;
       overflow-x: hidden;
     }
@@ -57,24 +57,29 @@
       padding: 80px 0;
       min-height: 100vh;
       background:
-        radial-gradient(circle at top left, rgba(153, 89, 255, 0.22), transparent 32%),
-        radial-gradient(circle at bottom right, rgba(255, 76, 140, 0.18), transparent 28%),
-        linear-gradient(135deg, #0b0b18 0%, #070711 45%, #12091f 100%);
+        radial-gradient(circle at top left, rgba(255,255,255,0.06), transparent 32%),
+        radial-gradient(circle at bottom left, rgba(0,0,0,0.2), transparent 28%),
+        linear-gradient(135deg, #355e3b 0%, #234728 45%, #12351f 100%);
+    }
+
+    .case-study .container {
+      max-width: 1780px;
     }
 
     .case-hero {
       position: relative;
-      min-height: 300px;
+      min-height: 410px;
+      width: min(100%, 1700px);
+      margin: 0 auto 40px;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      margin-bottom: 40px;
       border-radius: 34px;
       overflow: hidden;
       background:
-        radial-gradient(circle at top, rgba(255,255,255,0.28), transparent 38%),
-        linear-gradient(135deg, #1c1c2e 0%, #2b183f 45%, #12091f 100%);
+        radial-gradient(circle at top, rgba(255,255,255,0.45), transparent 38%),
+        linear-gradient(135deg, #d8d8d8 0%, #bfc1c4 45%, #9ca0a4 100%);
       box-shadow: 0 30px 90px rgba(0,0,0,0.25);
     }
 
@@ -93,9 +98,8 @@
       filter: drop-shadow(0 10px 25px rgba(0,0,0,0.2));
     }
 
-    .case-eyebrow,
-    .section-label {
-      color: #c7a7ff;
+    .case-eyebrow {
+      color: #111;
       font-size: 14px;
       font-weight: 700;
       letter-spacing: 0.08em;
@@ -106,10 +110,10 @@
     .case-intro {
       font-size: 18px;
       line-height: 1.7;
-      color: #f8f8f8;
+      color: #222;
       max-width: 700px;
       margin: 0 auto 22px;
-      text-shadow: 0 8px 22px rgba(0,0,0,0.18);
+      text-shadow: none;
     }
 
     .case-links {
@@ -124,54 +128,31 @@
       align-items: center;
       padding: 10px 16px;
       border-radius: 999px;
-      background: rgba(255,255,255,0.16);
-      color: #fff;
-      border: 1px solid rgba(255,255,255,0.3);
+      background: rgba(0,0,0,0.12);
+      color: #111;
+      border: 1px solid rgba(0,0,0,0.18);
       transition: 0.25s ease;
       text-decoration: none;
       backdrop-filter: blur(12px);
     }
 
     .case-btn:hover {
-      background: rgba(255,255,255,0.28);
-      color: #fff;
+      background: rgba(0,0,0,0.2);
+      color: #111;
       transform: translateY(-2px);
     }
 
-    .music-notes-bg {
-      position: absolute;
-      inset: 0;
-      overflow: hidden;
-      z-index: 1;
+    .coffee-beans-bg {
+      display: none;
     }
 
-    .music-notes-bg span {
-      position: absolute;
-      top: -60px;
-      color: rgba(255,255,255,0.25);
-      font-size: 42px;
-      animation: fallNotes 12s linear infinite;
-    }
-
-    .music-notes-bg span:nth-child(1) { left: 8%; animation-delay: 0s; }
-    .music-notes-bg span:nth-child(2) { left: 20%; animation-delay: 2s; }
-    .music-notes-bg span:nth-child(3) { left: 34%; animation-delay: 4s; }
-    .music-notes-bg span:nth-child(4) { left: 48%; animation-delay: 1s; }
-    .music-notes-bg span:nth-child(5) { left: 63%; animation-delay: 3s; }
-    .music-notes-bg span:nth-child(6) { left: 76%; animation-delay: 5s; }
-    .music-notes-bg span:nth-child(7) { left: 88%; animation-delay: 1.5s; }
-    .music-notes-bg span:nth-child(8) { left: 95%; animation-delay: 6s; }
-
-    @keyframes fallNotes {
-      0% {
-        top: -80px;
-        transform: translateY(0) rotate(0deg);
-      }
-
-      100% {
-        top: 110%;
-        transform: translateY(40px) rotate(360deg);
-      }
+    .section-label {
+      color: #111;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
     }
 
     .article-wrap {
@@ -191,14 +172,14 @@
     }
 
     .article-section h2 {
-      color: #fff;
+      color: #111;
       font-size: 36px;
       font-weight: 800;
       margin-bottom: 22px;
     }
 
     .article-section h3 {
-      color: #fff;
+      color: #111;
       font-size: 24px;
       font-weight: 700;
       margin-bottom: 16px;
@@ -610,20 +591,10 @@
       <div class="container">
 
         <div class="case-hero">
-          <div class="music-notes-bg">
-            <span>♪</span>
-            <span>♫</span>
-            <span>♬</span>
-            <span>♪</span>
-            <span>♫</span>
-            <span>♬</span>
-            <span>♪</span>
-            <span>♫</span>
-          </div>
-
           <div class="hero-content">
             <div class="case-eyebrow">Web / Product Design</div>
-            <img src="assets/img/portfolio/.png" alt="SIPS Logo" class="case-logo">
+            <img src="assets/img/portfolio/sips-logo.png" alt="SIPS Logo" class="case-logo">
+
             <p class="case-intro">
               SIPS is a mobile first beverage discovery product designed to help users find local drink spots quickly, while giving small businesses more visibility.
             </p>
@@ -642,7 +613,7 @@
             <div class="section-label">Overview</div>
             <h2>A focused way to discover local drinks</h2>
             <p>
-              I created SIPS to make discovering local beverage spots feel more intuitive, curated, and visually engaging. Instead of relying on scattered recommendations across social media, search engines, and word of mouth, SIPS gives users a focused place to browse and explore.
+              I created SIPS to make discovering local beverage spots feel more intuitive, curated, and visually engaging. Instead of relying on scattered recommendations across social media, search engines, and word of mouth, SIPS gives users a more focused place to browse and explore.
             </p>
           </div>
 
