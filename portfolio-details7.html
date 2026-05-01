@@ -68,9 +68,12 @@
 
     .case-hero {
       position: relative;
-      min-height: 410px;
+      height: 300px !important;
+      min-height: 300px !important;
+      max-height: 300px !important;
       width: min(100%, 1700px);
       margin: 0 auto 40px;
+      padding: 0 !important;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -87,14 +90,18 @@
       position: relative;
       z-index: 3;
       max-width: 700px;
-      padding: 30px 20px;
+      padding: 0 20px !important;
+      transform: scale(0.85);
+      transform-origin: center;
     }
 
     .case-logo {
-      width: clamp(160px, 20vw, 320px);
-      height: auto;
-      margin: 6px auto 16px;
+      width: auto !important;
+      height: 70px !important;
+      max-height: 70px !important;
+      margin: 4px auto 12px !important;
       display: block;
+      object-fit: contain !important;
       filter: drop-shadow(0 10px 25px rgba(0,0,0,0.2));
     }
 
@@ -108,11 +115,11 @@
     }
 
     .case-intro {
-      font-size: 18px;
-      line-height: 1.7;
+      font-size: 16px !important;
+      line-height: 1.5 !important;
       color: #222;
       max-width: 700px;
-      margin: 0 auto 22px;
+      margin: 0 auto 14px !important;
       text-shadow: none;
     }
 
@@ -476,11 +483,14 @@
 
     @media (max-width: 991px) {
       .case-hero {
-        min-height: 280px;
+        height: 280px !important;
+        min-height: 280px !important;
+        max-height: 280px !important;
       }
 
       .case-logo {
-        width: clamp(150px, 38vw, 280px);
+        height: 62px !important;
+        max-height: 62px !important;
       }
     }
 
@@ -535,20 +545,24 @@
       }
 
       .case-hero {
-        min-height: 260px;
+        height: 260px !important;
+        min-height: 260px !important;
+        max-height: 260px !important;
       }
 
       .hero-content {
-        padding: 24px 18px;
+        padding: 0 18px !important;
+        transform: scale(0.82);
       }
 
       .case-intro {
-        font-size: 15px;
-        line-height: 1.6;
+        font-size: 15px !important;
+        line-height: 1.6 !important;
       }
 
       .case-logo {
-        width: clamp(140px, 55vw, 260px);
+        height: 58px !important;
+        max-height: 58px !important;
       }
 
       .portfolio-image,
@@ -577,45 +591,6 @@
         width: 285px;
         height: 580px;
       }
-      .case-hero {
-  height: 300px !important;
-  min-height: unset !important;
-  max-height: 300px !important;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-.hero-content {
-  padding: 10px 20px !important;
-}
-#portfolio-details .case-hero {
-  height: 300px !important;
-  min-height: 300px !important;
-  max-height: 300px !important;
-  padding: 0 !important;
-}
-
-#portfolio-details .hero-content {
-  padding: 0 20px !important;
-  transform: scale(0.85);
-  transform-origin: center;
-}
-
-#portfolio-details .case-logo {
-  width: auto !important;
-  height: 70px !important;
-  max-height: 70px !important;
-  margin: 4px auto 12px !important;
-  object-fit: contain !important;
-}
-
-#portfolio-details .case-intro {
-  margin-bottom: 14px !important;
-  font-size: 16px !important;
-  line-height: 1.5 !important;
-}
     }
   </style>
 </head>
