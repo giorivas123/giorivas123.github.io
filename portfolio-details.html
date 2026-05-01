@@ -296,7 +296,7 @@
       position: absolute;
       right: 16px;
       bottom: 16px;
-      z-index: 5;
+      z-index: 50;
       width: 44px;
       height: 44px;
       border-radius: 50%;
@@ -328,6 +328,7 @@
       pointer-events: none;
       transition: 0.3s ease;
       cursor: zoom-out;
+      padding: 24px;
     }
 
     .image-modal.active {
@@ -392,9 +393,16 @@
       font-size: 18px;
     }
 
-    .fidelity-slide img {
+    .fidelity-image-wrap {
+      position: relative;
       width: 100%;
       height: 560px;
+      background: #111;
+    }
+
+    .fidelity-slide img {
+      width: 100%;
+      height: 100%;
       object-fit: contain;
       display: block;
       background: #111;
@@ -531,7 +539,7 @@
         padding: 0 54px;
       }
 
-      .fidelity-slide img {
+      .fidelity-image-wrap {
         height: 360px;
       }
 
@@ -593,7 +601,7 @@
         font-size: 22px;
       }
 
-      .fidelity-slide img {
+      .fidelity-image-wrap {
         height: 300px;
       }
 
@@ -745,26 +753,52 @@
                   I designed MusicHub in Figma with a visual and modern direction. I focused on strong imagery, card based layouts, clear hierarchy, and spacing that helped music content feel easy to browse.
                 </p>
 
-                <div class="portfolio-image">
-                  <img src="assets/img/portfolio/musichub-sketches4.png" alt="MusicHub low fidelity wireframes">
-                  <button class="expand-btn" onclick="openImageModal(this)" aria-label="Expand image">
-                    <i class="bi bi-arrows-fullscreen"></i>
-                  </button>
+                <div class="fidelity-carousel">
+                  <div class="fidelity-stage" id="fidelityStage">
+
+                    <div class="fidelity-slide active">
+                      <p>Low fidelity wireframes</p>
+                      <div class="fidelity-image-wrap">
+                        <img src="assets/img/portfolio/musichub-sketches4.png" alt="MusicHub low fidelity wireframes">
+                        <button class="expand-btn" onclick="openImageModal(this)" aria-label="Expand image">
+                          <i class="bi bi-arrows-fullscreen"></i>
+                        </button>
+                      </div>
+                    </div>
+
+                    <div class="fidelity-slide">
+                      <p>Mid fidelity screens</p>
+                      <div class="fidelity-image-wrap">
+                        <img src="assets/img/portfolio/musichub-sketches5.png" alt="MusicHub mid fidelity screens">
+                        <button class="expand-btn" onclick="openImageModal(this)" aria-label="Expand image">
+                          <i class="bi bi-arrows-fullscreen"></i>
+                        </button>
+                      </div>
+                    </div>
+
+                    <div class="fidelity-slide">
+                      <p>High fidelity final UI</p>
+                      <div class="fidelity-image-wrap">
+                        <img src="assets/img/portfolio/musichub-sketches6.png" alt="MusicHub high fidelity screens">
+                        <button class="expand-btn" onclick="openImageModal(this)" aria-label="Expand image">
+                          <i class="bi bi-arrows-fullscreen"></i>
+                        </button>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <div class="fidelity-controls">
+                    <button class="fidelity-arrow fidelity-prev" type="button" onclick="moveFidelity(-1)">
+                      <i class="bi bi-chevron-left"></i>
+                    </button>
+
+                    <button class="fidelity-arrow fidelity-next" type="button" onclick="moveFidelity(1)">
+                      <i class="bi bi-chevron-right"></i>
+                    </button>
+                  </div>
                 </div>
 
-                <div class="portfolio-image">
-                  <img src="assets/img/portfolio/musichub-sketches5.png" alt="MusicHub mid fidelity screens">
-                  <button class="expand-btn" onclick="openImageModal(this)" aria-label="Expand image">
-                    <i class="bi bi-arrows-fullscreen"></i>
-                  </button>
-                </div>
-
-                <div class="portfolio-image">
-                  <img src="assets/img/portfolio/musichub-sketches6.png" alt="MusicHub high fidelity screens">
-                  <button class="expand-btn" onclick="openImageModal(this)" aria-label="Expand image">
-                    <i class="bi bi-arrows-fullscreen"></i>
-                  </button>
-                </div>
               </div>
             </div>
 
@@ -858,6 +892,63 @@
 
     function closeImageModal() {
       document.getElementById("imageModal").classList.remove("active");
+    }
+
+    const fidelityStage = document.getElementById('fidelityStage');
+
+    function updateActiveSlide() {
+      if (!fidelityStage) return;
+
+      const slides = Array.from(fidelityStage.querySelectorAll('.fidelity-slide'));
+      const stageCenter = fidelityStage.scrollLeft + fidelityStage.offsetWidth / 2;
+
+      let closestSlide = slides[0];
+      let closestDistance = Infinity;
+
+      slides.forEach((slide) => {
+        const slideCenter = slide.offsetLeft + slide.offsetWidth / 2;
+        const distance = Math.abs(stageCenter - slideCenter);
+
+        if (distance < closestDistance) {
+          closestDistance = distance;
+          closestSlide = slide;
+        }
+      });
+
+      slides.forEach((slide) => slide.classList.remove('active'));
+      closestSlide.classList.add('active');
+    }
+
+    function moveFidelity(direction) {
+      if (!fidelityStage) return;
+
+      const slides = Array.from(fidelityStage.querySelectorAll('.fidelity-slide'));
+      const activeSlide = fidelityStage.querySelector('.fidelity-slide.active') || slides[0];
+      const currentIndex = slides.indexOf(activeSlide);
+
+      let nextIndex = currentIndex + direction;
+
+      if (nextIndex < 0) nextIndex = slides.length - 1;
+      if (nextIndex >= slides.length) nextIndex = 0;
+
+      const targetSlide = slides[nextIndex];
+      const targetLeft = targetSlide.offsetLeft - (fidelityStage.offsetWidth - targetSlide.offsetWidth) / 2;
+
+      fidelityStage.scrollTo({
+        left: targetLeft,
+        behavior: 'smooth'
+      });
+
+      setTimeout(updateActiveSlide, 450);
+    }
+
+    if (fidelityStage) {
+      fidelityStage.addEventListener('scroll', () => {
+        window.requestAnimationFrame(updateActiveSlide);
+      });
+
+      window.addEventListener('load', updateActiveSlide);
+      window.addEventListener('resize', updateActiveSlide);
     }
   </script>
 
