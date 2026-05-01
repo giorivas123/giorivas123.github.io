@@ -62,21 +62,6 @@
         linear-gradient(135deg, #355e3b 0%, #234728 45%, #12351f 100%);
     }
 
-    .case-top {
-      width: min(100%, 980px);
-      margin: 0 auto 45px;
-      text-align: center;
-      padding-top: 10px;
-    }
-
-    .case-logo {
-      width: clamp(150px, 18vw, 260px);
-      height: auto;
-      margin: 0 auto 26px;
-      display: block;
-      filter: drop-shadow(0 10px 25px rgba(0,0,0,0.25));
-    }
-
     .case-intro {
       font-size: 19px;
       line-height: 1.75;
@@ -118,9 +103,9 @@
 
     .walkthrough-video {
       width: 100%;
-      max-width: 760px;
+      max-width: 520px;
       margin: 0 auto;
-      border-radius: 26px;
+      border-radius: 24px;
       overflow: hidden;
       background: rgba(255,255,255,0.06);
       border: 1px solid rgba(255,255,255,0.12);
@@ -129,8 +114,11 @@
 
     .walkthrough-video video {
       width: 100%;
+      height: auto;
+      max-height: 520px;
       display: block;
       background: #000;
+      object-fit: contain;
     }
 
     .article-wrap {
@@ -568,10 +556,6 @@
         line-height: 1.6;
       }
 
-      .case-logo {
-        width: clamp(140px, 55vw, 240px);
-      }
-
       .portfolio-image {
         height: 280px;
       }
@@ -597,6 +581,14 @@
         width: 285px;
         height: 580px;
       }
+
+      .walkthrough-video {
+        max-width: 320px;
+      }
+
+      .walkthrough-video video {
+        max-height: 420px;
+      }
     }
   </style>
 </head>
@@ -609,10 +601,6 @@
 
     <section id="portfolio-details" class="case-study">
       <div class="container">
-
-        <div class="case-top">
-          <img src="assets/img/portfolio/sips-logo.png" alt="SIPS Logo" class="case-logo">
-        </div>
 
         <div class="article-wrap">
 
