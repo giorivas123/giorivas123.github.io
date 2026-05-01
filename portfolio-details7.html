@@ -62,25 +62,28 @@
         linear-gradient(135deg, #355e3b 0%, #234728 45%, #12351f 100%);
     }
 
-.case-hero {
-  position: relative;
-  min-height: 410px;
-  width: min(100%, 1700px);
-  margin: 0 auto 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  border-radius: 34px;
-  overflow: hidden;
-  background:
-    radial-gradient(circle at top, rgba(255,255,255,0.45), transparent 38%),
-    linear-gradient(135deg, #d8d8d8 0%, #bfc1c4 45%, #9ca0a4 100%);
-  box-shadow: 0 30px 90px rgba(0,0,0,0.25);
-}
-.case-study .container {
-  max-width: 1780px;
-}
+    .case-study .container {
+      max-width: 1780px;
+    }
+
+    .case-hero {
+      position: relative;
+      height: 410px;
+      width: min(100%, 1700px);
+      margin: 0 auto 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      border-radius: 34px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at top, rgba(255,255,255,0.45), transparent 38%),
+        linear-gradient(135deg, #d8d8d8 0%, #bfc1c4 45%, #9ca0a4 100%);
+      box-shadow: 0 30px 90px rgba(0,0,0,0.25);
+      box-sizing: border-box;
+    }
+
     .hero-content {
       position: relative;
       z-index: 3;
@@ -89,15 +92,16 @@
     }
 
     .case-logo {
-      width: clamp(160px, 20vw, 320px);
+      width: clamp(150px, 18vw, 280px);
+      max-height: 115px;
       height: auto;
+      object-fit: contain;
       margin: 6px auto 16px;
       display: block;
       filter: drop-shadow(0 10px 25px rgba(0,0,0,0.2));
     }
 
-    .case-eyebrow,
-    .section-label {
+    .case-eyebrow {
       color: #111;
       font-size: 14px;
       font-weight: 700;
@@ -106,14 +110,14 @@
       margin-bottom: 14px;
     }
 
-.case-intro {
-  font-size: 18px;
-  line-height: 1.7;
-  color: #222;
-  max-width: 700px;
-  margin: 0 auto 22px;
-  text-shadow: none;
-}
+    .case-intro {
+      font-size: 18px;
+      line-height: 1.7;
+      color: #222;
+      max-width: 700px;
+      margin: 0 auto 22px;
+      text-shadow: none;
+    }
 
     .case-links {
       display: flex;
@@ -122,74 +126,36 @@
       gap: 14px;
     }
 
-  .case-btn {
-  display: inline-flex;
-  align-items: center;
-  padding: 10px 16px;
-  border-radius: 999px;
-  background: rgba(0,0,0,0.12);
-  color: #111;
-  border: 1px solid rgba(0,0,0,0.18);
-  transition: 0.25s ease;
-  text-decoration: none;
-  backdrop-filter: blur(12px);
-}
+    .case-btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: rgba(0,0,0,0.12);
+      color: #111;
+      border: 1px solid rgba(0,0,0,0.18);
+      transition: 0.25s ease;
+      text-decoration: none;
+      backdrop-filter: blur(12px);
+    }
 
-.case-btn:hover {
-  background: rgba(0,0,0,0.2);
-  color: #111;
-  transform: translateY(-2px);
-}
+    .case-btn:hover {
+      background: rgba(0,0,0,0.2);
+      color: #111;
+      transform: translateY(-2px);
+    }
 
     .coffee-beans-bg {
-      position: absolute;
-      inset: 0;
-      overflow: hidden;
-      z-index: 1;
+      display: none;
     }
 
-    .coffee-beans-bg span {
-      position: absolute;
-      top: -90px;
-      width: 42px;
-      height: 60px;
-      background: #4b2f24;
-      border-radius: 50%;
-      opacity: 0.42;
-      animation: fallBeans 12s linear infinite;
-    }
-
-    .coffee-beans-bg span::after {
-      content: "";
-      position: absolute;
-      top: 8px;
-      left: 50%;
-      width: 4px;
-      height: 44px;
-      background: rgba(255,255,255,0.28);
-      border-radius: 50%;
-      transform: translateX(-50%) rotate(12deg);
-    }
-
-    .coffee-beans-bg span:nth-child(1) { left: 8%; animation-delay: 0s; }
-    .coffee-beans-bg span:nth-child(2) { left: 20%; animation-delay: 2s; transform: scale(0.8); }
-    .coffee-beans-bg span:nth-child(3) { left: 34%; animation-delay: 4s; transform: scale(1.1); }
-    .coffee-beans-bg span:nth-child(4) { left: 48%; animation-delay: 1s; transform: scale(0.9); }
-    .coffee-beans-bg span:nth-child(5) { left: 63%; animation-delay: 3s; transform: scale(1.2); }
-    .coffee-beans-bg span:nth-child(6) { left: 76%; animation-delay: 5s; transform: scale(0.75); }
-    .coffee-beans-bg span:nth-child(7) { left: 88%; animation-delay: 1.5s; transform: scale(1); }
-    .coffee-beans-bg span:nth-child(8) { left: 95%; animation-delay: 6s; transform: scale(0.85); }
-
-    @keyframes fallBeans {
-      0% {
-        top: -100px;
-        transform: translateY(0) rotate(0deg);
-      }
-
-      100% {
-        top: 110%;
-        transform: translateY(40px) rotate(360deg);
-      }
+    .section-label {
+      color: #111;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
     }
 
     .article-wrap {
@@ -513,17 +479,22 @@
 
     @media (max-width: 991px) {
       .case-hero {
-        min-height: 280px;
+        height: 360px;
       }
 
       .case-logo {
-        width: clamp(150px, 38vw, 280px);
+        width: clamp(145px, 32vw, 240px);
+        max-height: 100px;
       }
     }
 
     @media (max-width: 768px) {
       .case-study {
         padding: 60px 0;
+      }
+
+      .case-hero {
+        height: 340px;
       }
 
       .process-step {
@@ -572,7 +543,9 @@
       }
 
       .case-hero {
-        min-height: 260px;
+        height: auto;
+        min-height: 300px;
+        padding: 36px 0;
       }
 
       .hero-content {
@@ -585,7 +558,8 @@
       }
 
       .case-logo {
-        width: clamp(140px, 55vw, 260px);
+        width: clamp(130px, 50vw, 220px);
+        max-height: 90px;
       }
 
       .portfolio-image,
@@ -628,20 +602,11 @@
       <div class="container">
 
         <div class="case-hero">
-          <div class="coffee-beans-bg">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-
           <div class="hero-content">
             <div class="case-eyebrow">Web / Product Design</div>
+
             <img src="assets/img/portfolio/sips-logo.png" alt="SIPS Logo" class="case-logo">
+
             <p class="case-intro">
               SIPS is a mobile first beverage discovery product designed to help users find local drink spots quickly, while giving small businesses more visibility.
             </p>
