@@ -57,82 +57,63 @@
       padding: 80px 0;
       min-height: 100vh;
       background:
-        radial-gradient(circle at top left, rgba(255,255,255,0.08), transparent 32%),
-        radial-gradient(circle at bottom left, rgba(0,0,0,0.24), transparent 28%),
+        radial-gradient(circle at top left, rgba(255,255,255,0.06), transparent 32%),
+        radial-gradient(circle at bottom left, rgba(0,0,0,0.2), transparent 28%),
         linear-gradient(135deg, #355e3b 0%, #234728 45%, #12351f 100%);
     }
 
-    .case-study .container {
-      max-width: 1780px;
-    }
-
-    .case-hero {
-      position: relative;
-      height: 330px !important;
-      min-height: 330px !important;
-      max-height: 330px !important;
-      width: min(86%, 1450px);
-      margin: 0 auto 60px;
-      padding: 0 !important;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      border-radius: 38px;
-      overflow: hidden;
-      background:
-        radial-gradient(circle at 50% 0%, rgba(255,255,255,0.65), transparent 42%),
-        linear-gradient(135deg, #f0f0ef 0%, #cfd1d2 44%, #a5a9ac 100%);
-      box-shadow:
-        0 32px 90px rgba(0,0,0,0.32),
-        inset 0 1px 0 rgba(255,255,255,0.7);
-    }
-
-    .case-hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(90deg, rgba(255,255,255,0.2), transparent 35%, rgba(0,0,0,0.08)),
-        radial-gradient(circle at center, rgba(255,255,255,0.3), transparent 55%);
-      pointer-events: none;
-    }
-
+.case-hero {
+  position: relative;
+  min-height: 410px;
+  width: min(100%, 1700px);
+  margin: 0 auto 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 34px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at top, rgba(255,255,255,0.45), transparent 38%),
+    linear-gradient(135deg, #d8d8d8 0%, #bfc1c4 45%, #9ca0a4 100%);
+  box-shadow: 0 30px 90px rgba(0,0,0,0.25);
+}
+.case-study .container {
+  max-width: 1780px;
+}
     .hero-content {
       position: relative;
       z-index: 3;
-      max-width: 850px;
-      padding: 0 28px !important;
-    }
-
-    .case-eyebrow {
-      color: #151515;
-      font-size: 15px;
-      font-weight: 800;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      margin-bottom: 20px;
+      max-width: 700px;
+      padding: 30px 20px;
     }
 
     .case-logo {
-      width: auto !important;
-      height: 105px !important;
-      max-height: 105px !important;
-      margin: 0 auto 22px !important;
+      width: clamp(160px, 20vw, 320px);
+      height: auto;
+      margin: 6px auto 16px;
       display: block;
-      object-fit: contain !important;
-      filter: drop-shadow(0 12px 22px rgba(0,0,0,0.22));
+      filter: drop-shadow(0 10px 25px rgba(0,0,0,0.2));
     }
 
-    .case-intro {
-      font-size: 19px !important;
-      line-height: 1.55 !important;
-      color: #ffffff;
-      max-width: 850px;
-      margin: 0 auto 24px !important;
-      font-weight: 500;
-      text-shadow: 0 2px 14px rgba(0,0,0,0.22);
+    .case-eyebrow,
+    .section-label {
+      color: #111;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
     }
+
+.case-intro {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #222;
+  max-width: 700px;
+  margin: 0 auto 22px;
+  text-shadow: none;
+}
 
     .case-links {
       display: flex;
@@ -141,42 +122,74 @@
       gap: 14px;
     }
 
-    .case-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-width: 150px;
-      padding: 12px 22px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.18);
-      color: #111;
-      border: 1px solid rgba(0,0,0,0.16);
-      transition: 0.25s ease;
-      text-decoration: none;
-      backdrop-filter: blur(14px);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.35);
-      font-size: 16px;
-      font-weight: 600;
-    }
+  .case-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: rgba(0,0,0,0.12);
+  color: #111;
+  border: 1px solid rgba(0,0,0,0.18);
+  transition: 0.25s ease;
+  text-decoration: none;
+  backdrop-filter: blur(12px);
+}
 
-    .case-btn:hover {
-      background: rgba(255,255,255,0.32);
-      color: #111;
-      transform: translateY(-2px);
-      box-shadow: 0 12px 26px rgba(0,0,0,0.18);
-    }
+.case-btn:hover {
+  background: rgba(0,0,0,0.2);
+  color: #111;
+  transform: translateY(-2px);
+}
 
     .coffee-beans-bg {
-      display: none;
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      z-index: 1;
     }
 
-    .section-label {
-      color: #b9c7b8;
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin-bottom: 14px;
+    .coffee-beans-bg span {
+      position: absolute;
+      top: -90px;
+      width: 42px;
+      height: 60px;
+      background: #4b2f24;
+      border-radius: 50%;
+      opacity: 0.42;
+      animation: fallBeans 12s linear infinite;
+    }
+
+    .coffee-beans-bg span::after {
+      content: "";
+      position: absolute;
+      top: 8px;
+      left: 50%;
+      width: 4px;
+      height: 44px;
+      background: rgba(255,255,255,0.28);
+      border-radius: 50%;
+      transform: translateX(-50%) rotate(12deg);
+    }
+
+    .coffee-beans-bg span:nth-child(1) { left: 8%; animation-delay: 0s; }
+    .coffee-beans-bg span:nth-child(2) { left: 20%; animation-delay: 2s; transform: scale(0.8); }
+    .coffee-beans-bg span:nth-child(3) { left: 34%; animation-delay: 4s; transform: scale(1.1); }
+    .coffee-beans-bg span:nth-child(4) { left: 48%; animation-delay: 1s; transform: scale(0.9); }
+    .coffee-beans-bg span:nth-child(5) { left: 63%; animation-delay: 3s; transform: scale(1.2); }
+    .coffee-beans-bg span:nth-child(6) { left: 76%; animation-delay: 5s; transform: scale(0.75); }
+    .coffee-beans-bg span:nth-child(7) { left: 88%; animation-delay: 1.5s; transform: scale(1); }
+    .coffee-beans-bg span:nth-child(8) { left: 95%; animation-delay: 6s; transform: scale(0.85); }
+
+    @keyframes fallBeans {
+      0% {
+        top: -100px;
+        transform: translateY(0) rotate(0deg);
+      }
+
+      100% {
+        top: 110%;
+        transform: translateY(40px) rotate(360deg);
+      }
     }
 
     .article-wrap {
@@ -196,14 +209,14 @@
     }
 
     .article-section h2 {
-      color: #fff;
+      color: #111;
       font-size: 36px;
       font-weight: 800;
       margin-bottom: 22px;
     }
 
     .article-section h3 {
-      color: #fff;
+      color: #111;
       font-size: 24px;
       font-weight: 700;
       margin-bottom: 16px;
@@ -500,43 +513,17 @@
 
     @media (max-width: 991px) {
       .case-hero {
-        width: 88%;
-        height: 315px !important;
-        min-height: 315px !important;
-        max-height: 315px !important;
+        min-height: 280px;
       }
 
       .case-logo {
-        height: 92px !important;
-        max-height: 92px !important;
-      }
-
-      .case-intro {
-        font-size: 17px !important;
+        width: clamp(150px, 38vw, 280px);
       }
     }
 
     @media (max-width: 768px) {
       .case-study {
         padding: 60px 0;
-      }
-
-      .case-hero {
-        width: 90%;
-        height: 340px !important;
-        min-height: 340px !important;
-        max-height: 340px !important;
-        border-radius: 30px;
-      }
-
-      .case-links {
-        gap: 10px;
-      }
-
-      .case-btn {
-        font-size: 14px;
-        min-width: auto;
-        padding: 10px 16px;
       }
 
       .process-step {
@@ -585,30 +572,20 @@
       }
 
       .case-hero {
-        width: 92%;
-        height: 360px !important;
-        min-height: 360px !important;
-        max-height: 360px !important;
+        min-height: 260px;
       }
 
       .hero-content {
-        padding: 0 18px !important;
-      }
-
-      .case-eyebrow {
-        font-size: 12px;
-        margin-bottom: 16px;
+        padding: 24px 18px;
       }
 
       .case-intro {
-        font-size: 15px !important;
-        line-height: 1.6 !important;
+        font-size: 15px;
+        line-height: 1.6;
       }
 
       .case-logo {
-        height: 82px !important;
-        max-height: 82px !important;
-        margin-bottom: 18px !important;
+        width: clamp(140px, 55vw, 260px);
       }
 
       .portfolio-image,
@@ -651,11 +628,20 @@
       <div class="container">
 
         <div class="case-hero">
+          <div class="coffee-beans-bg">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
           <div class="hero-content">
             <div class="case-eyebrow">Web / Product Design</div>
-
             <img src="assets/img/portfolio/sips-logo.png" alt="SIPS Logo" class="case-logo">
-
             <p class="case-intro">
               SIPS is a mobile first beverage discovery product designed to help users find local drink spots quickly, while giving small businesses more visibility.
             </p>
