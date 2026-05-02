@@ -39,6 +39,7 @@
       padding: 0;
       scroll-behavior: smooth;
       min-height: 100%;
+      height: auto;
     }
 
     html {
@@ -62,6 +63,8 @@
       animation: backgroundShift 8s ease-in-out infinite;
       color: #fff;
       overflow-x: hidden;
+      overflow-y: auto;
+      overscroll-behavior-y: none;
       position: relative;
     }
 
@@ -80,7 +83,7 @@
     body::after {
       content: "";
       position: fixed;
-      inset: -20%;
+      inset: -10%;
       pointer-events: none;
       z-index: -1;
       mix-blend-mode: screen;
@@ -485,14 +488,15 @@
        WORK SECTION
     ========================= */
     .work-clean {
-      padding: 90px 0 100px;
+      padding: 90px 0 40px;
       position: relative;
       margin-top: -44px;
+      margin-bottom: 0;
       z-index: 3;
     }
 
     .work-clean .tablet-card:last-of-type {
-      margin-bottom: 90px;
+      margin-bottom: 40px;
     }
 
     .work-clean .section-intro {
@@ -865,11 +869,23 @@
     #footer {
       background: transparent;
       border-top: 1px solid rgba(255, 255, 255, 0.08);
-      margin-top: 40px;
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
+      padding: 26px 0 26px !important;
     }
 
     #footer .copyright {
       color: rgba(255, 255, 255, 0.72);
+    }
+
+    main,
+    #main {
+      margin-bottom: 0 !important;
+      padding-bottom: 0 !important;
+    }
+
+    #preloader {
+      display: none !important;
     }
 
     /* =========================
@@ -964,6 +980,8 @@
       html,
       body {
         background-attachment: scroll !important;
+        height: auto !important;
+        min-height: 100% !important;
       }
 
       body {
@@ -972,7 +990,21 @@
 
       body::before,
       body::after {
-        position: absolute;
+        position: fixed;
+        inset: 0;
+      }
+
+      .work-clean {
+        padding-bottom: 20px;
+      }
+
+      .about-card-section:last-of-type,
+      #facts.about-card-section {
+        padding-bottom: 0;
+      }
+
+      #footer {
+        padding-bottom: 18px !important;
       }
 
       .work-clean .tablet-card {
