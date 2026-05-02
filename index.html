@@ -38,6 +38,17 @@
       margin: 0;
       padding: 0;
       scroll-behavior: smooth;
+      min-height: 100%;
+    }
+
+    html {
+      background:
+        radial-gradient(circle at 15% 20%, rgba(145, 98, 255, 0.22), transparent 24%),
+        radial-gradient(circle at 85% 18%, rgba(0, 224, 255, 0.16), transparent 22%),
+        radial-gradient(circle at 30% 75%, rgba(145, 98, 255, 0.14), transparent 26%),
+        linear-gradient(135deg, #0d0d12 0%, #12131b 35%, #1a1330 100%);
+      background-size: 180% 180%, 190% 190%, 170% 170%, 150% 150%;
+      background-attachment: scroll;
     }
 
     body {
@@ -47,11 +58,22 @@
         radial-gradient(circle at 30% 75%, rgba(145, 98, 255, 0.14), transparent 26%),
         linear-gradient(135deg, #0d0d12 0%, #12131b 35%, #1a1330 100%);
       background-size: 180% 180%, 190% 190%, 170% 170%, 150% 150%;
-      background-attachment: fixed;
+      background-attachment: scroll;
       animation: backgroundShift 8s ease-in-out infinite;
       color: #fff;
       overflow-x: hidden;
       position: relative;
+    }
+
+    section,
+    main,
+    #main,
+    #hero,
+    #work,
+    #about,
+    #skills,
+    #facts {
+      background: transparent !important;
     }
 
     body::before,
@@ -939,6 +961,20 @@
     }
 
     @media (max-width: 768px) {
+      html,
+      body {
+        background-attachment: scroll !important;
+      }
+
+      body {
+        animation: none;
+      }
+
+      body::before,
+      body::after {
+        position: absolute;
+      }
+
       .work-clean .tablet-card {
         padding: 22px;
       }
