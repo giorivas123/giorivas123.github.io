@@ -70,54 +70,12 @@
         linear-gradient(135deg, #0b0b18 0%, #070711 45%, #12091f 100%);
     }
 
-    .case-hero {
-      position: relative;
-      min-height: 300px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      margin-bottom: 40px;
-      border-radius: 34px;
-      overflow: hidden;
-      background:
-        radial-gradient(circle at top, rgba(255,255,255,0.28), transparent 38%),
-        linear-gradient(135deg, #1c1c2e 0%, #2b183f 45%, #12091f 100%);
-      box-shadow: 0 30px 90px rgba(0,0,0,0.25);
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 3;
-      max-width: 700px;
-      padding: 30px 20px;
-    }
-
-    .case-logo {
-      width: clamp(160px, 20vw, 320px);
-      height: auto;
-      margin: 6px auto 16px;
-      display: block;
-      filter: drop-shadow(0 10px 25px rgba(0,0,0,0.2));
-    }
-
-    .case-eyebrow,
-    .section-label {
-      color: #c7a7ff;
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin-bottom: 14px;
-    }
-
     .case-intro {
-      font-size: 18px;
-      line-height: 1.7;
-      color: #f8f8f8;
-      max-width: 700px;
-      margin: 0 auto 22px;
-      text-shadow: 0 8px 22px rgba(0,0,0,0.18);
+      font-size: 19px;
+      line-height: 1.75;
+      color: #e9edf7;
+      max-width: 760px;
+      margin: 0 auto 26px;
     }
 
     .case-links {
@@ -125,61 +83,50 @@
       justify-content: center;
       flex-wrap: wrap;
       gap: 14px;
+      margin: 28px 0 40px;
     }
 
     .case-btn {
       display: inline-flex;
       align-items: center;
+      gap: 8px;
       padding: 10px 16px;
       border-radius: 999px;
-      background: rgba(255,255,255,0.16);
+      background: rgba(255,255,255,0.15);
       color: #fff;
-      border: 1px solid rgba(255,255,255,0.3);
+      font-size: 14px;
+      font-weight: 600;
+      border: 1px solid rgba(255,255,255,0.18);
       transition: 0.25s ease;
       text-decoration: none;
       backdrop-filter: blur(12px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
     }
 
     .case-btn:hover {
-      background: rgba(255,255,255,0.28);
+      background: rgba(255,255,255,0.22);
       color: #fff;
       transform: translateY(-2px);
     }
 
-    .music-notes-bg {
-      position: absolute;
-      inset: 0;
+    .walkthrough-video {
+      width: 100%;
+      max-width: 520px;
+      margin: 0 auto;
+      border-radius: 24px;
       overflow: hidden;
-      z-index: 1;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.25);
     }
 
-    .music-notes-bg span {
-      position: absolute;
-      top: -60px;
-      color: rgba(255,255,255,0.25);
-      font-size: 42px;
-      animation: fallNotes 12s linear infinite;
-    }
-
-    .music-notes-bg span:nth-child(1) { left: 8%; animation-delay: 0s; }
-    .music-notes-bg span:nth-child(2) { left: 20%; animation-delay: 2s; }
-    .music-notes-bg span:nth-child(3) { left: 34%; animation-delay: 4s; }
-    .music-notes-bg span:nth-child(4) { left: 48%; animation-delay: 1s; }
-    .music-notes-bg span:nth-child(5) { left: 63%; animation-delay: 3s; }
-    .music-notes-bg span:nth-child(6) { left: 76%; animation-delay: 5s; }
-    .music-notes-bg span:nth-child(7) { left: 88%; animation-delay: 1.5s; }
-    .music-notes-bg span:nth-child(8) { left: 95%; animation-delay: 6s; }
-
-    @keyframes fallNotes {
-      0% {
-        top: -80px;
-        transform: translateY(0) rotate(0deg);
-      }
-
-      100% {
-        top: 110%;
-        transform: translateY(40px) rotate(360deg);
-      }
+    .walkthrough-video video {
+      width: 100%;
+      height: auto;
+      max-height: 520px;
+      display: block;
+      background: #000;
+      object-fit: contain;
     }
 
     .article-wrap {
@@ -210,6 +157,15 @@
       font-size: 24px;
       font-weight: 700;
       margin-bottom: 16px;
+    }
+
+    .section-label {
+      color: #c7a7ff;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
     }
 
     .article-section p,
@@ -320,7 +276,9 @@
       position: fixed;
       inset: 0;
       z-index: 999999;
-      background: rgba(5,9,20,0.95);
+      background: rgba(5,9,20,0.55);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -338,8 +296,34 @@
 
     .image-modal img {
       max-width: 92vw;
-      max-height: 92vh;
+      max-height: 88vh;
       object-fit: contain;
+      border-radius: 18px;
+      box-shadow: 0 30px 90px rgba(0,0,0,0.45);
+    }
+
+    .modal-close {
+      position: fixed;
+      top: 24px;
+      right: 24px;
+      z-index: 1000000;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.16);
+      color: #fff;
+      font-size: 28px;
+      line-height: 1;
+      cursor: pointer;
+      backdrop-filter: blur(12px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-close:hover {
+      background: rgba(255,255,255,0.25);
     }
 
     .fidelity-carousel {
@@ -458,13 +442,46 @@
     }
 
     .takeaway-card {
-      padding: 24px;
-      border-radius: 20px;
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.1);
+      padding: 26px;
+      border-radius: 24px;
+      background: linear-gradient(145deg, rgba(255,255,255,0.11), rgba(255,255,255,0.05));
+      border: 1px solid rgba(255,255,255,0.14);
       color: #dce4f8;
       font-size: 17px;
       line-height: 1.6;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.18);
+      transition: 0.25s ease;
+    }
+
+    .takeaway-card:hover {
+      transform: translateY(-5px);
+      background: linear-gradient(145deg, rgba(255,255,255,0.15), rgba(255,255,255,0.07));
+    }
+
+    .takeaway-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 16px;
+      background: rgba(199,167,255,0.14);
+      color: #c7a7ff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin-bottom: 16px;
+    }
+
+    .takeaway-card h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+
+    .takeaway-card p {
+      font-size: 16px;
+      line-height: 1.7;
+      margin: 0;
+      color: #cfd7ea;
     }
 
     .prototype-preview {
@@ -491,31 +508,23 @@
       align-items: center;
       justify-content: center;
       margin-top: 22px;
-      padding: 12px 22px;
-      background: #7b2cff;
-      color: #fff;
-      text-decoration: none;
+      padding: 10px 16px;
       border-radius: 999px;
-      font-size: 15px;
+      background: rgba(255,255,255,0.15);
+      color: #fff;
+      font-size: 14px;
       font-weight: 600;
+      border: 1px solid rgba(255,255,255,0.18);
       transition: 0.25s ease;
-      box-shadow: 0 12px 28px rgba(123,44,255,0.3);
+      text-decoration: none;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
     }
 
     .prototype-btn:hover {
-      background: #5a1edc;
+      background: rgba(255,255,255,0.22);
       color: #fff;
       transform: translateY(-2px);
-    }
-
-    @media (max-width: 991px) {
-      .case-hero {
-        min-height: 280px;
-      }
-
-      .case-logo {
-        width: clamp(150px, 38vw, 280px);
-      }
     }
 
     @media (max-width: 768px) {
@@ -568,21 +577,9 @@
         font-size: 16px;
       }
 
-      .case-hero {
-        min-height: 260px;
-      }
-
-      .hero-content {
-        padding: 24px 18px;
-      }
-
       .case-intro {
-        font-size: 15px;
+        font-size: 16px;
         line-height: 1.6;
-      }
-
-      .case-logo {
-        width: clamp(140px, 55vw, 260px);
       }
 
       .portfolio-image,
@@ -610,6 +607,14 @@
       .prototype-preview img {
         max-width: 280px;
       }
+
+      .walkthrough-video {
+        max-width: 320px;
+      }
+
+      .walkthrough-video video {
+        max-height: 420px;
+      }
     }
   </style>
 </head>
@@ -623,41 +628,39 @@
     <section id="portfolio-details" class="case-study">
       <div class="container">
 
-        <div class="case-hero">
-          <div class="music-notes-bg">
-            <span>♪</span>
-            <span>♫</span>
-            <span>♬</span>
-            <span>♪</span>
-            <span>♫</span>
-            <span>♬</span>
-            <span>♪</span>
-            <span>♫</span>
-          </div>
-
-          <div class="hero-content">
-            <div class="case-eyebrow">Web / Product Design</div>
-            <img src="assets/img/portfolio/musichub-logo.png" alt="MusicHub Logo" class="case-logo">
-            <p class="case-intro">
-              MusicHub is a mobile first music discovery product designed to help users explore artists, events, and music experiences in one focused place.
-            </p>
-
-            <div class="case-links">
-              <a class="case-btn" href="javascript:void(0)">View Live Demo</a>
-              <a class="case-btn" href="javascript:void(0)">View Github</a>
-              <a class="case-btn glightbox" href="assets/videos/MusicHubVideoWalkthrough.mp4" data-glightbox="type: video">Watch Walkthrough</a>
-            </div>
-          </div>
-        </div>
-
         <div class="article-wrap">
 
           <div class="article-section">
             <div class="section-label">Overview</div>
             <h2>A focused way to discover music experiences</h2>
+
+            <p class="case-intro">
+              MusicHub is a mobile first music discovery product designed to help users explore artists, events, and music experiences in one focused place.
+            </p>
+
             <p>
               I created MusicHub to make discovering music, artists, and local events feel more intuitive and visually engaging. Instead of jumping between different platforms, MusicHub gives users a focused place to explore music related content.
             </p>
+
+            <div class="case-links">
+              <a class="case-btn" href="javascript:void(0)">
+                <i class="bi bi-box-arrow-up-right"></i> View Live Demo
+              </a>
+
+              <a class="case-btn" href="javascript:void(0)">
+                <i class="bi bi-github"></i> View GitHub
+              </a>
+
+              <a class="case-btn" href="assets/videos/MusicHubVideoWalkthrough.mp4" target="_blank">
+                <i class="bi bi-play-circle"></i> Watch Walkthrough
+              </a>
+            </div>
+
+            <div class="walkthrough-video">
+              <video controls>
+                <source src="assets/videos/MusicHubVideoWalkthrough.mp4" type="video/mp4">
+              </video>
+            </div>
           </div>
 
           <div class="article-section">
@@ -813,10 +816,29 @@
             </p>
 
             <div class="takeaway-grid">
-              <div class="takeaway-card">I strengthened my ability to define a focused product concept.</div>
-              <div class="takeaway-card">I practiced designing visual, content driven mobile interfaces.</div>
-              <div class="takeaway-card">I translated design decisions into real frontend code.</div>
-              <div class="takeaway-card">I learned how music content can be structured for easier discovery.</div>
+              <div class="takeaway-card">
+                <div class="takeaway-icon"><i class="bi bi-lightbulb"></i></div>
+                <h3>Focused product thinking</h3>
+                <p>I strengthened my ability to define a focused product concept instead of making the experience feel too broad.</p>
+              </div>
+
+              <div class="takeaway-card">
+                <div class="takeaway-icon"><i class="bi bi-music-note-beamed"></i></div>
+                <h3>Visual music discovery</h3>
+                <p>I practiced designing visual, content driven mobile interfaces that support browsing and exploration.</p>
+              </div>
+
+              <div class="takeaway-card">
+                <div class="takeaway-icon"><i class="bi bi-code-slash"></i></div>
+                <h3>Design into code</h3>
+                <p>I translated design decisions into real frontend code and learned how layout choices behave in the browser.</p>
+              </div>
+
+              <div class="takeaway-card">
+                <div class="takeaway-icon"><i class="bi bi-grid-3x3-gap"></i></div>
+                <h3>Clearer content structure</h3>
+                <p>I learned how music content can be organized in a way that makes discovery feel easier and more intentional.</p>
+              </div>
             </div>
           </div>
 
@@ -853,6 +875,7 @@
   </a>
 
   <div id="imageModal" class="image-modal" onclick="closeImageModal()">
+    <button class="modal-close" onclick="closeImageModal(event)" aria-label="Close expanded image">×</button>
     <img id="modalImage" src="" alt="Expanded project image">
   </div>
 
@@ -891,7 +914,8 @@
       modal.classList.add("active");
     }
 
-    function closeImageModal() {
+    function closeImageModal(event) {
+      if (event) event.stopPropagation();
       document.getElementById("imageModal").classList.remove("active");
     }
 
