@@ -28,37 +28,317 @@
   <link href="assets/css/style.css" rel="stylesheet">
 
   <style>
-    html {
+    html,
+    body {
+      margin: 0;
+      padding: 0;
       scroll-behavior: smooth;
+      min-height: 100%;
+      height: auto;
+    }
+
+    html {
+      background:
+        radial-gradient(circle at 15% 20%, rgba(145, 98, 255, 0.22), transparent 24%),
+        radial-gradient(circle at 85% 18%, rgba(0, 224, 255, 0.16), transparent 22%),
+        radial-gradient(circle at 30% 75%, rgba(145, 98, 255, 0.14), transparent 26%),
+        linear-gradient(135deg, #0d0d12 0%, #12131b 35%, #1a1330 100%);
+      background-size: 180% 180%, 190% 190%, 170% 170%, 150% 150%;
+      background-attachment: scroll;
     }
 
     body {
       background:
-        radial-gradient(1200px 800px at 20% 10%, rgba(0, 82, 255, .35), transparent 60%),
-        radial-gradient(900px 700px at 80% 30%, rgba(140, 0, 255, .25), transparent 55%),
-        radial-gradient(900px 700px at 40% 90%, rgba(0, 255, 200, .12), transparent 55%),
-        linear-gradient(180deg, #0b0f19 0%, #070a12 100%);
+        radial-gradient(circle at 15% 20%, rgba(145, 98, 255, 0.22), transparent 24%),
+        radial-gradient(circle at 85% 18%, rgba(0, 224, 255, 0.16), transparent 22%),
+        radial-gradient(circle at 30% 75%, rgba(145, 98, 255, 0.14), transparent 26%),
+        linear-gradient(135deg, #0d0d12 0%, #12131b 35%, #1a1330 100%);
+      background-size: 180% 180%, 190% 190%, 170% 170%, 150% 150%;
+      background-attachment: scroll;
+      animation: backgroundShift 8s ease-in-out infinite;
       color: #fff;
       overflow-x: hidden;
+      overflow-y: auto;
+      overscroll-behavior-y: none;
+      position: relative;
+    }
+
+    section,
+    main,
+    #main,
+    #resume {
+      background: transparent !important;
+    }
+
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      inset: -10%;
+      pointer-events: none;
+      z-index: -1;
+      mix-blend-mode: screen;
     }
 
     body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='.15'/%3E%3C/svg%3E");
-      opacity: .18;
-      mix-blend-mode: overlay;
-      z-index: 0;
+      background:
+        radial-gradient(circle at 20% 30%, rgba(132, 76, 255, 0.16), transparent 20%),
+        radial-gradient(circle at 75% 25%, rgba(54, 160, 255, 0.14), transparent 18%),
+        radial-gradient(circle at 60% 70%, rgba(108, 70, 255, 0.12), transparent 22%);
+      background-size: 140% 140%;
+      animation: backgroundFloatOne 10s ease-in-out infinite alternate;
+      filter: blur(18px);
     }
 
-    #header,
-    #hero,
-    #main,
+    body::after {
+      background:
+        radial-gradient(circle at 70% 35%, rgba(76, 132, 255, 0.12), transparent 18%),
+        radial-gradient(circle at 30% 75%, rgba(165, 96, 255, 0.14), transparent 20%);
+      background-size: 145% 145%;
+      animation: backgroundFloatTwo 7s ease-in-out infinite alternate;
+      filter: blur(22px);
+    }
+
+    @keyframes backgroundShift {
+      0% {
+        background-position: 0% 0%, 100% 0%, 0% 100%, 0% 50%;
+      }
+
+      25% {
+        background-position: 18% 8%, 82% 18%, 10% 82%, 25% 50%;
+      }
+
+      50% {
+        background-position: 35% 20%, 65% 30%, 22% 65%, 100% 50%;
+      }
+
+      75% {
+        background-position: 15% 12%, 90% 8%, 5% 90%, 75% 50%;
+      }
+
+      100% {
+        background-position: 0% 0%, 100% 0%, 0% 100%, 0% 50%;
+      }
+    }
+
+    @keyframes backgroundFloatOne {
+      0% {
+        transform: translate3d(-30px, -20px, 0) scale(1);
+      }
+
+      100% {
+        transform: translate3d(40px, 30px, 0) scale(1.12);
+      }
+    }
+
+    @keyframes backgroundFloatTwo {
+      0% {
+        transform: translate3d(25px, -15px, 0) scale(1);
+      }
+
+      100% {
+        transform: translate3d(-35px, 35px, 0) scale(1.1);
+      }
+    }
+
+    #header {
+      position: fixed !important;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      z-index: 99999;
+      background: rgba(10, 10, 14, 0.22) !important;
+      border: none !important;
+      box-shadow: none !important;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+
+    #header::before,
+    #header::after {
+      content: none !important;
+    }
+
+    #header .container-fluid {
+      padding: 16px 26px;
+    }
+
+    .logo a {
+      font-weight: 700;
+      letter-spacing: 0.6px;
+    }
+
+    .header-social-links a {
+      transition: transform .25s ease, opacity .25s ease;
+    }
+
+    .header-social-links a:hover {
+      transform: translateY(-2px);
+      opacity: 0.85;
+    }
+
+    :root {
+      --accent-purple: #9457FF;
+    }
+
+    .section-title h2::after {
+      background: var(--accent-purple) !important;
+    }
+
+    .navbar a:hover,
+    .navbar .active,
+    .navbar li:hover > a {
+      color: var(--accent-purple) !important;
+    }
+
+    .navbar a::before {
+      background: var(--accent-purple) !important;
+    }
+
+    .resume .resume-item {
+      border-left: 2px solid var(--accent-purple) !important;
+    }
+
+    .resume .resume-item::before {
+      border: 2px solid var(--accent-purple) !important;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, rgba(148, 87, 255, 0.95), rgba(103, 58, 183, 0.95)) !important;
+      border: none !important;
+    }
+
+    .btn-primary:hover {
+      opacity: 0.9;
+    }
+
+    .back-to-top {
+      background: var(--accent-purple) !important;
+    }
+
+    .menu-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .25s ease, visibility .25s ease;
+      z-index: 100000;
+    }
+
+    .menu-overlay.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .menu-panel {
+      width: min(420px, calc(100% - 36px));
+      margin-left: auto;
+      height: 100%;
+      background:
+        linear-gradient(180deg, #141621 0%, #1a1430 100%);
+      border-left: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: -20px 0 60px rgba(0, 0, 0, 0.35);
+    }
+
+    .menu-close {
+      margin-left: auto;
+      background: transparent;
+      border: none;
+      color: #fff;
+      font-size: 22px;
+      margin-bottom: 38px;
+    }
+
+    .menu-links {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .menu-links a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 24px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      transition: opacity .2s ease, transform .2s ease;
+    }
+
+    .menu-links a:hover {
+      opacity: 0.8;
+      transform: translateX(4px);
+    }
+
+    .menu-toggle {
+      background: transparent;
+      border: none;
+      color: #fff;
+      font-size: 28px;
+      display: none;
+      align-items: center;
+      justify-content: center;
+    }
+
     #footer {
-      position: relative;
-      z-index: 1;
+      background: transparent;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
+      padding: 26px 0 26px !important;
+    }
+
+    #footer .copyright {
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    main,
+    #main {
+      margin-bottom: 0 !important;
+      padding-bottom: 0 !important;
+    }
+
+    #preloader {
+      display: none !important;
+    }
+
+    @media (max-width: 991px) {
+      #header .navbar ul {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: inline-flex;
+      }
+
+      .header-social-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 768px) {
+      html,
+      body {
+        background-attachment: scroll !important;
+        height: auto !important;
+        min-height: 100% !important;
+      }
+
+      body {
+        animation: none;
+      }
+
+      body::before,
+      body::after {
+        position: fixed;
+        inset: 0;
+      }
     }
   </style>
 </head>
