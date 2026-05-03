@@ -219,6 +219,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      position: relative;
     }
 
     .portfolio-image img {
@@ -228,10 +229,6 @@
       max-height: 100%;
       display: block;
       object-fit: contain;
-    }
-
-    .step-3-image {
-      position: relative;
     }
 
     .expand-btn {
@@ -345,6 +342,7 @@
       filter: blur(5px) brightness(0.7);
       transform: scale(0.92);
       transition: 0.35s ease;
+      position: relative;
     }
 
     .fidelity-slide.active {
@@ -676,6 +674,9 @@
 
                 <div class="portfolio-image">
                   <img src="assets/img/portfolio/sips-sketches.png" alt="SIPS early sketches">
+                  <button class="expand-btn" type="button" onclick="openImageModal('assets/img/portfolio/sips-sketches.png', 'SIPS early sketches')" aria-label="Expand image">
+                    <i class="bi bi-arrows-fullscreen"></i>
+                  </button>
                 </div>
               </div>
             </div>
@@ -696,6 +697,9 @@
 
                 <div class="portfolio-image">
                   <img src="assets/img/portfolio/sips-sketches2.png" alt="SIPS experience sketches">
+                  <button class="expand-btn" type="button" onclick="openImageModal('assets/img/portfolio/sips-sketches2.png', 'SIPS experience sketches')" aria-label="Expand image">
+                    <i class="bi bi-arrows-fullscreen"></i>
+                  </button>
                 </div>
               </div>
             </div>
@@ -708,10 +712,9 @@
                   I built the flow around a simple sequence: open, browse, select, and explore. This helped me think through what users needed first and how the interface could guide them without feeling heavy.
                 </p>
 
-                <div class="portfolio-image step-3-image">
+                <div class="portfolio-image">
                   <img src="assets/img/portfolio/sips-sketches3.png" alt="SIPS user flow sketches">
-
-                  <button class="expand-btn" onclick="openImageModal()" aria-label="Expand user flow image">
+                  <button class="expand-btn" type="button" onclick="openImageModal('assets/img/portfolio/sips-sketches3.png', 'SIPS user flow sketches')" aria-label="Expand image">
                     <i class="bi bi-arrows-fullscreen"></i>
                   </button>
                 </div>
@@ -732,16 +735,25 @@
                     <div class="fidelity-slide active">
                       <p>Low fidelity wireframes</p>
                       <img src="assets/img/portfolio/sips-sketches4.png" alt="SIPS low fidelity wireframes">
+                      <button class="expand-btn" type="button" onclick="openImageModal('assets/img/portfolio/sips-sketches4.png', 'SIPS low fidelity wireframes')" aria-label="Expand image">
+                        <i class="bi bi-arrows-fullscreen"></i>
+                      </button>
                     </div>
 
                     <div class="fidelity-slide">
                       <p>Mid fidelity screens</p>
                       <img src="assets/img/portfolio/sips-sketches5.png" alt="SIPS mid fidelity screens">
+                      <button class="expand-btn" type="button" onclick="openImageModal('assets/img/portfolio/sips-sketches5.png', 'SIPS mid fidelity screens')" aria-label="Expand image">
+                        <i class="bi bi-arrows-fullscreen"></i>
+                      </button>
                     </div>
 
                     <div class="fidelity-slide">
                       <p>High fidelity final UI</p>
                       <img src="assets/img/portfolio/sips-sketches6.png" alt="SIPS high fidelity screens">
+                      <button class="expand-btn" type="button" onclick="openImageModal('assets/img/portfolio/sips-sketches6.png', 'SIPS high fidelity screens')" aria-label="Expand image">
+                        <i class="bi bi-arrows-fullscreen"></i>
+                      </button>
                     </div>
 
                   </div>
@@ -770,6 +782,9 @@
 
                 <div class="portfolio-image">
                   <img src="assets/img/portfolio/sips-sketches7.png" alt="SIPS frontend code preview">
+                  <button class="expand-btn" type="button" onclick="openImageModal('assets/img/portfolio/sips-sketches7.png', 'SIPS frontend code preview')" aria-label="Expand image">
+                    <i class="bi bi-arrows-fullscreen"></i>
+                  </button>
                 </div>
               </div>
             </div>
@@ -794,6 +809,9 @@
 
                 <div class="portfolio-image">
                   <img src="assets/img/portfolio/sips-sketches8.png" alt="Screenshot of Render Dashboard">
+                  <button class="expand-btn" type="button" onclick="openImageModal('assets/img/portfolio/sips-sketches8.png', 'Screenshot of Render Dashboard')" aria-label="Expand image">
+                    <i class="bi bi-arrows-fullscreen"></i>
+                  </button>
                 </div>
 
                 <p>
@@ -802,6 +820,9 @@
 
                 <div class="portfolio-image">
                   <img src="assets/img/portfolio/sips-sketches9.png" alt="Screenshot of MongoDB Dashboard">
+                  <button class="expand-btn" type="button" onclick="openImageModal('assets/img/portfolio/sips-sketches9.png', 'Screenshot of MongoDB Dashboard')" aria-label="Expand image">
+                    <i class="bi bi-arrows-fullscreen"></i>
+                  </button>
                 </div>
               </div>
             </div>
@@ -816,6 +837,9 @@
 
                 <div class="portfolio-image">
                   <img src="assets/img/portfolio/SIPSWalkthrough.gif" alt="Testing on Mobile">
+                  <button class="expand-btn" type="button" onclick="openImageModal('assets/img/portfolio/SIPSWalkthrough.gif', 'Testing on Mobile')" aria-label="Expand image">
+                    <i class="bi bi-arrows-fullscreen"></i>
+                  </button>
                 </div>
               </div>
             </div>
@@ -890,7 +914,7 @@
 
   <div id="imageModal" class="image-modal" onclick="closeImageModal()">
     <button class="modal-close" onclick="closeImageModal(event)" aria-label="Close expanded image">×</button>
-    <img src="assets/img/portfolio/sips-sketches3.png" alt="Expanded SIPS user flow">
+    <img id="modalImage" src="" alt="">
   </div>
 
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
@@ -952,14 +976,31 @@
       setTimeout(updateActiveSlide, 450);
     }
 
-    function openImageModal() {
-      document.getElementById('imageModal').classList.add('active');
+    function openImageModal(imageSrc, imageAlt) {
+      const modal = document.getElementById('imageModal');
+      const modalImage = document.getElementById('modalImage');
+
+      modalImage.src = imageSrc;
+      modalImage.alt = imageAlt;
+
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
     }
 
     function closeImageModal(event) {
       if (event) event.stopPropagation();
-      document.getElementById('imageModal').classList.remove('active');
+
+      const modal = document.getElementById('imageModal');
+      modal.classList.remove('active');
+
+      document.body.style.overflow = '';
     }
+
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        closeImageModal();
+      }
+    });
 
     if (fidelityStage) {
       fidelityStage.addEventListener('scroll', () => {
