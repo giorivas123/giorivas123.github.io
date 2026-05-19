@@ -1207,102 +1207,117 @@
         padding: 22px;
       }
     }
-    .about-upgraded {
-  padding: 54px;
+   .about-upgraded {
+  padding: 42px 48px;
 }
 
-.about-image-glow {
-  position: relative;
-  display: inline-flex;
-  justify-content: center;
+.about-upgraded .row {
   align-items: center;
 }
 
+.about-image-glow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
 .about-image-glow::before {
-  content: "";
-  position: absolute;
-  width: 260px;
-  height: 260px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(148, 87, 255, 0.32), transparent 70%);
-  filter: blur(18px);
-  z-index: 0;
+  width: 240px;
+  height: 240px;
 }
 
 .about-photo {
-  position: relative;
-  z-index: 1;
-  max-width: 330px;
-  filter: drop-shadow(0 24px 45px rgba(0,0,0,0.35));
+  max-width: 280px;
+  width: 100%;
 }
 
 .about-eyebrow {
-  color: var(--accent-purple);
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 1.8px;
-  text-transform: uppercase;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
 }
 
 .about-upgraded h3 {
-  font-size: 38px;
-  line-height: 1.15;
-  margin-bottom: 18px;
+  font-size: 54px;
+  line-height: 1.02;
+  letter-spacing: -1.8px;
+  max-width: 760px;
+  margin-bottom: 20px;
 }
 
 .about-main-text {
-  font-size: 18px;
-  line-height: 1.8;
-  color: rgba(255,255,255,0.78);
+  font-size: 17px;
+  line-height: 1.75;
+  max-width: 880px;
+  margin-bottom: 18px;
 }
 
 .about-highlight-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-  margin-top: 34px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 26px;
 }
 
 .about-highlight-card {
-  padding: 22px;
+  padding: 20px;
   border-radius: 18px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.10);
-}
-
-.about-highlight-card i {
-  color: var(--accent-purple);
-  font-size: 26px;
-  margin-bottom: 14px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
 }
 
 .about-highlight-card h4 {
-  color: #fff;
-  font-size: 20px;
   margin-bottom: 10px;
 }
 
 .about-highlight-card p {
-  color: rgba(255,255,255,0.72);
-  line-height: 1.6;
-  margin: 0;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+@media (max-width: 1200px) {
+  .about-upgraded h3 {
+    font-size: 46px;
+  }
 }
 
 @media (max-width: 992px) {
   .about-upgraded {
-    padding: 32px;
+    padding: 34px 28px;
+  }
+
+  .about-upgraded h3 {
+    font-size: 38px;
+    line-height: 1.08;
+  }
+
+  .about-main-text {
+    font-size: 16px;
   }
 
   .about-highlight-grid {
     grid-template-columns: 1fr;
   }
 
-  .about-upgraded h3 {
-    font-size: 30px;
+  .about-photo {
+    max-width: 220px;
+    margin-bottom: 18px;
   }
 }
 
+@media (max-width: 768px) {
+  .about-upgraded {
+    padding: 28px 22px;
+  }
+
+  .about-upgraded h3 {
+    font-size: 32px;
+  }
+
+  .about-main-text {
+    line-height: 1.7;
+  }
+}
     /* =========================
        PURPLE ACCENT OVERRIDES
     ========================= */
