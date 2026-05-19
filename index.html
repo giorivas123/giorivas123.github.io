@@ -1109,21 +1109,24 @@
        ABOUT CARD WRAP
     ========================= */
     .about-card-section {
-      padding: 40px 0 30px;
+      padding: 56px 0 36px;
       position: relative;
       z-index: 3;
     }
 
-.about-card-shell {
-  background: rgba(255,255,255,0.045);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 28px;
-  padding: 34px 42px;
-  max-width: 1380px;
-  margin: 0 auto;
-  backdrop-filter: blur(12px);
-  overflow: hidden;
-}
+    .about-card-shell {
+      position: relative;
+      background: rgba(255, 255, 255, 0.045);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 28px;
+      padding: 36px 42px;
+      max-width: 1180px;
+      margin: 0 auto;
+      backdrop-filter: blur(12px);
+      overflow: hidden;
+      box-shadow: 0 22px 70px rgba(0, 0, 0, 0.18);
+      transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+    }
 
     .about-card-shell::before {
       content: "";
@@ -1146,7 +1149,22 @@
       box-shadow: 0 28px 70px rgba(0, 0, 0, 0.28);
     }
 
-    .about-card-shell .section-title h2,
+    .about-card-shell .section-title {
+      padding-bottom: 0;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .about-card-shell .section-title h2 {
+      color: #fff;
+      margin-bottom: 0;
+    }
+
+    .about-card-shell .section-title p {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
     .about-card-shell h3,
     .about-card-shell p,
     .about-card-shell li,
@@ -1156,14 +1174,8 @@
       color: rgba(255, 255, 255, 0.84);
     }
 
-    .about-card-shell .section-title h2,
     .about-card-shell h3 {
       color: #fff;
-    }
-
-    .about-card-shell .section-title p {
-      max-width: 1200px;
-      margin: 0 auto;
     }
 
     .about-card-shell img.img-fluid {
@@ -1191,132 +1203,201 @@
       margin-right: 8px;
     }
 
-    @media (max-width: 992px) {
+    .about-upgraded {
+      padding: 34px 40px 40px;
+    }
+
+    .about-upgraded .row {
+      align-items: center;
+    }
+
+    .about-image-glow {
+      min-height: 430px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      height: 100%;
+      border-radius: 24px;
+      background:
+        radial-gradient(circle at 50% 42%, rgba(148, 87, 255, 0.22), transparent 42%),
+        linear-gradient(145deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.025));
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      overflow: hidden;
+      padding: 26px 18px 0;
+    }
+
+    .about-image-glow::before {
+      content: "";
+      position: absolute;
+      width: 240px;
+      height: 240px;
+      border-radius: 50%;
+      background: rgba(148, 87, 255, 0.15);
+      filter: blur(24px);
+      z-index: 0;
+    }
+
+    .about-photo {
+      max-width: 285px;
+      width: 100%;
+      position: relative;
+      z-index: 1;
+      filter: drop-shadow(0 18px 34px rgba(0, 0, 0, 0.38));
+    }
+
+    .about-eyebrow {
+      margin-bottom: 12px;
+      font-size: 14px;
+      letter-spacing: 1.3px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.68) !important;
+      font-weight: 600;
+    }
+
+    .about-upgraded h3 {
+      font-size: clamp(38px, 4vw, 58px);
+      line-height: 1.02;
+      letter-spacing: -1.8px;
+      max-width: 780px;
+      margin-bottom: 18px;
+    }
+
+    .about-main-text {
+      font-size: 17px;
+      line-height: 1.75;
+      max-width: 860px;
+      margin-bottom: 12px;
+    }
+
+    .about-highlight-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .about-highlight-card {
+      min-height: 190px;
+      padding: 22px;
+      border-radius: 20px;
+      background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.035));
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      backdrop-filter: blur(10px);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    .about-highlight-card i {
+      width: 34px;
+      height: 34px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+      border-radius: 12px;
+      color: #fff;
+      background: rgba(148, 87, 255, 0.18);
+    }
+
+    .about-highlight-card h4 {
+      color: #fff;
+      margin: 0 0 10px;
+      font-size: 22px;
+      font-weight: 600;
+    }
+
+    .about-highlight-card p {
+      font-size: 15px;
+      line-height: 1.65;
+      margin: 0;
+      color: rgba(255, 255, 255, 0.78) !important;
+    }
+
+    @media (max-width: 1200px) {
       .about-card-shell {
-        padding: 26px;
+        max-width: 1040px;
+        padding: 32px;
+      }
+
+      .about-upgraded h3 {
+        font-size: 46px;
+      }
+    }
+
+    @media (max-width: 992px) {
+      .about-card-section {
+        padding: 44px 0 28px;
+      }
+
+      .about-card-shell {
+        padding: 28px;
+      }
+
+      .about-upgraded {
+        padding: 28px;
       }
 
       .about-card-shell img.img-fluid {
-        margin-bottom: 24px;
+        margin-bottom: 0;
+      }
+
+      .about-image-glow {
+        min-height: 300px;
+        align-items: center;
+        padding: 24px;
+        margin-bottom: 8px;
+      }
+
+      .about-photo {
+        max-width: 220px;
+      }
+
+      .about-upgraded h3 {
+        font-size: 38px;
+        line-height: 1.08;
+      }
+
+      .about-main-text {
+        font-size: 16px;
+      }
+
+      .about-highlight-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-highlight-card {
+        min-height: auto;
       }
     }
 
     @media (max-width: 768px) {
+      .about-card-section {
+        padding: 34px 0 24px;
+      }
+
       .about-card-shell {
         padding: 22px;
+        border-radius: 24px;
+      }
+
+      .about-upgraded {
+        padding: 22px;
+      }
+
+      .about-card-shell .section-title {
+        margin-bottom: 22px;
+      }
+
+      .about-upgraded h3 {
+        font-size: 32px;
+      }
+
+      .about-main-text {
+        line-height: 1.7;
       }
     }
-   .about-upgraded {
-  padding: 26px 12px;
-}
-
-.about-upgraded .row {
-  align-items: center;
-}
-
-.about-image-glow {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
-
-.about-image-glow::before {
-  width: 240px;
-  height: 240px;
-}
-
-.about-photo {
-  max-width: 280px;
-  width: 100%;
-}
-
-.about-eyebrow {
-  margin-bottom: 12px;
-}
-
-.about-upgraded h3 {
-  font-size: 54px;
-  line-height: 1.02;
-  letter-spacing: -1.8px;
-  max-width: 760px;
-  margin-bottom: 14px;
-}
-
-.about-main-text {
-  font-size: 17px;
-  line-height: 1.75;
-  max-width: 880px;
-  margin-bottom: 12px;
-}
-
-.about-highlight-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
-  margin-top: 18px;
-}
-
-.about-highlight-card {
-  padding: 20px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.08);
-  backdrop-filter: blur(10px);
-}
-
-.about-highlight-card h4 {
-  margin-bottom: 10px;
-}
-
-.about-highlight-card p {
-  font-size: 15px;
-  line-height: 1.65;
-}
-
-@media (max-width: 1200px) {
-  .about-upgraded h3 {
-    font-size: 46px;
-  }
-}
-
-@media (max-width: 992px) {
-  .about-upgraded {
-    padding: 20px 6px;
-  }
-
-  .about-upgraded h3 {
-    font-size: 38px;
-    line-height: 1.08;
-  }
-
-  .about-main-text {
-    font-size: 16px;
-  }
-
-  .about-highlight-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .about-photo {
-    max-width: 220px;
-    margin-bottom: 18px;
-  }
-}
-
-@media (max-width: 768px) {
-  .about-upgraded {
-    padding: 18px 2px;
-  }
-
-  .about-upgraded h3 {
-    font-size: 32px;
-  }
-
-  .about-main-text {
-    line-height: 1.7;
-  }
-}
     /* =========================
        PURPLE ACCENT OVERRIDES
     ========================= */
@@ -1343,9 +1424,6 @@
       background: var(--accent-purple) !important;
     }
 
-    .back-to-top {
-      background: transparent !important;
-    }
   </style>
 </head>
 
