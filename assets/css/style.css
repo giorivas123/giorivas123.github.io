@@ -80,7 +80,7 @@ h6 {
   right: 15px;
   bottom: 15px;
   z-index: 996;
-  background: #00008B;
+  background: transparent;
   width: 40px;
   height: 40px;
   border-radius: 50px;
@@ -94,7 +94,7 @@ h6 {
 }
 
 .back-to-top:hover {
-  background: #00008B;
+  background: transparent;
   color: #fff;
 }
 
