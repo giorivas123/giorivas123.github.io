@@ -1109,22 +1109,21 @@
        ABOUT CARD WRAP
     ========================= */
     .about-card-section {
-      padding: 0 0 40px;
+      padding: 40px 0 30px;
       position: relative;
       z-index: 3;
     }
 
-    .about-card-shell {
-      background: rgba(255, 255, 255, 0.055);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 22px;
-      padding: 36px;
-      backdrop-filter: blur(12px);
-      position: relative;
-      overflow: hidden;
-      transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
-    }
+.about-card-shell {
+  background: rgba(255,255,255,0.045);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 28px;
+  padding: 34px 42px;
+  max-width: 1380px;
+  margin: 0 auto;
+  backdrop-filter: blur(12px);
+  overflow: hidden;
+}
 
     .about-card-shell::before {
       content: "";
@@ -1241,21 +1240,21 @@
   line-height: 1.02;
   letter-spacing: -1.8px;
   max-width: 760px;
-  margin-bottom: 20px;
+  margin-bottom: 14px;
 }
 
 .about-main-text {
   font-size: 17px;
   line-height: 1.75;
   max-width: 880px;
-  margin-bottom: 18px;
+  margin-bottom: 12px;
 }
 
 .about-highlight-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
-  margin-top: 26px;
+  margin-top: 18px;
 }
 
 .about-highlight-card {
