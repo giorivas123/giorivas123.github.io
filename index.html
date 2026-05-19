@@ -1207,6 +1207,101 @@
         padding: 22px;
       }
     }
+    .about-upgraded {
+  padding: 54px;
+}
+
+.about-image-glow {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-image-glow::before {
+  content: "";
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(148, 87, 255, 0.32), transparent 70%);
+  filter: blur(18px);
+  z-index: 0;
+}
+
+.about-photo {
+  position: relative;
+  z-index: 1;
+  max-width: 330px;
+  filter: drop-shadow(0 24px 45px rgba(0,0,0,0.35));
+}
+
+.about-eyebrow {
+  color: var(--accent-purple);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.about-upgraded h3 {
+  font-size: 38px;
+  line-height: 1.15;
+  margin-bottom: 18px;
+}
+
+.about-main-text {
+  font-size: 18px;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.78);
+}
+
+.about-highlight-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 34px;
+}
+
+.about-highlight-card {
+  padding: 22px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.10);
+}
+
+.about-highlight-card i {
+  color: var(--accent-purple);
+  font-size: 26px;
+  margin-bottom: 14px;
+}
+
+.about-highlight-card h4 {
+  color: #fff;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.about-highlight-card p {
+  color: rgba(255,255,255,0.72);
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 992px) {
+  .about-upgraded {
+    padding: 32px;
+  }
+
+  .about-highlight-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-upgraded h3 {
+    font-size: 30px;
+  }
+}
 
     /* =========================
        PURPLE ACCENT OVERRIDES
@@ -1460,41 +1555,48 @@
 <section id="about" class="about-card-section">
   <div class="container" data-aos="fade-up">
 
-    <div class="about-card-shell">
+    <div class="about-card-shell about-upgraded">
       <div class="section-title">
         <h2>ABOUT</h2>
       </div>
 
-      <div class="row align-items-center">
-        <div class="col-lg-4">
-          <img src="assets/img/about.jpg" class="img-fluid" alt="Giovanni Rivas">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-4 text-center">
+          <div class="about-image-glow">
+            <img src="assets/img/about.jpg" class="img-fluid about-photo" alt="Giovanni Rivas">
+          </div>
         </div>
 
-        <div class="col-lg-8 pt-4 pt-lg-0 content">
-          <h3>UI/UX Designer & Front-End Creative</h3>
+        <div class="col-lg-8 content">
+          <p class="about-eyebrow">UI/UX DESIGNER • FRONT-END CREATIVE</p>
 
-          <p>
-            I’m Giovanni Rivas, a digital media designer focused on creating clean, modern, and user-friendly digital experiences. My work combines UI/UX design, visual storytelling, and front-end development to turn ideas into polished products.
+          <h3>Designing clean digital experiences with purpose.</h3>
+
+          <p class="about-main-text">
+            I’m Giovanni Rivas, a digital media designer focused on creating modern, user-friendly interfaces that feel clear, intentional, and easy to navigate. My work blends UI/UX design, visual storytelling, and front-end development to bring ideas into polished digital experiences.
           </p>
 
-          <p>
-            I enjoy designing interfaces that feel simple, intentional, and easy to use. Whether I’m working on a mobile app, portfolio project, or responsive website, I focus on clarity, structure, and creating experiences that feel visually engaging.
+          <p class="about-main-text">
+            I enjoy turning complex ideas into simple layouts, building responsive websites, and designing products that feel visually engaging while still being practical for real users.
           </p>
 
-          <div class="row mt-4">
-            <div class="col-md-4">
+          <div class="about-highlight-grid">
+            <div class="about-highlight-card">
+              <i class="bi bi-layers"></i>
               <h4>Focus</h4>
               <p>UI/UX Design<br>Web Design<br>Product Design</p>
             </div>
 
-            <div class="col-md-4">
+            <div class="about-highlight-card">
+              <i class="bi bi-tools"></i>
               <h4>Tools</h4>
               <p>Figma<br>Sketch<br>HTML / CSS / JS</p>
             </div>
 
-            <div class="col-md-4">
+            <div class="about-highlight-card">
+              <i class="bi bi-stars"></i>
               <h4>Goal</h4>
-              <p>Design thoughtful digital experiences that are useful, modern, and easy to navigate.</p>
+              <p>Create thoughtful digital experiences that feel useful, polished, and easy to use.</p>
             </div>
           </div>
         </div>
@@ -1503,7 +1605,7 @@
 
   </div>
 </section>
-        </section><!-- End About Section -->
+       <!-- End About Section -->
 
         <!-- ======= Skills Section ======= -->
         <section id="skills" class="skills about-card-section">
