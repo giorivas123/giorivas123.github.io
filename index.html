@@ -1598,7 +1598,208 @@
   .availability-content h2 {
     font-size: 28px;
   }
+/* =========================
+   AVAILABILITY CARD
+========================= */
+.availability-card-section {
+  padding: 20px 0 36px;
+  position: relative;
+  z-index: 3;
+}
 
+.availability-card {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 70px 48px 62px;
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 20% 35%, rgba(148, 87, 255, 0.18), transparent 30%),
+    radial-gradient(circle at 80% 35%, rgba(0, 153, 255, 0.16), transparent 32%),
+    rgba(255,255,255,0.045);
+  border: 1px solid rgba(255,255,255,0.10);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 22px 70px rgba(0,0,0,0.28);
+}
+
+.availability-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 18% 35%, rgba(168, 85, 247, 0.22), transparent 22%),
+    radial-gradient(circle at 82% 35%, rgba(59, 130, 246, 0.20), transparent 24%);
+  opacity: 0.8;
+  animation: availabilityGlow 7s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+.availability-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,0.42) 1px, transparent 1px);
+  background-size: 90px 90px;
+  opacity: 0.16;
+  animation: availabilityParticles 14s linear infinite;
+  pointer-events: none;
+}
+
+.availability-bg-wave {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(115deg, transparent 8%, rgba(148, 87, 255, 0.18) 30%, transparent 52%),
+    linear-gradient(245deg, transparent 10%, rgba(59, 130, 246, 0.18) 34%, transparent 58%);
+  filter: blur(18px);
+  opacity: 0.85;
+  animation: availabilityWave 8s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+.availability-apple,
+.availability-eyebrow,
+.availability-card h2,
+.availability-text,
+.availability-resume-btn {
+  position: relative;
+  z-index: 2;
+}
+
+.availability-apple {
+  width: 130px;
+  height: 130px;
+  margin: 0 auto 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.availability-apple i {
+  font-size: 104px;
+  color: #fff;
+  text-shadow:
+    0 0 22px rgba(148, 87, 255, 0.65),
+    0 0 46px rgba(148, 87, 255, 0.35);
+}
+
+.availability-eyebrow {
+  margin-bottom: 14px;
+  font-size: 13px;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.64);
+}
+
+.availability-card h2 {
+  max-width: 760px;
+  margin: 0 auto 18px;
+  font-size: 42px;
+  line-height: 1.12;
+  letter-spacing: -1.5px;
+  color: #fff;
+}
+
+.availability-text {
+  max-width: 880px;
+  margin: 0 auto;
+  font-size: 16px;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.78);
+}
+
+.availability-resume-btn {
+  margin-top: 28px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px 28px;
+  border-radius: 14px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.20);
+  transition: transform .25s ease, background .25s ease, border-color .25s ease;
+}
+
+.availability-resume-btn:hover {
+  transform: translateY(-2px);
+  color: #fff;
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.32);
+}
+
+@keyframes availabilityGlow {
+  0% {
+    transform: translateX(-20px) scale(1);
+  }
+
+  100% {
+    transform: translateX(20px) scale(1.08);
+  }
+}
+
+@keyframes availabilityWave {
+  0% {
+    transform: translateX(-45px) translateY(10px) scale(1);
+  }
+
+  100% {
+    transform: translateX(45px) translateY(-10px) scale(1.08);
+  }
+}
+
+@keyframes availabilityParticles {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 90px 90px;
+  }
+}
+
+@media (max-width: 992px) {
+  .availability-card {
+    padding: 56px 30px 52px;
+  }
+
+  .availability-card h2 {
+    font-size: 34px;
+  }
+
+  .availability-apple i {
+    font-size: 86px;
+  }
+}
+
+@media (max-width: 768px) {
+  .availability-card {
+    padding: 46px 22px;
+  }
+
+  .availability-card h2 {
+    font-size: 28px;
+  }
+
+  .availability-text {
+    font-size: 15px;
+  }
+
+  .availability-apple {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+  }
+
+  .availability-apple i {
+    font-size: 76px;
+  }
+}
 }
     }
     /* =========================
@@ -1761,42 +1962,36 @@
   <!-- End Hero -->
   
   <!-- ======= Availability / Contact Card ======= -->
-<section class="availability-banner-section">
+<section class="availability-card-section">
   <div class="container" data-aos="fade-up">
+    <div class="availability-card">
+      <div class="availability-bg-wave"></div>
 
-    <div class="availability-banner-card">
-
-      <div class="availability-logo">
+      <div class="availability-apple">
         <i class="bi bi-apple"></i>
       </div>
 
-      <div class="availability-content">
-        <p class="availability-eyebrow">
-          OPEN TO OPPORTUNITIES • PRODUCT DESIGN • UI/UX
-        </p>
+      <p class="availability-eyebrow">
+        OPEN TO OPPORTUNITIES • PRODUCT DESIGN • UI/UX
+      </p>
 
-        <h2>
-          Interested in learning more about my work and experience?
-        </h2>
+      <h2>
+        Interested in learning more about my work and experience?
+      </h2>
 
-        <p>
-          Due to NDA restrictions, some professional projects cannot be publicly displayed within my portfolio. 
-          If you’d like to inquire further about my experience, design process, or previous work, feel free to reach out.
-        </p>
+      <p class="availability-text">
+        Due to NDA restrictions, some professional projects cannot be publicly displayed within my portfolio.
+        If you’d like to inquire further about my experience, design process, or previous work, feel free to reach out.
+      </p>
 
-        <div class="availability-actions">
-          <a href="mailto:YOUR_EMAIL_HERE" class="availability-btn">
-            Contact Me
-            <i class="bi bi-arrow-up-right"></i>
-          </a>
-
-          <a href="resume.html" class="availability-btn secondary">
-            View Resume
-          </a>
-        </div>
-      </div>
-
+      <a href="resume.html" class="availability-resume-btn">
+        <i class="bi bi-file-earmark-text"></i>
+        View Resume
+        <i class="bi bi-arrow-up-right"></i>
+      </a>
     </div>
+  </div>
+</section>
 
   </div>
 </section>
