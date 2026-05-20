@@ -431,162 +431,279 @@
       transform: translateY(-2px);
       color: #fff;
     }
+/* =========================
+   AVAILABILITY CARD
+========================= */
 
-    /* =========================
-       AVAILABILITY CARD
-    ========================= */
-    .availability-card-section {
-      padding: 40px 0 36px;
-      position: relative;
-      z-index: 3;
-    }
+.availability-card-section {
+  padding: 40px 0 36px;
+  position: relative;
+  z-index: 3;
+}
 
-    .availability-card-section .container {
-      max-width: 1320px;
-      width: 100%;
-      margin: 0 auto;
-      padding-left: 15px;
-      padding-right: 15px;
-    }
+.availability-card-section .container {
+  max-width: 1320px !important;
+  width: 100%;
+  margin: 0 auto !important;
+  padding-left: 15px;
+  padding-right: 15px;
+}
 
-    .availability-card {
-      position: relative;
-      overflow: hidden;
-      text-align: center;
-      width: 100%;
-      max-width: 1320px;
-      margin: 0 auto;
-      padding: 70px 48px 62px;
-      border-radius: 28px;
-      border: 1px solid rgba(255,255,255,0.10);
-      background:
-        radial-gradient(circle at 20% 35%, rgba(148, 87, 255, 0.18), transparent 30%),
-        radial-gradient(circle at 80% 35%, rgba(0, 153, 255, 0.16), transparent 32%),
-        rgba(255,255,255,0.045);
-      backdrop-filter: blur(12px);
-      box-shadow: 0 22px 70px rgba(0,0,0,0.28);
-    }
+.availability-card {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
 
-    .availability-card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(circle at 18% 35%, rgba(168, 85, 247, 0.22), transparent 22%),
-        radial-gradient(circle at 82% 35%, rgba(59, 130, 246, 0.20), transparent 24%);
-      opacity: 0.8;
-      animation: availabilityGlow 7s ease-in-out infinite alternate;
-      pointer-events: none;
-    }
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
 
-    .availability-card::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-image:
-        radial-gradient(circle, rgba(255,255,255,0.42) 1px, transparent 1px);
-      background-size: 90px 90px;
-      opacity: 0.16;
-      animation: availabilityParticles 14s linear infinite;
-      pointer-events: none;
-    }
+  padding: 70px 48px 62px;
 
-    .availability-bg-wave {
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(115deg, transparent 8%, rgba(148, 87, 255, 0.18) 30%, transparent 52%),
-        linear-gradient(245deg, transparent 10%, rgba(59, 130, 246, 0.18) 34%, transparent 58%);
-      filter: blur(18px);
-      opacity: 0.85;
-      animation: availabilityWave 8s ease-in-out infinite alternate;
-      pointer-events: none;
-    }
+  border-radius: 32px;
+  border: 1px solid rgba(255,255,255,0.10);
 
-    .availability-card > * {
-      position: relative;
-      z-index: 2;
-    }
+  background:
+    radial-gradient(circle at 20% 30%, rgba(59,130,246,0.22), transparent 34%),
+    radial-gradient(circle at 80% 25%, rgba(37,99,235,0.20), transparent 34%),
+    linear-gradient(
+      135deg,
+      #02142d 0%,
+      #032f73 45%,
+      #021b46 100%
+    );
 
-    .availability-apple {
-      width: 130px;
-      height: 130px;
-      margin: 0 auto 26px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+  backdrop-filter: blur(16px);
 
-    .availability-apple i {
-      font-size: 104px;
-      color: #fff;
-      text-shadow:
-        0 0 22px rgba(148, 87, 255, 0.65),
-        0 0 46px rgba(148, 87, 255, 0.35);
-    }
+  box-shadow:
+    0 24px 80px rgba(0,0,0,0.32),
+    inset 0 1px 0 rgba(255,255,255,0.06);
+}
 
-    .availability-eyebrow {
-      margin-bottom: 14px;
-      font-size: 13px;
-      letter-spacing: 1.8px;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.64);
-    }
+/* subtle stars */
+.availability-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
 
-    .availability-card h2 {
-      max-width: 760px;
-      margin: 0 auto 18px;
-      font-size: 42px;
-      line-height: 1.12;
-      letter-spacing: -1.5px;
-      color: #fff;
-    }
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,0.28) 1px, transparent 1px);
 
-    .availability-text {
-      max-width: 880px;
-      margin: 0 auto;
-      font-size: 16px;
-      line-height: 1.75;
-      color: rgba(255,255,255,0.78);
-    }
+  background-size: 120px 120px;
+  opacity: 0.18;
 
-    .availability-resume-btn {
-      margin-top: 28px;
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      padding: 15px 28px;
-      border-radius: 14px;
-      color: #fff;
-      text-decoration: none;
-      font-weight: 600;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.20);
-      transition: transform .25s ease, background .25s ease, border-color .25s ease;
-    }
+  pointer-events: none;
+}
 
-    .availability-resume-btn:hover {
-      transform: translateY(-2px);
-      color: #fff;
-      background: rgba(255,255,255,0.08);
-      border-color: rgba(255,255,255,0.32);
-    }
+.availability-card > * {
+  position: relative;
+  z-index: 2;
+}
 
-    @keyframes availabilityGlow {
-      0% { transform: translateX(-20px) scale(1); }
-      100% { transform: translateX(20px) scale(1.08); }
-    }
+/* =========================
+   APPLE LOGO
+========================= */
 
-    @keyframes availabilityWave {
-      0% { transform: translateX(-45px) translateY(10px) scale(1); }
-      100% { transform: translateX(45px) translateY(-10px) scale(1.08); }
-    }
+.availability-apple {
+  width: 130px;
+  height: 130px;
 
-    @keyframes availabilityParticles {
-      0% { background-position: 0 0; }
-      100% { background-position: 90px 90px; }
-    }
+  margin: 0 auto 28px;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+}
+
+.availability-apple::before {
+  content: "";
+
+  position: absolute;
+
+  width: 180px;
+  height: 180px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255,255,255,0.55) 0%,
+      rgba(255,255,255,0.20) 35%,
+      rgba(255,255,255,0) 72%
+    );
+
+  filter: blur(18px);
+
+  animation: appleGlow 4s ease-in-out infinite alternate;
+}
+
+.availability-apple i {
+  font-size: 104px;
+  color: #fff;
+
+  position: relative;
+  z-index: 2;
+
+  text-shadow:
+    0 0 25px rgba(255,255,255,0.95),
+    0 0 55px rgba(255,255,255,0.55);
+}
+
+@keyframes appleGlow {
+  0% {
+    transform: scale(1);
+    opacity: 0.85;
+  }
+
+  100% {
+    transform: scale(1.08);
+    opacity: 1;
+  }
+}
+
+/* =========================
+   TEXT
+========================= */
+
+.availability-eyebrow {
+  margin-bottom: 18px;
+
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  color: rgba(255,255,255,0.72);
+}
+
+.availability-card h2 {
+  max-width: 980px;
+
+  margin: 0 auto 24px;
+
+  font-size: 72px;
+  line-height: 1.02;
+  letter-spacing: -3px;
+
+  color: #fff;
+}
+
+.availability-text {
+  max-width: 1080px;
+
+  margin: 0 auto;
+
+  font-size: 20px;
+  line-height: 1.8;
+
+  color: rgba(255,255,255,0.82);
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.availability-resume-btn {
+  margin-top: 34px;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 18px 34px;
+
+  border-radius: 18px;
+
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 18px;
+
+  background: rgba(255,255,255,0.06);
+
+  border: 1px solid rgba(255,255,255,0.16);
+
+  backdrop-filter: blur(10px);
+
+  transition:
+    transform .25s ease,
+    background .25s ease,
+    border-color .25s ease;
+}
+
+.availability-resume-btn:hover {
+  transform: translateY(-2px);
+
+  color: #fff;
+
+  background: rgba(255,255,255,0.10);
+
+  border-color: rgba(255,255,255,0.28);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 992px) {
+
+  .availability-card {
+    padding: 56px 30px 52px;
+  }
+
+  .availability-card h2 {
+    font-size: 48px;
+    line-height: 1.08;
+  }
+
+  .availability-text {
+    font-size: 18px;
+  }
+
+  .availability-apple i {
+    font-size: 88px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .availability-card {
+    padding: 44px 22px;
+    border-radius: 26px;
+  }
+
+  .availability-card h2 {
+    font-size: 34px;
+    letter-spacing: -1.5px;
+  }
+
+  .availability-text {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .availability-apple {
+    width: 100px;
+    height: 100px;
+  }
+
+  .availability-apple::before {
+    width: 140px;
+    height: 140px;
+  }
+
+  .availability-apple i {
+    font-size: 72px;
+  }
+
+  .availability-resume-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+ 
     /* =========================
        WORK SECTION
     ========================= */
