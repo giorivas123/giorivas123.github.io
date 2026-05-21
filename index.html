@@ -966,6 +966,58 @@
       border-radius: 0 0 16px 16px;
     }
 
+    .desktop-screen-logo {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+      opacity: 0.88;
+      text-shadow: 0 0 24px currentColor;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+    }
+
+    .desktop-placeholder.sips-desktop {
+      background:
+        radial-gradient(circle at 50% 42%, rgba(74, 222, 128, 0.20), transparent 42%),
+        linear-gradient(135deg, rgba(255,255,255,0.08), rgba(9, 55, 27, 0.22));
+    }
+
+    .desktop-placeholder.musichub-desktop {
+      background:
+        radial-gradient(circle at 50% 42%, rgba(192, 132, 252, 0.24), transparent 42%),
+        linear-gradient(135deg, rgba(255,255,255,0.08), rgba(52, 18, 82, 0.26));
+    }
+
+    .desktop-placeholder.apple-desktop {
+      background:
+        radial-gradient(circle at 50% 42%, rgba(96, 165, 250, 0.22), transparent 42%),
+        linear-gradient(135deg, rgba(255,255,255,0.09), rgba(3, 10, 22, 0.55));
+    }
+
+    .desktop-screen-logo.sips-logo {
+      color: #4ade80;
+      font-size: 42px;
+    }
+
+    .desktop-screen-logo.musichub-logo {
+      color: #c084fc;
+      font-size: 32px;
+    }
+
+    .desktop-screen-logo.apple-logo {
+      color: #fff;
+      font-size: 54px;
+      text-shadow:
+        0 0 25px rgba(255,255,255,0.92),
+        0 0 55px rgba(96,165,250,0.52);
+    }
+
     .phone-peek {
       position: absolute;
       left: 50%;
@@ -1006,6 +1058,29 @@
       align-items: center;
       justify-content: flex-start;
       padding-top: 46px;
+    }
+
+    .phone-peek.has-gif {
+      background: #101014;
+    }
+
+    .phone-peek.has-gif .phone-gif {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+    }
+
+    .phone-peek.has-gif::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.06), transparent 42%);
+      pointer-events: none;
+      z-index: 5;
     }
 
     .phone-ui .phone-card-preview {
@@ -2036,7 +2111,9 @@
 
             <div class="col-lg-5">
               <div class="project-media-frame apple-showcase">
-                <div class="desktop-placeholder"></div>
+                <div class="desktop-placeholder apple-desktop">
+                  <div class="desktop-screen-logo apple-logo"><i class="bi bi-apple"></i></div>
+                </div>
                 <div class="showcase-logo apple-logo">
                   <i class="bi bi-apple"></i>
                 </div>
@@ -2076,13 +2153,11 @@
 
             <div class="col-lg-5">
               <div class="project-media-frame sips-showcase">
-                <div class="desktop-placeholder"></div>
-                <div class="showcase-logo sips-logo">SIPS</div>
-                <div class="phone-peek">
-                  <div class="phone-ui sips-ui">
-                    <span>SIPS</span>
-                    <div class="phone-card-preview"></div>
-                  </div>
+                <div class="desktop-placeholder sips-desktop">
+                  <div class="desktop-screen-logo sips-logo">SIPS</div>
+                </div>
+                <div class="phone-peek has-gif">
+                  <img class="phone-gif" src="assets/img/portfolio/SIPSWalkthrough.gif" alt="SIPS app walkthrough">
                 </div>
               </div>
             </div>
@@ -2128,13 +2203,11 @@
 
             <div class="col-lg-5">
               <div class="project-media-frame musichub-showcase">
-                <div class="desktop-placeholder"></div>
-                <div class="showcase-logo musichub-logo"><i class="bi bi-soundwave"></i> MusicHub</div>
-                <div class="phone-peek">
-                  <div class="phone-ui music-ui">
-                    <span>MusicHub</span>
-                    <div class="phone-card-preview"></div>
-                  </div>
+                <div class="desktop-placeholder musichub-desktop">
+                  <div class="desktop-screen-logo musichub-logo"><i class="bi bi-soundwave"></i> MusicHub</div>
+                </div>
+                <div class="phone-peek has-gif">
+                  <img class="phone-gif" src="assets/img/portfolio/MusicHubWalkthrough.gif" alt="MusicHub app walkthrough">
                 </div>
               </div>
             </div>
