@@ -436,7 +436,7 @@
        AVAILABILITY CARD
     ========================= */
     .availability-card-section {
-      padding: 40px 0 36px;
+      padding: 28px 0 28px;
       position: relative;
       z-index: 3;
     }
@@ -663,6 +663,110 @@
       transform: translateY(-4px);
       border-color: rgba(255, 255, 255, 0.14);
       box-shadow: 0 28px 70px rgba(0, 0, 0, 0.28);
+    }
+
+    .work-clean .tablet-card.sips-card {
+      background:
+        radial-gradient(circle at 18% 22%, rgba(34, 197, 94, 0.26), transparent 34%),
+        radial-gradient(circle at 84% 18%, rgba(5, 150, 105, 0.18), transparent 34%),
+        linear-gradient(135deg, #03140b 0%, #082b17 48%, #020806 100%);
+      border-color: rgba(74, 222, 128, 0.18);
+      box-shadow:
+        0 22px 70px rgba(0, 0, 0, 0.28),
+        0 0 45px rgba(34, 197, 94, 0.08);
+    }
+
+    .work-clean .tablet-card.sips-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle, rgba(255, 255, 255, 0.18) 1px, transparent 1px);
+      background-size: 115px 115px;
+      opacity: 0.12;
+      pointer-events: none;
+    }
+
+    .work-clean .tablet-card.musichub-card {
+      background:
+        radial-gradient(circle at 18% 22%, rgba(168, 85, 247, 0.26), transparent 34%),
+        radial-gradient(circle at 82% 18%, rgba(88, 28, 135, 0.22), transparent 34%),
+        linear-gradient(135deg, #05010b 0%, #1c0b2d 48%, #030105 100%);
+      border-color: rgba(192, 132, 252, 0.18);
+      box-shadow:
+        0 22px 70px rgba(0, 0, 0, 0.30),
+        0 0 45px rgba(168, 85, 247, 0.08);
+    }
+
+    .work-clean .tablet-card.musichub-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle, rgba(255, 255, 255, 0.18) 1px, transparent 1px);
+      background-size: 115px 115px;
+      opacity: 0.12;
+      pointer-events: none;
+    }
+
+    .work-clean .tablet-card.sips-card > *,
+    .work-clean .tablet-card.musichub-card > * {
+      position: relative;
+      z-index: 2;
+    }
+
+    .project-role {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 16px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      line-height: 1;
+      font-weight: 600;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.86);
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(8px);
+    }
+
+    .project-action-btn {
+      margin-top: 20px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 28px;
+      border-radius: 18px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 17px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.16);
+      backdrop-filter: blur(10px);
+      transition:
+        transform .25s ease,
+        background .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease;
+    }
+
+    .project-action-btn:hover {
+      transform: translateY(-2px);
+      color: #fff;
+      background: rgba(255,255,255,0.10);
+      border-color: rgba(255,255,255,0.28);
+    }
+
+    .sips-card .project-action-btn:hover {
+      box-shadow: 0 14px 38px rgba(34, 197, 94, 0.24);
+    }
+
+    .musichub-card .project-action-btn:hover {
+      box-shadow: 0 14px 38px rgba(168, 85, 247, 0.24);
     }
 
     .work-clean .tablet-title {
@@ -1700,42 +1804,11 @@
       </div>
     </div>
 
-    <a href="#availability" class="scroll-indicator" aria-label="Scroll to Apple section">
+    <a href="#work" class="scroll-indicator" aria-label="Scroll to selected work">
       <i class="bi bi-chevron-down"></i>
     </a>
   </section>
   <!-- End Hero -->
-
-  <!-- ======= Availability / Contact Card ======= -->
-  <section class="availability-card-section" id="availability">
-    <div class="container" data-aos="fade-up">
-      <div class="availability-card">
-        <div class="availability-bg-wave"></div>
-
-        <div class="availability-apple">
-          <i class="bi bi-apple"></i>
-        </div>
-
-        <p class="availability-eyebrow">
-           APPLE
-        </p>
-
-         <h2>
-          Career Experience Intern
-         </h2>
-
-        <p class="availability-text">
-         Supported product design initiatives across internal experiences within a fast-paced collaborative environment. Due to confidentiality agreements, some professional projects cannot be publicly showcased.
-        </p>
-
-        <a href="resume.html" class="availability-resume-btn">
-          <i class="bi bi-file-earmark-text"></i>
-          View Resume
-          <i class="bi bi-arrow-up-right"></i>
-        </a>
-      </div>
-    </div>
-  </section>
 
   <main id="main">
     <section id="work" class="work-clean anchor-offset">
@@ -1749,8 +1822,33 @@
           </p>
         </div>
 
-        <!-- Project 1 -->
-        <div class="tablet-card" data-aos="fade-up" data-aos-delay="150">
+        <!-- Apple / Career Experience -->
+        <div class="availability-card-section" id="availability">
+          <div class="container" data-aos="fade-up">
+            <div class="availability-card">
+              <div class="availability-bg-wave"></div>
+
+              <div class="availability-apple">
+                <i class="bi bi-apple"></i>
+              </div>
+
+              <p class="availability-eyebrow">
+                APPLE
+              </p>
+
+              <h2>
+                Career Experience Intern
+              </h2>
+
+              <p class="availability-text">
+                Supported product design initiatives across internal experiences within a fast-paced collaborative environment. Due to confidentiality agreements, some professional projects cannot be publicly showcased.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- SIPS -->
+        <div class="tablet-card sips-card" data-aos="fade-up" data-aos-delay="150">
           <div class="row g-5 project-row">
 
             <div class="col-lg-5">
@@ -1762,8 +1860,9 @@
             <div class="col-lg-7">
               <div class="project-copy">
 
-                <h2 class="tablet-title project-eyebrow">Project 1</h2>
-                <h3 class="tablet-title project-title">SIPS</h3>
+                <h2 class="tablet-title project-eyebrow">SIPS</h2>
+                <h3 class="tablet-title project-title">Design Developer</h3>
+                <p class="project-role">Local Beverage Discovery App</p>
 
                 <p class="tablet-text">
                   A local beverage discovery app designed to help users find
@@ -1775,7 +1874,7 @@
                   small businesses. Designed in Figma and coded with HTML/CSS/JS.
                 </p>
 
-                <a class="tablet-btn sips-btn" href="portfolio-details7.html">
+                <a class="project-action-btn" href="portfolio-details7.html">
                   View Project
                   <i class="bi bi-arrow-up-right"></i>
                 </a>
@@ -1786,8 +1885,8 @@
           </div>
         </div>
 
-        <!-- Project 2 -->
-        <div class="tablet-card" data-aos="fade-up">
+        <!-- MusicHub -->
+        <div class="tablet-card musichub-card" data-aos="fade-up">
           <div class="row g-5 project-row">
 
             <div class="col-lg-5">
@@ -1799,8 +1898,9 @@
             <div class="col-lg-7">
               <div class="project-copy">
 
-                <h2 class="tablet-title project-eyebrow">Project 2</h2>
-                <h3 class="tablet-title project-title">MusicHub</h3>
+                <h2 class="tablet-title project-eyebrow">MusicHub</h2>
+                <h3 class="tablet-title project-title">UI Designer</h3>
+                <p class="project-role">Music Discovery Experience</p>
 
                 <p class="tablet-text">
                   A modern music app concept focused on discovery, collection,
@@ -1812,7 +1912,7 @@
                   view upcoming performances, and explore festivals/events.
                 </p>
 
-                <a class="tablet-btn musichub-btn" href="portfolio-details.html">
+                <a class="project-action-btn" href="portfolio-details.html">
                   View Project
                   <i class="bi bi-arrow-up-right"></i>
                 </a>
