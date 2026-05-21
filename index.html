@@ -1124,6 +1124,110 @@
       margin-top: 0;
     }
 
+    /* =========================
+       UPDATED PROJECT DEVICE VISUALS
+    ========================= */
+    .project-media-frame.sips-showcase,
+    .project-media-frame.musichub-showcase {
+      background-image: none;
+    }
+
+    .project-media-frame.sips-showcase.coffee-bg {
+      background-image: url("assets/img/portfolio/coffee.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .project-media-frame.musichub-showcase.concert-bg {
+      background-image: url("assets/img/portfolio/concert.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .project-media-frame.sips-showcase.coffee-bg::after,
+    .project-media-frame.musichub-showcase.concert-bg::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.18));
+      z-index: 1;
+    }
+
+    .project-media-frame .project-phone-image {
+      position: absolute;
+      left: 50%;
+      bottom: -44px;
+      width: auto;
+      max-width: 235px;
+      max-height: 92%;
+      height: auto;
+      object-fit: contain;
+      transform: translateX(-50%);
+      z-index: 3;
+      border-radius: 28px;
+      filter: drop-shadow(0 18px 40px rgba(0, 0, 0, 0.55));
+      transition: transform .35s ease;
+    }
+
+    .tablet-card:hover .project-media-frame .project-phone-image {
+      transform: translateX(-50%) scale(1.04);
+    }
+
+    .project-media-frame.apple-showcase {
+      overflow: hidden;
+    }
+
+    .apple-showcase .showcase-logo.apple-logo {
+      top: 22px;
+      font-size: 58px;
+      z-index: 5;
+    }
+
+    .apple-showcase .phone-peek.blank-phone {
+      bottom: -68px;
+      height: 260px;
+      background: #fbfbfb;
+    }
+
+    .apple-showcase .phone-peek.blank-phone::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: 48px;
+      width: 132px;
+      height: 86px;
+      transform: translateX(-50%);
+      border-radius: 12px;
+      background: linear-gradient(135deg, #f9b4ff 0%, #ffcb52 70%, #fff1a8 100%);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+      opacity: 0.9;
+      z-index: 2;
+    }
+
+    .apple-showcase .phone-peek.blank-phone .phone-ui {
+      display: none;
+    }
+
+    @media (max-width: 992px) {
+      .project-media-frame .project-phone-image {
+        max-width: 220px;
+        bottom: -36px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .project-media-frame .project-phone-image {
+        max-width: 205px;
+      }
+
+      .apple-showcase .showcase-logo.apple-logo {
+        top: 18px;
+        font-size: 48px;
+      }
+    }
+
     .apple-card .project-eyebrow,
     .apple-card .project-role {
       color: rgba(191, 219, 254, 0.92);
@@ -2113,12 +2217,7 @@
                 <div class="showcase-logo apple-logo">
                   <i class="bi bi-apple"></i>
                 </div>
-                <div class="phone-peek">
-                  <div class="phone-ui">
-                    <span><i class="bi bi-apple"></i> Card</span>
-                    <div class="phone-card-preview"></div>
-                  </div>
-                </div>
+                <div class="phone-peek blank-phone"></div>
               </div>
             </div>
 
@@ -2148,11 +2247,8 @@
           <div class="row g-5 project-row">
 
             <div class="col-lg-5">
-              <div class="project-media-frame sips-showcase">
-                <div class="showcase-logo sips-logo">SIPS</div>
-                <div class="phone-peek has-image">
-                  <img class="phone-image" src="assets/img/portfolio/SIPS.jpg" alt="SIPS app screen">
-                </div>
+              <div class="project-media-frame sips-showcase coffee-bg">
+                <img class="project-phone-image" src="assets/img/portfolio/SIPS.jpg" alt="SIPS app screen">
               </div>
             </div>
 
@@ -2196,11 +2292,8 @@
           <div class="row g-5 project-row">
 
             <div class="col-lg-5">
-              <div class="project-media-frame musichub-showcase">
-                <div class="showcase-logo musichub-logo"><i class="bi bi-soundwave"></i> MusicHub</div>
-                <div class="phone-peek has-image">
-                  <img class="phone-image" src="assets/img/portfolio/musichub.jpg" alt="MusicHub app screen">
-                </div>
+              <div class="project-media-frame musichub-showcase concert-bg">
+                <img class="project-phone-image" src="assets/img/portfolio/musichub.jpg" alt="MusicHub app screen">
               </div>
             </div>
 
