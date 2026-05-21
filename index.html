@@ -811,7 +811,7 @@
     .project-media-frame {
       position: relative;
       width: 100%;
-      height: 300px;
+      height: 360px;
       border-radius: 18px;
       overflow: hidden;
       background: rgba(255, 255, 255, 0.035);
@@ -819,13 +819,13 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 32px;
+      padding: 34px;
       box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.18);
     }
 
     .project-media-frame img {
       max-width: 260px;
-      max-height: 85%;
+      max-height: 92%;
       width: auto;
       height: auto;
       object-fit: contain;
@@ -881,8 +881,6 @@
     }
 
 
-    .project-media-frame.sips-showcase,
-    .project-media-frame.musichub-showcase,
     .project-media-frame.apple-showcase {
       background-image: none;
     }
@@ -903,6 +901,61 @@
       background:
         radial-gradient(circle at 50% 24%, rgba(96, 165, 250, 0.26), transparent 34%),
         linear-gradient(145deg, rgba(255, 255, 255, 0.06), rgba(3, 10, 22, 0.55));
+    }
+
+    .apple-desktop-peek {
+      position: absolute;
+      right: 36px;
+      bottom: 38px;
+      width: 245px;
+      height: 165px;
+      border-radius: 18px 18px 8px 8px;
+      border: 1px solid rgba(255, 255, 255, 0.11);
+      background:
+        radial-gradient(circle at 50% 40%, rgba(255,255,255,0.20), transparent 34%),
+        linear-gradient(135deg, rgba(13, 36, 75, 0.88), rgba(1, 8, 20, 0.72));
+      opacity: 0.48;
+      transform: translateX(34px);
+      z-index: 1;
+      box-shadow: 0 20px 45px rgba(0,0,0,0.28);
+    }
+
+    .apple-desktop-peek::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: -28px;
+      width: 82px;
+      height: 28px;
+      transform: translateX(-50%);
+      border-radius: 0 0 14px 14px;
+      background: rgba(255,255,255,0.09);
+    }
+
+    .apple-showcase .showcase-logo {
+      top: 28px;
+      z-index: 5;
+    }
+
+    .apple-showcase .phone-peek {
+      z-index: 4;
+    }
+
+    .apple-showcase .phone-ui {
+      background: #fff;
+    }
+
+    .apple-showcase .phone-ui::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: 44px;
+      width: 130px;
+      height: 82px;
+      transform: translateX(-50%);
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(249,180,255,0.65), rgba(255,203,82,0.75));
+      opacity: 0.72;
     }
 
     .showcase-logo {
@@ -1124,110 +1177,6 @@
       margin-top: 0;
     }
 
-    /* =========================
-       UPDATED PROJECT DEVICE VISUALS
-    ========================= */
-    .project-media-frame.sips-showcase,
-    .project-media-frame.musichub-showcase {
-      background-image: none;
-    }
-
-    .project-media-frame.sips-showcase.coffee-bg {
-      background-image: url("assets/img/portfolio/coffee.jpg");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-    }
-
-    .project-media-frame.musichub-showcase.concert-bg {
-      background-image: url("assets/img/portfolio/concert.jpg");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-    }
-
-    .project-media-frame.sips-showcase.coffee-bg::after,
-    .project-media-frame.musichub-showcase.concert-bg::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.18));
-      z-index: 1;
-    }
-
-    .project-media-frame .project-phone-image {
-      position: absolute;
-      left: 50%;
-      bottom: -44px;
-      width: auto;
-      max-width: 235px;
-      max-height: 92%;
-      height: auto;
-      object-fit: contain;
-      transform: translateX(-50%);
-      z-index: 3;
-      border-radius: 28px;
-      filter: drop-shadow(0 18px 40px rgba(0, 0, 0, 0.55));
-      transition: transform .35s ease;
-    }
-
-    .tablet-card:hover .project-media-frame .project-phone-image {
-      transform: translateX(-50%) scale(1.04);
-    }
-
-    .project-media-frame.apple-showcase {
-      overflow: hidden;
-    }
-
-    .apple-showcase .showcase-logo.apple-logo {
-      top: 22px;
-      font-size: 58px;
-      z-index: 5;
-    }
-
-    .apple-showcase .phone-peek.blank-phone {
-      bottom: -68px;
-      height: 260px;
-      background: #fbfbfb;
-    }
-
-    .apple-showcase .phone-peek.blank-phone::after {
-      content: "";
-      position: absolute;
-      left: 50%;
-      bottom: 48px;
-      width: 132px;
-      height: 86px;
-      transform: translateX(-50%);
-      border-radius: 12px;
-      background: linear-gradient(135deg, #f9b4ff 0%, #ffcb52 70%, #fff1a8 100%);
-      box-shadow: 0 12px 24px rgba(0,0,0,0.12);
-      opacity: 0.9;
-      z-index: 2;
-    }
-
-    .apple-showcase .phone-peek.blank-phone .phone-ui {
-      display: none;
-    }
-
-    @media (max-width: 992px) {
-      .project-media-frame .project-phone-image {
-        max-width: 220px;
-        bottom: -36px;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .project-media-frame .project-phone-image {
-        max-width: 205px;
-      }
-
-      .apple-showcase .showcase-logo.apple-logo {
-        top: 18px;
-        font-size: 48px;
-      }
-    }
-
     .apple-card .project-eyebrow,
     .apple-card .project-role {
       color: rgba(191, 219, 254, 0.92);
@@ -1331,6 +1280,25 @@
       transform: translateY(-2px);
       color: #fff;
       box-shadow: 0 14px 40px rgba(168, 85, 247, 0.5);
+    }
+
+
+    @media (max-width: 992px) {
+      .apple-desktop-peek {
+        right: 18px;
+        width: 205px;
+        height: 135px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .apple-desktop-peek {
+        right: 50%;
+        transform: translateX(50%);
+        width: 210px;
+        height: 135px;
+        opacity: 0.36;
+      }
     }
 
     /* =========================
@@ -1733,7 +1701,7 @@
       }
 
       .project-media-frame {
-        height: 300px;
+        height: 340px;
       }
 
       .about-card-shell {
@@ -1793,7 +1761,7 @@
       }
 
       .project-media-frame {
-        height: 280px;
+        height: 330px;
         padding: 22px;
       }
 
@@ -2214,10 +2182,13 @@
 
             <div class="col-lg-5">
               <div class="project-media-frame apple-showcase">
+                <div class="apple-desktop-peek"></div>
                 <div class="showcase-logo apple-logo">
                   <i class="bi bi-apple"></i>
                 </div>
-                <div class="phone-peek blank-phone"></div>
+                <div class="phone-peek">
+                  <div class="phone-ui"></div>
+                </div>
               </div>
             </div>
 
@@ -2247,8 +2218,8 @@
           <div class="row g-5 project-row">
 
             <div class="col-lg-5">
-              <div class="project-media-frame sips-showcase coffee-bg">
-                <img class="project-phone-image" src="assets/img/portfolio/SIPS.jpg" alt="SIPS app screen">
+              <div class="project-media-frame coffee-bg">
+                <img src="assets/img/portfolio/SIPS.jpg" alt="SIPS app screen">
               </div>
             </div>
 
@@ -2292,8 +2263,8 @@
           <div class="row g-5 project-row">
 
             <div class="col-lg-5">
-              <div class="project-media-frame musichub-showcase concert-bg">
-                <img class="project-phone-image" src="assets/img/portfolio/musichub.jpg" alt="MusicHub app screen">
+              <div class="project-media-frame concert-bg">
+                <img src="assets/img/portfolio/musichub.jpg" alt="MusicHub app screen">
               </div>
             </div>
 
