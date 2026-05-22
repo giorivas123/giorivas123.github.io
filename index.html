@@ -1165,15 +1165,29 @@
     .project-actions {
       display: flex;
       align-items: center;
+      justify-content: flex-start;
       flex-wrap: wrap;
       gap: 14px;
       margin-top: 22px;
+      text-align: left;
     }
 
     .project-action-btn {
       min-width: 170px;
       justify-content: center;
       margin-top: 0;
+    }
+
+    .locked-project-btn {
+      cursor: not-allowed;
+      opacity: 0.72;
+    }
+
+    .locked-project-btn:hover {
+      transform: none;
+      background: rgba(255,255,255,0.06);
+      border-color: rgba(255,255,255,0.16);
+      box-shadow: none;
     }
 
     .apple-card .project-eyebrow,
@@ -2196,14 +2210,6 @@
     <section id="work" class="work-clean anchor-offset">
       <div class="container" data-aos="fade-up">
 
-        <div class="section-intro" data-aos="fade-up">
-          <h2>Selected Work</h2>
-          <p>
-            A collection of interface and product design projects focused on clarity,
-            usability, and visually engaging digital experiences.
-          </p>
-        </div>
-
         <!-- Apple / Career Experience -->
         <div class="tablet-card apple-card" id="availability" data-aos="fade-up" data-aos-delay="100">
           <div class="row g-5 project-row">
@@ -2214,8 +2220,6 @@
                   <i class="bi bi-apple"></i>
                 </div>
 
-                <img src="assets/img/portfolio/imac_template.png" alt="iMac mockup" class="apple-imac-back">
-                <img src="assets/img/portfolio/iphone_template.png" alt="iPhone back mockup" class="apple-phone-back">
               </div>
             </div>
 
@@ -2224,15 +2228,17 @@
 
                 <h2 class="tablet-title project-eyebrow">Apple</h2>
                 <h3 class="tablet-title project-title">Career Experience Intern</h3>
-                <p class="project-role">Product Design</p>
 
                 <p class="tablet-text">
-                  Supported product design initiatives across internal experiences within a fast-paced collaborative environment.
+                  Supported product design teams for App Store Connect within a fast-paced, collaborative environment. This experience strengthened my design thinking and collaboration skills while working on professional product design workflows.
                 </p>
 
-                <p class="tablet-text">
-                  Due to confidentiality agreements, some professional projects cannot be publicly showcased, but this experience strengthened my product thinking, visual design, and collaboration skills.
-                </p>
+                <div class="project-actions">
+                  <button class="project-action-btn locked-project-btn" type="button" disabled aria-disabled="true">
+                    <i class="bi bi-lock-fill"></i>
+                    Reach Out for More Info
+                  </button>
+                </div>
 
               </div>
             </div>
@@ -2254,25 +2260,13 @@
               <div class="project-copy">
 
                 <h2 class="tablet-title project-eyebrow">SIPS</h2>
-                <h3 class="tablet-title project-title">Design Developer</h3>
-                <p class="project-role">Local Beverage Discovery App</p>
+                <h3 class="tablet-title project-title">Designer &amp; Developer</h3>
 
                 <p class="tablet-text">
-                  A local beverage discovery app designed to help users find
-                  new drinks, spots, and favorites faster.
-                </p>
-
-                <p class="tablet-text">
-                  Goal: Build a user-friendly app that connects users with local drink shops and supports
-                  small businesses. Designed in Figma and coded with HTML/CSS/JS.
+                  SIPS is a mobile-first beverage discovery app designed to help users explore local drink shops, find new favorites, and support small businesses through a simple, user-friendly experience built with Figma, HTML, CSS, and JavaScript.
                 </p>
 
                 <div class="project-actions">
-                  <a class="project-action-btn" href="https://sips-rh1i.onrender.com" target="_blank" rel="noopener">
-                    <i class="bi bi-eye-fill"></i>
-                    Live Preview
-                  </a>
-
                   <a class="project-action-btn" href="portfolio-details7.html">
                     <i class="bi bi-arrow-up-right"></i>
                     View Project
@@ -2300,24 +2294,12 @@
 
                 <h2 class="tablet-title project-eyebrow">MusicHub</h2>
                 <h3 class="tablet-title project-title">UI Designer</h3>
-                <p class="project-role">Music Discovery Experience</p>
 
                 <p class="tablet-text">
-                  A modern music app concept focused on discovery, collection,
-                  and a premium listening experience.
-                </p>
-
-                <p class="tablet-text">
-                  Goal: Prototype a modern music app in Figma that helps users discover smaller artists,
-                  view upcoming performances, and explore festivals/events.
+                  MusicHub is a mobile-first music discovery concept designed in Figma to help users discover smaller artists, explore upcoming performances, and browse festivals or events through a clean and modern interface.
                 </p>
 
                 <div class="project-actions">
-                  <a class="project-action-btn" href="portfolio-details.html">
-                    <i class="bi bi-eye-fill"></i>
-                    Live Preview
-                  </a>
-
                   <a class="project-action-btn" href="portfolio-details.html">
                     <i class="bi bi-arrow-up-right"></i>
                     View Project
