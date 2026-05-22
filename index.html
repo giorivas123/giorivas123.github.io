@@ -919,11 +919,11 @@
 
     .apple-phone-back {
       position: absolute;
-      left: 37%;
-      bottom: -24px;
-      width: 245px;
+      left: 30%;
+      bottom: -52px;
+      width: 242px;
       max-width: 58%;
-      max-height: 88%;
+      max-height: 90%;
       height: auto;
       object-fit: contain;
       transform: translateX(-50%);
@@ -939,15 +939,15 @@
 
     .apple-imac-back {
       position: absolute;
-      right: 18px;
-      bottom: 34px;
-      width: 275px;
-      max-width: 64%;
-      max-height: 78%;
+      right: 22px;
+      bottom: -36px;
+      width: 300px;
+      max-width: 70%;
+      max-height: 86%;
       height: auto;
       object-fit: contain;
       z-index: 3;
-      opacity: 0.94;
+      opacity: 0.96;
       border-radius: 0;
       filter: drop-shadow(0 22px 42px rgba(0, 0, 0, 0.42));
       transition: transform .35s ease;
@@ -1302,33 +1302,30 @@
 
     @media (max-width: 992px) {
       .apple-phone-back {
-        left: 36%;
+        left: 31%;
+        bottom: -46px;
         width: 220px;
       }
 
       .apple-imac-back {
-        right: 8px;
-        width: 235px;
+        right: 10px;
+        bottom: -28px;
+        width: 260px;
       }
     }
 
     @media (max-width: 768px) {
       .apple-phone-back {
-        left: 42%;
+        left: 35%;
         width: 205px;
-        bottom: -26px;
+        bottom: -46px;
       }
 
       .apple-imac-back {
-        right: 50%;
-        bottom: 42px;
-        width: 225px;
-        transform: translateX(50%);
-        opacity: 0.48;
-      }
-
-      .tablet-card:hover .apple-imac-back {
-        transform: translateX(50%) scale(1.02);
+        right: -10px;
+        bottom: -18px;
+        width: 245px;
+        opacity: 0.9;
       }
     }
 
