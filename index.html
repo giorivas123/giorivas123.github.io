@@ -958,6 +958,27 @@
       opacity: 0.72;
     }
 
+
+    .apple-phone-back {
+      position: absolute;
+      left: 50%;
+      bottom: -24px;
+      width: 250px;
+      max-width: 68%;
+      max-height: 86%;
+      height: auto;
+      object-fit: contain;
+      transform: translateX(-50%);
+      z-index: 4;
+      border-radius: 0;
+      filter: drop-shadow(0 24px 46px rgba(0, 0, 0, 0.55));
+      transition: transform .35s ease;
+    }
+
+    .tablet-card:hover .apple-phone-back {
+      transform: translateX(-50%) scale(1.04);
+    }
+
     .showcase-logo {
       position: absolute;
       top: 40px;
@@ -2182,13 +2203,10 @@
 
             <div class="col-lg-5">
               <div class="project-media-frame apple-showcase">
-                <div class="apple-desktop-peek"></div>
                 <div class="showcase-logo apple-logo">
                   <i class="bi bi-apple"></i>
                 </div>
-                <div class="phone-peek">
-                  <div class="phone-ui"></div>
-                </div>
+                <img src="assets/img/portfolio/iphone_template.png" alt="iPhone back mockup" class="apple-phone-back">
               </div>
             </div>
 
