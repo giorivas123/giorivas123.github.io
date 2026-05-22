@@ -1540,85 +1540,94 @@
     }
 
     .about-upgraded {
-      padding: 34px 40px 40px;
+      padding: 34px 40px 38px;
     }
 
     .about-upgraded .row {
-      align-items: center;
+      align-items: stretch;
     }
 
     .about-image-glow {
-      min-height: 430px;
+      min-height: 360px;
+      height: 100%;
       display: flex;
       justify-content: center;
       align-items: flex-end;
-      height: 100%;
       border-radius: 24px;
       background:
-        radial-gradient(circle at 50% 42%, rgba(148, 87, 255, 0.22), transparent 42%),
-        linear-gradient(145deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.025));
-      border: 1px solid rgba(255, 255, 255, 0.08);
+        radial-gradient(circle at 50% 54%, rgba(148, 87, 255, 0.24), transparent 44%),
+        linear-gradient(145deg, rgba(255, 255, 255, 0.065), rgba(255, 255, 255, 0.028));
+      border: 1px solid rgba(255, 255, 255, 0.09);
       overflow: hidden;
-      padding: 26px 18px 0;
+      padding: 24px 18px 0;
+      position: relative;
     }
 
     .about-image-glow::before {
       content: "";
       position: absolute;
-      width: 240px;
-      height: 240px;
+      width: 250px;
+      height: 250px;
       border-radius: 50%;
-      background: rgba(148, 87, 255, 0.15);
+      background: rgba(148, 87, 255, 0.16);
       filter: blur(24px);
       z-index: 0;
     }
 
     .about-photo {
-      max-width: 285px;
+      max-width: 260px;
       width: 100%;
       position: relative;
       z-index: 1;
       filter: drop-shadow(0 18px 34px rgba(0, 0, 0, 0.38));
     }
 
+    .about-content-clean {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
     .about-eyebrow {
-      margin-bottom: 12px;
-      font-size: 14px;
-      letter-spacing: 1.3px;
+      margin-bottom: 10px;
+      font-size: 13px;
+      letter-spacing: 1.4px;
       text-transform: uppercase;
       color: rgba(255, 255, 255, 0.68) !important;
       font-weight: 600;
     }
 
     .about-upgraded h3 {
-      font-size: clamp(38px, 4vw, 58px);
-      line-height: 1.02;
-      letter-spacing: -1.8px;
-      max-width: 780px;
-      margin-bottom: 18px;
+      font-size: clamp(34px, 4vw, 54px);
+      line-height: 1.05;
+      letter-spacing: -1.7px;
+      max-width: 760px;
+      margin-bottom: 16px;
     }
 
     .about-main-text {
       font-size: 17px;
-      line-height: 1.75;
-      max-width: 860px;
-      margin-bottom: 12px;
+      line-height: 1.7;
+      max-width: 760px;
+      margin-bottom: 0;
     }
 
     .about-highlight-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 16px;
-      margin-top: 24px;
+      margin-top: 26px;
+      align-items: stretch;
     }
 
     .about-highlight-card {
-      min-height: 190px;
-      padding: 22px;
+      min-height: 140px;
+      padding: 20px;
       border-radius: 20px;
       background:
-        linear-gradient(145deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.035));
-      border: 1px solid rgba(255, 255, 255, 0.09);
+        linear-gradient(145deg, rgba(255, 255, 255, 0.082), rgba(255, 255, 255, 0.038));
+      border: 1px solid rgba(255, 255, 255, 0.10);
       backdrop-filter: blur(10px);
       display: flex;
       flex-direction: column;
@@ -1631,22 +1640,22 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
       border-radius: 12px;
       color: #fff;
-      background: rgba(148, 87, 255, 0.18);
+      background: rgba(148, 87, 255, 0.20);
     }
 
     .about-highlight-card h4 {
       color: #fff;
-      margin: 0 0 10px;
-      font-size: 22px;
+      margin: 0 0 8px;
+      font-size: 21px;
       font-weight: 600;
     }
 
     .about-highlight-card p {
       font-size: 15px;
-      line-height: 1.65;
+      line-height: 1.55;
       margin: 0;
       color: rgba(255, 255, 255, 0.78) !important;
     }
@@ -1860,8 +1869,8 @@
 
       .about-image-glow {
         min-height: 300px;
-        align-items: center;
-        padding: 24px;
+        align-items: flex-end;
+        padding: 24px 18px 0;
         margin-bottom: 8px;
       }
 
@@ -2343,35 +2352,33 @@
                 </div>
 
                 <div class="col-lg-8 content">
-                  <p class="about-eyebrow">UI/UX DESIGNER • FRONT-END CREATIVE</p>
+                  <div class="about-content-clean">
+                    <p class="about-eyebrow">UI/UX DESIGNER • FRONT-END CREATIVE</p>
 
-                  <h3>Designing clean digital experiences with purpose.</h3>
+                    <h3>Designing clean, simple digital experiences.</h3>
 
-                  <p class="about-main-text">
-                    I’m Giovanni Rivas, a digital media designer focused on creating modern, user-friendly interfaces that feel clear, intentional, and easy to navigate. My work blends UI/UX design, visual storytelling, and front-end development to bring ideas into polished digital experiences.
-                  </p>
+                    <p class="about-main-text">
+                      I’m Giovanni Rivas, a designer and developer who creates polished, user-friendly interfaces with a focus on clarity, structure, and responsive web experiences.
+                    </p>
 
-                  <p class="about-main-text">
-                    I enjoy turning complex ideas into simple layouts, building responsive websites, and designing products that feel visually engaging while still being practical for real users.
-                  </p>
+                    <div class="about-highlight-grid">
+                      <div class="about-highlight-card">
+                        <i class="bi bi-layers"></i>
+                        <h4>Focus</h4>
+                        <p>UI/UX<br>Web Design<br>Product Design</p>
+                      </div>
 
-                  <div class="about-highlight-grid">
-                    <div class="about-highlight-card">
-                      <i class="bi bi-layers"></i>
-                      <h4>Focus</h4>
-                      <p>UI/UX Design<br>Web Design<br>Product Design</p>
-                    </div>
+                      <div class="about-highlight-card">
+                        <i class="bi bi-tools"></i>
+                        <h4>Tools</h4>
+                        <p>Figma<br>Sketch<br>HTML / CSS / JS</p>
+                      </div>
 
-                    <div class="about-highlight-card">
-                      <i class="bi bi-tools"></i>
-                      <h4>Tools</h4>
-                      <p>Figma<br>Sketch<br>HTML / CSS / JS</p>
-                    </div>
-
-                    <div class="about-highlight-card">
-                      <i class="bi bi-stars"></i>
-                      <h4>Goal</h4>
-                      <p>Create thoughtful digital experiences that feel useful, polished, and easy to use.</p>
+                      <div class="about-highlight-card">
+                        <i class="bi bi-stars"></i>
+                        <h4>Goal</h4>
+                        <p>Make digital experiences feel clear, useful, and easy to use.</p>
+                      </div>
                     </div>
                   </div>
                 </div>
