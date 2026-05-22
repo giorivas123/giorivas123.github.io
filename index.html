@@ -711,13 +711,14 @@
 
     .work-clean .tablet-card.apple-card {
       background:
-        radial-gradient(circle at 18% 22%, rgba(59, 130, 246, 0.24), transparent 34%),
-        radial-gradient(circle at 84% 18%, rgba(37, 99, 235, 0.20), transparent 34%),
-        linear-gradient(135deg, #020915 0%, #061b3f 48%, #020711 100%);
-      border-color: rgba(96, 165, 250, 0.22);
+        radial-gradient(circle at 18% 18%, rgba(0, 122, 255, 0.42), transparent 36%),
+        radial-gradient(circle at 78% 20%, rgba(64, 156, 255, 0.34), transparent 38%),
+        radial-gradient(circle at 52% 82%, rgba(10, 132, 255, 0.22), transparent 40%),
+        linear-gradient(135deg, #001b3f 0%, #003d86 48%, #00152f 100%);
+      border-color: rgba(100, 181, 255, 0.34);
       box-shadow:
-        0 22px 70px rgba(0, 0, 0, 0.30),
-        0 0 45px rgba(59, 130, 246, 0.10);
+        0 24px 76px rgba(0, 0, 0, 0.32),
+        0 0 54px rgba(0, 122, 255, 0.18);
     }
 
     .work-clean .tablet-card.apple-card::after {
@@ -899,8 +900,10 @@
 
     .project-media-frame.apple-showcase {
       background:
-        radial-gradient(circle at 50% 24%, rgba(96, 165, 250, 0.26), transparent 34%),
-        linear-gradient(145deg, rgba(255, 255, 255, 0.06), rgba(3, 10, 22, 0.55));
+        radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.18), transparent 18%),
+        radial-gradient(circle at 50% 50%, rgba(0, 122, 255, 0.34), transparent 42%),
+        linear-gradient(145deg, rgba(20, 111, 220, 0.28), rgba(0, 25, 58, 0.72));
+      border-color: rgba(140, 201, 255, 0.18);
     }
 
     .apple-desktop-peek {
@@ -908,7 +911,9 @@
     }
 
     .apple-showcase .showcase-logo {
-      top: 28px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       z-index: 6;
     }
 
@@ -984,10 +989,12 @@
 
     .showcase-logo.apple-logo {
       color: #fff;
-      font-size: 54px;
+      font-size: 118px;
+      line-height: 1;
       text-shadow:
-        0 0 25px rgba(255,255,255,0.92),
-        0 0 55px rgba(96,165,250,0.52);
+        0 0 28px rgba(255,255,255,0.95),
+        0 0 70px rgba(0,122,255,0.72),
+        0 0 110px rgba(64,156,255,0.40);
     }
 
     .desktop-placeholder {
@@ -1340,6 +1347,13 @@
         bottom: -18px;
         width: 245px;
         opacity: 0.9;
+      }
+    }
+
+
+    @media (max-width: 768px) {
+      .showcase-logo.apple-logo {
+        font-size: 96px;
       }
     }
 
